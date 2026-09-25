@@ -52,7 +52,7 @@
 ### 2.2 批次（念故事 / 配音 / 有聲書）
 | 面向 | 事實 | 影響 |
 |---|---|---|
-| 單請求輸出上限 | 16,384 audio tokens；實測 **32–40 tokens/秒** → **每請求約 7–8.5 分鐘音檔**（Cloud TTS 文件寫 ~655 s 會截斷） | 一章 5,000 字（≈20 分鐘）要切成 3–4 段；切段間的聲線一致性要靠同一個 `voice_…` ID + 同一個 style 字串，實驗要驗 drift |
+| 單請求輸出上限 | 名目 16,384 audio tokens；實測 **32–40 tokens/秒** → 理論每請求 7–8.5 分鐘（Cloud TTS 文件寫 ~655 s 會截斷）。**但 pilot 裡 2,000 字（約 7.4 分鐘）四種組合全部在遠低於上限處靜默停止，音檔只有 32–210 秒且不報錯**（見 §3） | 實務上每段控制在 **300–600 字（1–2 分鐘）**，並且**每段都要用「音長 ÷ 預期音長」檢查是否截斷**；一章 5,000 字要切 10 段以上。切段間聲線一致性靠同一個 `voice_…` ID + 同一個 style 字串，實驗要驗 drift |
 | 單請求輸入上限 | 8,192 tokens ≈ 8,000 中文字 | 通常先撞到輸出上限，不會撞到輸入 |
 | 雙人限制 | 一次最多 2 個 prebuilt 說話者；設計/複製聲線不能同時多人 | 三人以上的故事要拆成「旁白+A」「旁白+B」再剪接（`run_matrix.py` 已自動切） |
 | Batch API | 模型卡寫「支援」，價格頁有 batch 價（半價）；但 Batch API 文件目前只列 generateContent | **需驗證** interactions TTS 能否進 Batch；不行的話用 Flex inference（同樣半價，較慢） |
@@ -78,6 +78,30 @@
 | flash | 1.66 s | 1.96 s | 0.92 | 1.78 |
 
 其他：unary 60 字句兩模型都約 6 s；雙人故事 3 turn（20 秒音）Lite 7.4 s；語音設計一次約 10 s 含 sample。詳見 `experiments/pilot/smoke_first_run.md`。
+
+長文基準（`bench_latency.py`，Kore，每格 2 次，`experiments/pilot/latency_pilot.jsonl`）。預期音長以每秒 4.5 字估：
+
+| 字數 | 模型 | 模式 | n | TTFB 中位 | 生成時間中位 | 音長中位 | 預期音長 | RTF 中位 | 錯誤 |
+|---|---|---|---|---|---|---|---|---|---|
+| 60 | lite | stream | 2 | 1.27 s | 5.3 s | 17 s | ~13 s | 0.31 | 0 |
+| 60 | lite | unary | 2 | – | 6.0 s | 17 s | ~13 s | 0.36 | 0 |
+| 60 | flash | stream | 2 | 1.71 s | 12.9 s | 14 s | ~13 s | 0.89 | 0 |
+| 60 | flash | unary | 2 | – | 6.6 s | 15 s | ~13 s | 0.44 | 0 |
+| 600 | lite | stream | 2 | 0.80 s | 134.0 s | 170 s | ~133 s | 2.27 | 0 |
+| 600 | lite | unary | 2 | – | 34.4 s | 128 s | ~133 s | 0.27 | 0 |
+| 600 | flash | stream | 2 | 1.39 s | 46.1 s | 119 s | ~133 s | 0.39 | 0 |
+| 600 | flash | unary | 1 | – | 38.1 s | 100 s | ~133 s | 0.38 | 1 |
+| 2000 | lite | stream | 2 | 0.91 s | 7.6 s | 32 s ⚠️截斷 | ~444 s | 0.24 | 0 |
+| 2000 | lite | unary | 2 | – | 59.0 s | 210 s ⚠️截斷 | ~444 s | 0.28 | 0 |
+| 2000 | flash | stream | 2 | 1.60 s | 47.9 s | 104 s ⚠️截斷 | ~444 s | 0.46 | 0 |
+| 2000 | flash | unary | 2 | – | 47.1 s | 122 s ⚠️截斷 | ~444 s | 0.38 | 0 |
+
+讀法與警訊：
+- **2,000 字全部靜默截斷**：四種組合的 output tokens 都遠低於 16,384 上限（913–9,882），API 回 200、沒有任何錯誤或 `truncated` 欄位。Lite 串流最極端，7.6 秒就結束、只給 32 秒音檔。**批次流程一定要自己驗音長。**
+- 注意 confound：這次的長文是同一段落重複 17 次，模型可能把重複內容「摺疊」掉；`bench_latency.py` 已改成 6 段不同段落輪替並自動標記截斷，正式實驗要重跑。
+- 600 字開始不穩：Lite 串流兩次中有一次 RTF 超過 2（比即時慢一倍以上），音長 170 秒又**超過**預期，疑似重複唸；Flash unary 兩次中一次伺服器直接斷線。
+- **串流回報的 output tokens 比 unary 高 1.3–2.4 倍**（60 字：719 vs 543；600 字：11,496 vs 4,870），同一段文字。若這是計費依據，串流成本可能是 unary 的兩倍，要對帳單驗證。
+- 短句（60 字）行為和 §2.1 一致：Lite 串流 RTF 0.31、Flash 串流 0.89。
 
 ---
 
@@ -128,6 +152,8 @@ python experiments/cost.py --hours 100 --calls 1000000 --sec 6
 輸出全部在 `out/`（git ignore）。盲測用的匿名片段與答案對照表在 `out/listening/`。
 
 ### 4.6 已知風險 / 待驗證
+- **長文靜默截斷**（pilot 2,000 字四種組合全中，600 字開始不穩）：每段要驗音長，正式實驗用不重複文本重跑 `bench_latency.py`，找出安全段長。
+- 串流回報的 output tokens 明顯高於 unary，要對帳單確認計費方式。
 - Batch API 對 interactions TTS 的支援（文件互相矛盾）。
 - Rate limit 不公開，要用自己的 key 壓測；論壇回報付費 tier 延遲異常。
 - 台語漢字讀法不穩；可能需要「台語詞改諧音」的前處理層。
@@ -149,7 +175,7 @@ experiments/
   corpus/scenarios/        虎姑婆故事、手搖飲廣告配音、電信客服
   rating/rubric.md         人類盲測指引與門檻
   rating/build_listening_test.py  產生匿名化盲測包
-  pilot/                   2026-09-25 探測與 pilot 原始數據
+  pilot/                   2026-09-25 探測與 pilot 原始數據（summarize_latency.py 產生長文表格）
 ```
 
 ## 參考
