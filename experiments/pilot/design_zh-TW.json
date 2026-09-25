@@ -1,0 +1,32 @@
+{
+ "type": "prompted",
+ "display_name": "ttspoc-tw-female-probe",
+ "expire_time": "2027-09-25 11:17:02.178031+00:00",
+ "gender": "female",
+ "id": "voice_30etwdi80a4n",
+ "language_code": "zh-TW",
+ "model": "models/gemini-3.8-flash-tts",
+ "prompted": {
+  "input": "三十歲左右的台灣女生，標準台灣國語，語氣親切自然，像台北捷運廣播加一點朋友聊天的感覺，不要中國大陸的捲舌腔。"
+ },
+ "usage": {
+  "input_tokens_by_modality": [
+   {
+    "modality": "text",
+    "tokens": 96
+   }
+  ],
+  "output_tokens_by_modality": [
+   {
+    "modality": "audio",
+    "tokens": 388
+   }
+  ],
+  "total_cached_tokens": 0,
+  "total_input_tokens": 246,
+  "total_output_tokens": 388,
+  "total_thought_tokens": 969,
+  "total_tokens": 634,
+  "total_tool_use_tokens": 0
+ }
+}
