@@ -1,0 +1,39 @@
+{"id":"P01","cat":"particles","text":"欸，你等一下喔，我先去買個飲料齁，馬上回來啦。","check":"欸/喔/齁/啦 語助詞要輕、短、上揚，不能唸成書面語"}
+{"id":"P02","cat":"particles","text":"蛤？真的假的，這樣也可以喔，好啦好啦我知道了捏。","check":"蛤(ㄏㄚˊ) 不能唸成 ㄍㄜˊ；捏/餒 台灣口語尾音"}
+{"id":"H01","cat":"hokkien_hanzi","text":"歹勢歹勢，我遲到了。","check":"歹勢 應唸台語 pháinn-sè，不能唸成國語 dǎi-shì"}
+{"id":"H02","cat":"hokkien_hanzi","text":"拍謝拍謝，我遲到了。","check":"同 H01 的諧音寫法，比較哪種拼寫模型比較會唸對"}
+{"id":"H03","cat":"hokkien_hanzi","text":"阿嬤，呷飽未？今天有滷肉飯喔。","check":"呷飽未 tsia̍h-pá-buē；阿嬤 a-má"}
+{"id":"H04","cat":"hokkien_hanzi","text":"母湯喔！這樣真的母湯。","check":"母湯 m̄-thang，網路諧音寫法"}
+{"id":"H05","cat":"hokkien_hanzi","text":"這間店真的金厲害，揪團一起去啦。","check":"金(tsin)厲害 台語副詞；揪團 tshio"}
+{"id":"H06","cat":"hokkien_hanzi","text":"阿公說：「囡仔人有耳無喙。」","check":"整句台語漢字：gín-á-lâng ū hīnn bô tshuì"}
+{"id":"H07","cat":"hokkien_tailo","text":"阿公說：「Gín-á-lâng ū hīnn bô tshuì.」","check":"同 H06 改用台羅拼音，測試模型是否認得台羅"}
+{"id":"C01","cat":"code_switch","text":"這個 case 我們先 follow 一下，下午 meeting 再 update 給大家。","check":"英文單字要用台灣式輕度英文腔，不能唸成字母拼讀或美式播報腔"}
+{"id":"C02","cat":"code_switch","text":"你 LINE 我一下，順便幫我去小七買一杯 City Café。","check":"LINE 讀成單字；小七 = 7-11；City Café 品牌名"}
+{"id":"C03","cat":"code_switch","text":"我們的 API 要在 Q3 前上 production，PM 已經 sync 過 RD 了。","check":"縮寫要逐字母 (A-P-I, P-M, R-D)，Q3 唸 Q three 或 第三季 都可接受"}
+{"id":"L01","cat":"tw_lexicon","text":"我用軟體剪了一支影片，等一下搭捷運的時候傳給你看。","check":"台灣用語：軟體/影片/捷運（不是 軟件/視頻/地鐵）；語音上要自然不遲疑"}
+{"id":"L02","cat":"tw_lexicon","text":"我騎機車去買便當，順便買鳳梨跟番茄回來。","check":"機車/便當/鳳梨 台灣詞彙"}
+{"id":"L03","cat":"tw_lexicon","text":"悠遊卡加值後，記得在統一超商或全聯都可以用。","check":"悠遊卡/加值/統一超商/全聯 專有名詞"}
+{"id":"R01","cat":"tw_reading","text":"請把垃圾拿去倒，順便和我一起把房間整理好。","check":"垃圾 ㄌㄜˋㄙㄜˋ（非 lā jī）；和 ㄏㄢˋ（非 hé）— 台灣教育部讀音"}
+{"id":"R02","cat":"tw_reading","text":"法國企業包括這家公司，都在亞洲設有據點。","check":"法 ㄈㄚˋ、企 ㄑㄧˋ、括 ㄍㄨㄚ、亞 ㄧㄚˇ — 四個台灣特有讀音"}
+{"id":"R03","cat":"tw_reading","text":"癌症患者攝取液體時要小心，微量的鈉也要注意。","check":"癌 ㄧㄢˊ、液 ㄧˋ、微 ㄨㄟˊ"}
+{"id":"R04","cat":"tw_reading","text":"俄羅斯的懸崖上有一隻蝸牛，暴露在風中。","check":"俄 ㄜˋ、崖 ㄧㄞˊ、蝸 ㄍㄨㄚ、暴 ㄆㄨˋ"}
+{"id":"R05","cat":"tw_reading","text":"他在銀行上班，行為很端正；重慶南路很重要。","check":"破音字：行(ㄏㄤˊ/ㄒㄧㄥˊ)、重(ㄔㄨㄥˊ/ㄓㄨㄥˋ)"}
+{"id":"R06","cat":"tw_reading","text":"這件衣服很便宜，穿起來也很方便。","check":"便(ㄆㄧㄢˊ/ㄅㄧㄢˋ)"}
+{"id":"R07","cat":"tw_reading","text":"期末考的時候，他一直不熟這一章的內容。","check":"期 ㄑㄧˊ (台) vs qī (陸)；熟 ㄕㄡˊ (台口語) vs shú"}
+{"id":"N01","cat":"names_places","text":"我們約在西門町的門市，或是淡水、艋舺也可以。","check":"艋舺 ㄇㄥˊㄐㄧㄚˇ (Báng-kah) 常錯；町 ㄉㄧㄥ"}
+{"id":"N02","cat":"names_places","text":"高雄美濃、南投埔里、屏東恆春，這三個地方都很值得去。","check":"地名連讀節奏"}
+{"id":"N03","cat":"names_places","text":"陳怡君小姐您好，王小明先生已經幫您把台積電的資料寄過去了。","check":"人名不能拆字；台積電 ㄊㄞˊㄐㄧㄐㄧㄢˋ"}
+{"id":"D01","cat":"numbers","text":"總金額是新台幣一千兩百八十元，發票號碼 AB-12345678。","check":"金額用「兩」；發票號碼字母+數字逐字讀"}
+{"id":"D02","cat":"numbers","text":"客服專線 0800-000-123，市話請撥 02-2345-6789。","check":"0 唸「零」；電話號碼分組停頓"}
+{"id":"D03","cat":"numbers","text":"民國 115 年 9 月 25 日星期五，下午 3 點 30 分。","check":"民國年份；「25 日」台灣習慣唸「二十五號」也可接受"}
+{"id":"D04","cat":"numbers","text":"這支 5G 手機是 3C 賣場 24 小時的限時優惠，只要 9,990 元。","check":"5G / 3C 混讀；9,990 唸 九千九百九十"}
+{"id":"D05","cat":"numbers","text":"請輸入您的身分證字號，例如 A123456789。","check":"字母 A + 9 位數字，速度與分組"}
+{"id":"E01","cat":"acting","text":"<whisper> 噓……小聲一點，虎姑婆就在門外。","check":"耳語標籤是否被演出而不是唸出來"}
+{"id":"E02","cat":"acting","text":"什麼！？你說什麼！？<laugh> 開玩笑的啦，別緊張。","check":"驚訝→笑→安撫 三段情緒轉換"}
+{"id":"E03","cat":"acting","text":"<sigh> 唉，算了啦，反正也不是第一次了。","check":"嘆氣 + 無奈語氣"}
+{"id":"E04","cat":"acting","text":"快跑！<short pause> 快！他追過來了！","check":"急促、停頓、音量變化"}
+{"id":"S01","cat":"customer_service","text":"您好，這裡是客服中心，很高興為您服務，請問有什麼可以幫您的嗎？","check":"制式開場白，要專業但不機械"}
+{"id":"S02","cat":"customer_service","text":"非常抱歉造成您的不便，我這邊立刻幫您反映處理，請您稍等一下。","check":"道歉語氣真誠、不油"}
+{"id":"S03","cat":"customer_service","text":"跟您確認一下，您的訂單編號是 TW-2026-09-25-0087，收件地址是台北市信義區松高路 11 號，對嗎？","check":"確認資訊時的重讀與分段"}
+{"id":"S04","cat":"customer_service","text":"帳單查詢請按 1，障礙申告請按 2，專人服務請按 0。","check":"IVR 選單節奏"}
+{"id":"S05","cat":"customer_service","text":"我理解您現在很生氣，這件事我們一定會負責到底，先讓我把狀況記錄下來好嗎？","check":"面對憤怒客戶的安撫語氣（同理、不卑不亢）"}
