@@ -108,6 +108,8 @@
 | `s05_v5_new-script_new-style_d1-remix-raspy.mp3` | 同 v3 | v2 | D1 remix「沙啞電台」D1M2 |
 | `s05_v6_new-script_new-style_d1-remix-confident.mp3` | 同 v3 | v2 | D1 remix「磁性自信」D1M1 |
 | `s05_v7_new-script_tw-style_d1_take1.mp3` 到 `take3` | 改寫稿，段落排版 | v3 台灣口音優先、有節奏 | D1，念三次；第 1 次停頓最少 |
+| `s05_v8_old-script_tw-phonetic-style_d1.mp3` | 改寫稿，段落排版 | v4 寫明台灣華語發音特色、素人感 | D1 |
+| `s05_v9_casual-script_tw-phonetic-style_d1_take1.mp3`、`take2` | 素人稿，台灣口語用字 | v4 | D1，念兩次；第 2 次最快、沒有長停頓 |
 
 真人試聽：v2 最台灣，v3、v4 偏大陸腔；Gemini 評審的口音排名正好相反，口音以真人判斷為準。
 數據與結論在 `podcast/RESULTS.md` 的「稿子口語化與 D1 語氣調整」。

@@ -36,11 +36,18 @@ def main(a):
         text = r.text.strip()
         out["candidates"].append({"text": text, "lint": lint(text)})
         print(f"\n--- candidate {i}\n{text}\n{json.dumps(lint(text), ensure_ascii=False)}")
+    # pick the candidate with no mainland words first, then fewest precise numbers, then shortest sentences
+    key = lambda i: (len(out["candidates"][i]["lint"]["mainland_words"]), len(out["candidates"][i]["lint"]["precise_numbers"]),
+                     out["candidates"][i]["lint"]["avg_sentence_len"])
+    out["chosen"] = min(range(len(out["candidates"])), key=key)
+    print(f"\nchosen candidate: {out['chosen']}")
     d = ROOT / "script/rewrites"; d.mkdir(parents=True, exist_ok=True)
-    (d / f"{a.segment}.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    name = f"{a.segment}_{a.tag}" if a.tag else a.segment
+    (d / f"{name}.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("segment"); ap.add_argument("--model", default="gemini-3.8-flash")
     ap.add_argument("--n", type=int, default=1); ap.add_argument("--temperature", type=float, default=0.8)
+    ap.add_argument("--tag", default="", help="suffix for the output file, so earlier rewrites are kept")
     main(ap.parse_args())

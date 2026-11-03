@@ -16,6 +16,9 @@ ENUM = re.compile(r"第[一二三四五六七八九十]+")
 PARTICLES = re.compile(r"[欸齁啦喔吧嘛耶捏咧哦蛤]")
 WRITTEN = ["推估", "因此", "此外", "然而", "其中", "對應", "處方", "藉由", "透過", "進行", "以及", "並且"]
 TAG = re.compile(r"<[^>]+>")
+# Mainland-flavoured words a Taiwanese listener flags (keep in sync with rule 13 of the prompt)
+MAINLAND = ["更狠的是", "盲猜", "咱們", "挺", "這事兒", "視頻", "質量", "信息", "軟件", "靠譜", "牛逼", "絕了", "立馬",
+            "整活", "老鐵", "點贊", "回頭再說", "兒", "啥"]
 
 def lint(text):
     clean = TAG.sub("", text)
@@ -35,6 +38,7 @@ def lint(text):
         "sentences_over_20": sum(1 for l in lens if l > 20),
         "particles_per_100": round(len(PARTICLES.findall(clean)) / chars * 100, 1) if chars else 0,
         "written_words": [w for w in WRITTEN if w in clean],
+        "mainland_words": [w for w in MAINLAND if w in clean and not (w == "兒" and ("兒子" in clean or "女兒" in clean))],
         "questions": clean.count("？") + clean.count("?"),
         "tags": len(TAG.findall(text)),
     }

@@ -1,0 +1,137 @@
+{
+ "segment": "s05_judge",
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_file": "podcast/prompts/spoken_script_zh-TW.md",
+ "prompt_sha256": "15db3adbf4088e97982cfeb4c8d6a508fa67afb502c629c817599dc7e4957b7b",
+ "original": {
+  "text": "但第五招，才是我覺得整篇的保險絲。Felix 這邊只寫了一句，而且語氣是用拜託的：Do not ask the model to judge itself. 不要讓模型評它自己。<short pause> 前面四招都在把模型往深處推，推得越深，你越看不到它在幹嘛。第五招，是唯一一招往回拉的。<short pause> 原文開頭有提到一個超讚的例子：一位業餘天文愛好者，用 Claude Code 分析 NASA 的 TESS 光變資料，發現一顆恆星每三點一八天會變暗百分之零點零五，推估是一點四倍地球大小的行星候選。他兩個禮拜跑了七十四次分析、上千個 script。<short pause> 但重點不是他問模型「這是不是行星」，而是一直叫模型想辦法證明它不是。他還把一部分資料遮起來，叫模型預測遮住的那幾段什麼時候會變暗，猜對了才算數。這個，就是外部裁判。",
+  "lint": {
+   "chars": 321,
+   "precise_numbers": [
+    "三點一八",
+    "百分之零點零五",
+    "一點四",
+    "七十四",
+    "千"
+   ],
+   "enumerations": [
+    "第五",
+    "第五"
+   ],
+   "sentences": 9,
+   "avg_sentence_len": 34.7,
+   "max_sentence_len": 91,
+   "sentences_over_20": 6,
+   "particles_per_100": 0.3,
+   "written_words": [
+    "推估"
+   ],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 3
+  }
+ },
+ "candidates": [
+  {
+   "text": "然後，來看第五招。<short pause>\n這招，嗯，應該說是整篇的保險絲。\n那個，原作者用了懇求的語氣喔。\n他說，千萬不要讓模型評它自己。\n對，前面幾招都在叫模型想深一點。\n但你想嘛，越深你就越看不懂。\n第五招是唯一把它往回拉的繩子。\n我看到這邊真的超有感觸。\n原文提了一個很扯的素人例子。\n有人用 Claude Code 挖 NASA 的太空資料。\n跑了兩週、上千個 script。<short pause>\n找到一顆比地球大一點的行星候選。\n你猜他怎麼做？\n他可不是去問 AI 說這是不是行星。\n重點來了，他反過來逼模型找碴。\n叫模型去證明它不是行星。\n然後他還把資料蓋住一半。\n叫模型預測那一段什麼時候變暗。\n猜中了才算數，醬才叫外部裁判。\n雖然這顆目前還沒完全確認啦。\n但這個做法真的超值得學起來。",
+   "lint": {
+    "chars": 301,
+    "precise_numbers": [
+     "千"
+    ],
+    "enumerations": [
+     "第五",
+     "第五"
+    ],
+    "sentences": 21,
+    "avg_sentence_len": 13.3,
+    "max_sentence_len": 23,
+    "sentences_over_20": 1,
+    "particles_per_100": 1.0,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  },
+  {
+   "text": "第五招，嗯，應該說是整篇的保險絲。<short pause> 作者甚至是用懇求的語氣寫喔。他說：Do not ask the model to judge itself. 千萬不要讓模型審查它自己。前面幾招都在把模型往深處推。推得越深，你越看不到它在幹嘛。第五招，是唯一把它往回拉的。我看到這招整個起雞皮疙瘩。原文開頭不是有提過一顆候選行星嗎？那是一個業餘愛好者做出來的。他用 Claude Code 分析 NASA TESS 的資料。兩個禮拜跑了幾十次、上千個 script。抓到一個每三點一八天變暗一點點的訊號。推估比地球大了一點點。重點來了，你猜他怎麼做的？他可沒有傻傻問模型「這是不是行星」。<short pause> 更扯的是，他是一直叫模型證明它不是。他還把部分資料遮起來。醬模型就看不到答案了嘛。然後叫它去算被遮住的地方何時會變暗。算對了才算數。雖然這顆目前還是候選、還沒確認。但這就是最漂亮的外部裁判啦。",
+   "lint": {
+    "chars": 367,
+    "precise_numbers": [
+     "千",
+     "三點一八"
+    ],
+    "enumerations": [
+     "第五",
+     "第五"
+    ],
+    "sentences": 22,
+    "avg_sentence_len": 15.7,
+    "max_sentence_len": 45,
+    "sentences_over_20": 2,
+    "particles_per_100": 1.1,
+    "written_words": [
+     "推估"
+    ],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "第五招，嗯，這招應該算是保險絲啦。\n原文作者只寫了一句話。\n而且他的語氣是用懇求的喔。\n叫大家千萬不要讓模型審查自己。\n前面幾招都在把模型往深處推。\n推得越深，你越看不到它在幹嘛。\n第五招，就是唯一把它往回拉的煞車。\n我看到這邊整個起雞皮疙瘩。<short pause>\n原文開頭有提到一顆行星候選天體嘛。\n有個業餘玩家用 Claude Code 去撈 NASA 資料。\n抓到一顆恆星每三點一八天會變暗一點點。\n推算大概比地球大一點。\n他兩週跑了幾十次分析、上千個 script。\n欸，你猜他怎麼驗證？\n直接問模型這是不是行星嗎？\n才不是勒。<laugh>\n他反而是一直叫模型想辦法證明它不是。\n更扯的是，他還把部分資料遮起來。\n叫模型預測遮住的地方什麼時候會變暗。\n算對了才算數。\n醬子做，後續觀測提案真的核准了。\n雖然目前還只是候選天體、尚未確認啦。\n但這就是最標準的外部裁判。",
+   "lint": {
+    "chars": 343,
+    "precise_numbers": [
+     "三點一八",
+     "千"
+    ],
+    "enumerations": [
+     "第五",
+     "第五"
+    ],
+    "sentences": 23,
+    "avg_sentence_len": 13.9,
+    "max_sentence_len": 25,
+    "sentences_over_20": 1,
+    "particles_per_100": 1.7,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  }
+ ],
+ "chosen": 0,
+ "final": {
+  "text": "然後，來看第五招。<short pause>\n這招，嗯，應該說是整篇的保險絲。\n那個，原作者用了懇求的語氣喔。\n他說，千萬不要讓模型評它自己。\n對，前面幾招都在叫模型想深一點。\n但你想嘛，越深你就越看不懂。\n第五招是唯一把它往回拉的繩子。\n我看到這邊真的超有感觸。\n原文提了一個很扯的素人例子。\n有人用 Claude Code 挖 NASA 的太空資料。\n跑了兩週、上千個 script。<short pause>\n找到一顆比地球大一點的行星候選。\n你猜他怎麼做？\n他可不是去問 AI 說這是不是行星。\n重點來了，他反過來逼模型找碴。\n叫模型去證明它不是行星。\n然後他還把資料蓋住一部分。\n叫模型預測那一段什麼時候變暗。\n猜中了才算數，醬才叫外部裁判。\n雖然這顆目前還沒完全確認啦。\n但這個做法真的超值得學起來。",
+  "lint": {
+   "chars": 302,
+   "precise_numbers": [
+    "千"
+   ],
+   "enumerations": [
+    "第五",
+    "第五"
+   ],
+   "sentences": 21,
+   "avg_sentence_len": 13.4,
+   "max_sentence_len": 23,
+   "sentences_over_20": 1,
+   "particles_per_100": 1.0,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 1,
+   "tags": 2
+  },
+  "manual_edits": [
+   {
+    "from": "蓋住一半",
+    "to": "蓋住一部分",
+    "reason": "原文只說遮住部分資料，「一半」是模型自己加的數量"
+   }
+  ]
+ }
+}
