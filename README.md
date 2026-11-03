@@ -162,6 +162,10 @@ python experiments/cost.py --hours 100 --calls 1000000 --sec 6
 
 ---
 
+## Podcast POC
+`podcast/`：把一篇 AI 導讀文章做成台灣口音、低沉磁性男聲的科技 podcast。
+計畫在 `podcast/PLAN.md`，結果與數據在 `podcast/RESULTS.md`。
+
 ## 目錄
 ```
 experiments/

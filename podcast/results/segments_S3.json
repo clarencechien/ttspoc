@@ -1,0 +1,102 @@
+[
+ {
+  "id": "s00_open",
+  "attempts": 1,
+  "audio_s": 31.96,
+  "expected_s": 30.7,
+  "ratio": 1.04,
+  "ok": true,
+  "wall_s": 10.8,
+  "tokens": 799
+ },
+ {
+  "id": "s01_copy",
+  "attempts": 1,
+  "audio_s": 47.96,
+  "expected_s": 47.6,
+  "ratio": 1.01,
+  "ok": true,
+  "wall_s": 13.4,
+  "tokens": 1199
+ },
+ {
+  "id": "s02_speed",
+  "attempts": 1,
+  "audio_s": 38.08,
+  "expected_s": 33.3,
+  "ratio": 1.14,
+  "ok": true,
+  "wall_s": 11.9,
+  "tokens": 952
+ },
+ {
+  "id": "s03_altitude",
+  "attempts": 1,
+  "audio_s": 47.72,
+  "expected_s": 55.1,
+  "ratio": 0.87,
+  "ok": true,
+  "wall_s": 13.2,
+  "tokens": 1193
+ },
+ {
+  "id": "s04_depth",
+  "attempts": 1,
+  "audio_s": 48.88,
+  "expected_s": 45.3,
+  "ratio": 1.08,
+  "ok": true,
+  "wall_s": 13.7,
+  "tokens": 1222
+ },
+ {
+  "id": "s05_judge",
+  "attempts": 1,
+  "audio_s": 65.88,
+  "expected_s": 65.3,
+  "ratio": 1.01,
+  "ok": true,
+  "wall_s": 18.1,
+  "tokens": 1647
+ },
+ {
+  "id": "s06_range",
+  "attempts": 1,
+  "audio_s": 53.76,
+  "expected_s": 45.8,
+  "ratio": 1.17,
+  "ok": true,
+  "wall_s": 15.7,
+  "tokens": 1344
+ },
+ {
+  "id": "s07_resolution",
+  "attempts": 1,
+  "audio_s": 54.48,
+  "expected_s": 50.4,
+  "ratio": 1.08,
+  "ok": true,
+  "wall_s": 14.5,
+  "tokens": 1362
+ },
+ {
+  "id": "s08_efficacy",
+  "attempts": 1,
+  "audio_s": 48.92,
+  "expected_s": 45.6,
+  "ratio": 1.07,
+  "ok": true,
+  "wall_s": 13.6,
+  "tokens": 1223
+ },
+ {
+  "id": "s09_outro",
+  "attempts": 1,
+  "audio_s": 40.36,
+  "expected_s": 36.2,
+  "ratio": 1.11,
+  "ok": true,
+  "wall_s": 11.8,
+  "tokens": 1009
+ }
+]
