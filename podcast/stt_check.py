@@ -74,8 +74,15 @@ def whisper_transcribe(paths):
     m = WhisperModel("large-v3-turbo", device="cpu", compute_type="int8")
     res = {}
     for p in paths:
-        segs, _ = m.transcribe(str(p), language="zh", beam_size=5, initial_prompt="以下是台灣華語的科技 podcast，繁體中文。")
-        segs = list(segs)
+        import wave
+        with wave.open(str(p)) as w:
+            dur = w.getnframes() / w.getframerate()
+        kw = dict(language="zh", beam_size=5, vad_filter=True, initial_prompt="以下是台灣華語的科技 podcast，繁體中文。")
+        segs = list(m.transcribe(str(p), **kw)[0])
+        if segs and segs[-1].end > dur + 1.0:
+            # Whisper hallucinated past the end of the audio and kept feeding on its own text; retry without that context
+            print(f"  whisper {p.stem}: timestamps run to {segs[-1].end:.0f}s on {dur:.0f}s of audio, retrying")
+            segs = list(m.transcribe(str(p), condition_on_previous_text=False, temperature=0.0, **kw)[0])
         res[p.stem] = {"text": "".join(s.text for s in segs), "segments": [(round(s.start, 2), s.text) for s in segs]}
         print(f"  whisper {p.stem}: {res[p.stem]['text'][:40]}…")
     return res

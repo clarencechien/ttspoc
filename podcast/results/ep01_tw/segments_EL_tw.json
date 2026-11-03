@@ -1,0 +1,173 @@
+{
+ "voice": "EL1",
+ "model": "eleven_v4",
+ "settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.8,
+  "style": 0.3
+ },
+ "prefix_tag": "[Taiwanese accent] [casually]",
+ "script": "podcast/script/ep01_tw.json",
+ "segments": [
+  {
+   "id": "s00_open",
+   "audio_s": 31.68,
+   "expected_s": 33.1,
+   "ratio": 0.96,
+   "ok": true,
+   "chars": 212,
+   "chosen": "s00_open.wav",
+   "takes": [
+    {
+     "file": "s00_open.wav",
+     "audio_s": 31.7,
+     "pauses_ge_0_6s": 2
+    }
+   ]
+  },
+  {
+   "id": "s01_copy",
+   "audio_s": 36.64,
+   "expected_s": 38.2,
+   "ratio": 0.96,
+   "ok": true,
+   "chars": 234,
+   "chosen": "s01_copy.wav",
+   "takes": [
+    {
+     "file": "s01_copy.wav",
+     "audio_s": 36.6,
+     "pauses_ge_0_6s": 3
+    }
+   ]
+  },
+  {
+   "id": "s02_speed",
+   "audio_s": 38.16,
+   "expected_s": 36.4,
+   "ratio": 1.05,
+   "ok": true,
+   "chars": 228,
+   "chosen": "s02_speed.wav",
+   "takes": [
+    {
+     "file": "s02_speed.wav",
+     "audio_s": 38.2,
+     "pauses_ge_0_6s": 3
+    }
+   ]
+  },
+  {
+   "id": "s03_altitude",
+   "audio_s": 52.88,
+   "expected_s": 61.1,
+   "ratio": 0.87,
+   "ok": true,
+   "chars": 352,
+   "chosen": "s03_altitude.wav",
+   "takes": [
+    {
+     "file": "s03_altitude.wav",
+     "audio_s": 52.9,
+     "pauses_ge_0_6s": 3
+    }
+   ]
+  },
+  {
+   "id": "s04_depth",
+   "audio_s": 44.4,
+   "expected_s": 46.9,
+   "ratio": 0.95,
+   "ok": true,
+   "chars": 283,
+   "chosen": "s04_depth.wav",
+   "takes": [
+    {
+     "file": "s04_depth.wav",
+     "audio_s": 44.4,
+     "pauses_ge_0_6s": 1
+    }
+   ]
+  },
+  {
+   "id": "s05_judge",
+   "audio_s": 63.28,
+   "expected_s": 69.6,
+   "ratio": 0.91,
+   "ok": true,
+   "chars": 382,
+   "chosen": "s05_judge.wav",
+   "takes": [
+    {
+     "file": "s05_judge.wav",
+     "audio_s": 63.3,
+     "pauses_ge_0_6s": 3
+    }
+   ]
+  },
+  {
+   "id": "s06_range",
+   "audio_s": 47.52,
+   "expected_s": 46.2,
+   "ratio": 1.03,
+   "ok": true,
+   "chars": 273,
+   "chosen": "s06_range.wav",
+   "takes": [
+    {
+     "file": "s06_range.wav",
+     "audio_s": 47.5,
+     "pauses_ge_0_6s": 1
+    }
+   ]
+  },
+  {
+   "id": "s07_resolution",
+   "audio_s": 51.36,
+   "expected_s": 57.6,
+   "ratio": 0.89,
+   "ok": true,
+   "chars": 338,
+   "chosen": "s07_resolution.wav",
+   "takes": [
+    {
+     "file": "s07_resolution.wav",
+     "audio_s": 51.4,
+     "pauses_ge_0_6s": 1
+    }
+   ]
+  },
+  {
+   "id": "s08_efficacy",
+   "audio_s": 43.12,
+   "expected_s": 43.3,
+   "ratio": 1.0,
+   "ok": true,
+   "chars": 262,
+   "chosen": "s08_efficacy.wav",
+   "takes": [
+    {
+     "file": "s08_efficacy.wav",
+     "audio_s": 43.1,
+     "pauses_ge_0_6s": 3
+    }
+   ]
+  },
+  {
+   "id": "s09_outro",
+   "audio_s": 41.92,
+   "expected_s": 41.6,
+   "ratio": 1.01,
+   "ok": true,
+   "chars": 258,
+   "chosen": "s09_outro.wav",
+   "takes": [
+    {
+     "file": "s09_outro.wav",
+     "audio_s": 41.9,
+     "pauses_ge_0_6s": 1
+    }
+   ]
+  }
+ ]
+}
