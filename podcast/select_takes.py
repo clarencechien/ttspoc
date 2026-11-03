@@ -24,10 +24,12 @@ def main(a):
     takes = {s["id"]: sorted(d.glob(f"{s['id']}.take*.wav")) for s in sc["segments"]}
     allc = [p for v in takes.values() for p in v]
     old = d / "select_log.json"
-    if a.reuse and old.exists():   # transcription is the slow part; reuse it when only the rule changes
+    T = {}
+    if a.reuse and old.exists():   # transcription is the slow part; reuse it and only transcribe new takes
         T = {Path(r["file"]).stem: {"text": r["text"]} for seg in json.loads(old.read_text(encoding="utf-8"))["segments"] for r in seg["takes"]}
-    else:
-        T = S.whisper_transcribe(allc)
+    missing = [p for p in allc if p.stem not in T]
+    if missing:
+        T.update(S.whisper_transcribe(missing))
     feats = {}
     if a.consistency:
         import numpy as np
