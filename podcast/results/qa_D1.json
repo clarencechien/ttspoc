@@ -1,0 +1,118 @@
+[
+ {
+  "id": "s00_open",
+  "f0_median": 91.6,
+  "text_match": 0.986,
+  "transcript": "欸，大家好，歡迎收聽深夜 Debug，一個在半夜幫你把 bug 跟腦袋一起清一清的節目。哈，我先問一個問題齁。你最近是不是有在社群上滑到一則貼文，大概是這樣講的：別再寫你是一個資深工程師這種 prompt 啦，角色扮演早就沒用了，要讓 AI 更有野心。然後底下一堆人按讚、轉傳、收藏，啊收藏完當然就再也沒打開過，這個我們都懂。",
+  "misreadings": [
+   {
+    "word": "prompt了",
+    "heard": "prompt啦",
+    "severity": "low"
+   }
+  ],
+  "tags_read_aloud": false,
+  "skipped_or_added": "「收藏完」前多唸了語助詞「啊」",
+  "mainland_accent_moments": "",
+  "english_terms_issue": ""
+ },
+ {
+  "id": "s01_copy",
+  "f0_median": 95.6,
+  "text_match": 0.995,
+  "transcript": "那我今天要講的是，這則貼文，其實只是一張複寫單的第二聯。就是以前那種三聯單啦，你拿原子筆用力寫，第一聯留在作者手上，傳出去的是第二聯，筆壓最重的那一行印得最清楚，其他的都淡掉了。原文是 Anthropic 的 Felix Rieseberg 寫的 How to be more ambitious，大概八分鐘可以讀完。裡面有四種野心、深度的五招、兩次關於角色扮演的警告，還有一張基礎建設的帳單。結果貼文留下來的，大概就一招半。而且很好笑的是，他留下了最好記的那一招，丟掉了最重要的那一招。",
+  "misreadings": [],
+  "tags_read_aloud": false,
+  "skipped_or_added": "",
+  "mainland_accent_moments": "",
+  "english_terms_issue": ""
+ },
+ {
+  "id": "s02_speed",
+  "f0_median": 99.6,
+  "text_match": 1.0,
+  "transcript": "好，我們先把骨架架起來。Felix 把野心拆成四種：速度、高度、深度、廣度。速度就是同一件事做得更快，他直接說這個大家都會，跳過。但我覺得這邊要幫他補一句：速度其實是另外三種的地基。你後面要跑驗證、要一直重試，每一圈都要夠便宜才轉得起來。可是速度同時也是天花板。你做得越快，產出就越多，而每一份產出，最後都還是要有人看。這個我們等一下會再回來。",
+  "misreadings": [],
+  "tags_read_aloud": false,
+  "skipped_or_added": "",
+  "mainland_accent_moments": "",
+  "english_terms_issue": ""
+ },
+ {
+  "id": "s03_altitude",
+  "f0_median": 90.2,
+  "text_match": 1.0,
+  "transcript": "第二種是高度，就是問自己：這件事做完之後，我真正要的是什麼？目標背後的目標是什麼？Felix 自己的例子很經典。他以前是叫 Claude 一個一個去修 crash，後來改成叫它：讓這個 app 保持零 crash。聽起來很帥對不對？但轉傳的時候，最常被剪掉的就是後面那段。為了讓這句話成立，他得先讓 Claude 能自己抓 crash report，讓它知道哪個版本對應哪個 git commit，還要給它 Windows、macOS、Linux 三台電腦，讓它可以自己重現、自己驗證。所以這不是一句 prompt，這是一張帳單。問法最便宜，讓模型有辦法回答那個問法，才是貴的。",
+  "misreadings": [],
+  "tags_read_aloud": false,
+  "skipped_or_added": "",
+  "mainland_accent_moments": "",
+  "english_terms_issue": ""
+ },
+ {
+  "id": "s04_depth",
+  "f0_median": 86.6,
+  "text_match": 1.0,
+  "transcript": "第三種是深度，這邊有五招。第一招就是貼文的主題，叫模型扮演專家的時候，它常常只換詞彙不換方法。但注意喔，原文沒有說角色 prompt 失效，它的處方也不是把角色拿掉，而是加上工具。模型想要畫一個 markdown 表格給你的時候，你要堅持叫它去開資料庫、跑統計模型。這跟你的 prompt 裡面有沒有寫資深兩個字，其實一點關係都沒有。第二到第四招也很好玩，訂一個不合理的目標，網站十秒要壓到五秒？直接要兩百毫秒。挑戰你自以為知道的事，還有叫模型去產生新的知識。",
+  "misreadings": [],
+  "tags_read_aloud": false,
+  "skipped_or_added": "",
+  "mainland_accent_moments": "",
+  "english_terms_issue": ""
+ },
+ {
+  "id": "s05_judge",
+  "f0_median": 88.9,
+  "text_match": 0.954,
+  "transcript": "但第五招才是我覺得整篇的保險絲。Felix 這邊只寫了一句，而且語氣是用拜託的：Do not ask the model to judge itself. 不要讓模型評它自己。前面四招都在把模型往深處推，推得越深，你越看不到它在幹嘛。第五招是唯一一招往回拉的。原文開頭有提到一個超讚的例子：一位業餘天文愛好者用 Claude Code 分析 NASA 的 TESS 光變資料，發現一顆恆星每 3.18 天會變暗 0.05%，推估是 1.4 倍地球大小的行星候選。他兩個禮拜跑了 74 次分析、上千個 script。但重點不是他問模型「這是不是行星」，而是一直叫模型想辦法證明它不是。他還把一部分資料遮起來，叫模型預測遮住的那幾段什麼時候會變暗，猜對了才算數。這個就是外部裁判。",
+  "misreadings": [],
+  "tags_read_aloud": false,
+  "skipped_or_added": "",
+  "mainland_accent_moments": "",
+  "english_terms_issue": ""
+ },
+ {
+  "id": "s06_range",
+  "f0_median": 87.6,
+  "text_match": 1.0,
+  "transcript": "第四種是廣度。兩招，一個是把名詞換成動詞。季度檢討不是一份簡報，而是在三十分鐘內，讓一群很忙的人相信一個因果故事，然後在不確定之下做決定。你一換成動詞，就會發現好多領域可以幫忙。第二招是組隊，就像搶劫電影前三十分鐘在湊人那樣：分析師、記者、剪接師，再來一個專門唱反調的放空者。但 Felix 在這邊又警告了一次：組隊很容易滑成角色扮演。不要叫模型寫得像放空者，要叫它去做放空者研究一檔股票時會做的事。這句我覺得工程師應該印出來，貼在螢幕旁邊：角色之後，要接動作。",
+  "misreadings": [],
+  "tags_read_aloud": false,
+  "skipped_or_added": "",
+  "mainland_accent_moments": "",
+  "english_terms_issue": ""
+ },
+ {
+  "id": "s07_resolution",
+  "f0_median": 102.6,
+  "text_match": 0.998,
+  "transcript": "好，接下來講原文沒說、但我覺得一定要補的東西。什麼叫好的裁判？我自己用三題，呃，Three.js 跑過一輪，有三個心得。第一個是解析度。在 Claude Code 裡面，每一輪都是零 console error，很漂亮。可是零錯誤只代表程式沒炸，不代表飛機長得像飛機。同一題換到另一個 app 跑，程式能跑，畫面卻一直閃，要我把症狀貼回去，它才知道機翼尖端在閃。裁判看得到什麼，野心就只能到哪裡。第二個是獨立性：裁判不能是當事人，也不能先偷看過當事人的筆記。第三個是成本：每一輪驗證要多久，決定你能跑幾輪；能跑幾輪，決定你能推多深。",
+  "misreadings": [],
+  "tags_read_aloud": false,
+  "skipped_or_added": "在「三題」後多停頓並發出填補詞「呃」",
+  "mainland_accent_moments": "",
+  "english_terms_issue": ""
+ },
+ {
+  "id": "s08_efficacy",
+  "f0_median": 88.9,
+  "text_match": 1.0,
+  "transcript": "最後一段，Felix 講了一點心理學，叫自我效能，就是你相不相信自己做得到。心理學家 Bandura 說，自我效能有四個來源：親身的成功經驗、看別人做到、別人說服你，還有你當下的身心狀態。原文的例子，Bannister 跑進四分鐘、Dantzig 把未解問題當作業寫掉，大概對應到後面三個。唯獨缺了最強的那一個：親身的成功經驗。用 AI 也一樣，你看一百個別人的 showcase，都比不上自己把一個題目從開題跑到裁判，親手付一次帳單。替代經驗可以工業化，親身經驗不行。",
+  "misreadings": [],
+  "tags_read_aloud": false,
+  "skipped_or_added": "",
+  "mainland_accent_moments": "「說服」讀作「shuì fú」（台灣多讀「shuō fú」）",
+  "english_terms_issue": ""
+ },
+ {
+  "id": "s09_outro",
+  "f0_median": 93.8,
+  "text_match": 1.0,
+  "transcript": "好，今天帶走三件事。第一，讓模型有一台電腦跟資料，這是前提，不是選項。第二，每一個往深處推的要求，都要配一個模型以外的裁判。第三，野心的帳單先付，問法最後才問。喔對，最後提醒一下時間戳，Felix 自己有寫，不要讓模型評自己，是二零二六年十月的判斷，他預期模型變強之後會改，所以你如果是很久以後才聽到這集，記得先看一下日期。好，今天的深夜 Debug 就到這邊，我們下次見，掰掰。",
+  "misreadings": [],
+  "tags_read_aloud": false,
+  "skipped_or_added": "",
+  "mainland_accent_moments": "",
+  "english_terms_issue": ""
+ }
+]

@@ -1,0 +1,203 @@
+{
+ "objective": [
+  {
+   "file": "D1_磁性深夜.wav",
+   "f0_median_hz": 96.4,
+   "f0_p10_p90": [
+    86.6,
+    123.3
+   ],
+   "centroid_hz": 2344,
+   "duration_s": 22.9
+  },
+  {
+   "file": "D2_工程師學長.wav",
+   "f0_median_hz": 118.8,
+   "f0_p10_p90": [
+    87.8,
+    186.0
+   ],
+   "centroid_hz": 2433,
+   "duration_s": 19.1
+  },
+  {
+   "file": "S1_Algieba.wav",
+   "f0_median_hz": 109.1,
+   "f0_p10_p90": [
+    85.2,
+    171.2
+   ],
+   "centroid_hz": 3192,
+   "duration_s": 20.3
+  },
+  {
+   "file": "S2_Charon.wav",
+   "f0_median_hz": 112.9,
+   "f0_p10_p90": [
+    83.3,
+    160.8
+   ],
+   "centroid_hz": 2547,
+   "duration_s": 19.2
+  },
+  {
+   "file": "S3_Enceladus.wav",
+   "f0_median_hz": 101.7,
+   "f0_p10_p90": [
+    81.4,
+    134.1
+   ],
+   "centroid_hz": 2370,
+   "duration_s": 19.2
+  },
+  {
+   "file": "S4_Umbriel.wav",
+   "f0_median_hz": 111.1,
+   "f0_p10_p90": [
+    85.7,
+    159.2
+   ],
+   "centroid_hz": 2238,
+   "duration_s": 22.5
+  }
+ ],
+ "rankings": [
+  {
+   "ranking": [
+    "S3_Enceladus.wav",
+    "S2_Charon.wav",
+    "D2_工程師學長.wav",
+    "S4_Umbriel.wav",
+    "S1_Algieba.wav",
+    "D1_磁性深夜.wav"
+   ],
+   "winner_reason": "A 擁有最完美的深夜電台低沉磁性嗓音，胸腔共鳴渾厚且不刻意造作；台灣口語語氣極為自然慵懶，英文專有名詞切換流暢不生硬，自嘲『這是一張帳單啦』的無奈感拿捏得恰到好處，完全符合深夜科技 podcast 的理想形象。",
+   "per_clip": {
+    "S3_Enceladus.wav": {
+     "taiwan_accent": "極度道地的台灣日常語調，語助詞與節奏極為自然。",
+     "magnetic_low": "胸腔共鳴飽滿渾厚，低沉且極具磁性，深夜電台氛圍拉滿。",
+     "weakness": "整體語速偏沉穩，若要追求高節奏吐槽感會稍嫌不夠明快。"
+    },
+    "S1_Algieba.wav": {
+     "taiwan_accent": "口音自然，但部分語句咬字稍嫌用力生硬。",
+     "magnetic_low": "音色偏扁偏緊，缺乏深夜電台所需的溫潤低頻與磁性感。",
+     "weakness": "說話發力點偏喉嚨，聽久容易產生壓迫感，不夠放鬆。"
+    },
+    "D2_工程師學長.wav": {
+     "taiwan_accent": "標準台灣科技人說話腔調，自嘲的冷笑聲十分真實。",
+     "magnetic_low": "音色偏中高頻、略帶沙啞，低沉磁性稍嫌不足。",
+     "weakness": "聲線較為單薄，缺乏深夜男聲沉穩包覆的聽感。"
+    },
+    "D1_磁性深夜.wav": {
+     "taiwan_accent": "口音雖在，但語氣刻意壓低拖沓，顯得不夠生活化。",
+     "magnetic_low": "雖然音調極低，但氣音過重像氣若游絲，而非有磁性的共鳴。",
+     "weakness": "節奏過慢且造作感強，聽起來像病懨懨而非慵懶愜意。"
+    },
+    "S4_Umbriel.wav": {
+     "taiwan_accent": "口音與語氣非常親切自然，像午後與工程師同事閒聊。",
+     "magnetic_low": "聲線偏亮偏高，情緒較亢奮，缺少深夜節目的低音包覆感。",
+     "weakness": "能量感過於充沛，較適合晨間科技節目或 YouTube 解說。"
+    },
+    "S2_Charon.wav": {
+     "taiwan_accent": "台灣在地感強烈，語尾的「吼」、「啦」十分放鬆自如。",
+     "magnetic_low": "低音厚度不錯，放鬆感很好，自嘲笑聲很加分。",
+     "weakness": "低頻的共鳴顆粒感與磁性厚度略遜 A 一籌。"
+    }
+   }
+  },
+  {
+   "ranking": [
+    "S2_Charon.wav",
+    "S3_Enceladus.wav",
+    "S4_Umbriel.wav",
+    "D1_磁性深夜.wav",
+    "S1_Algieba.wav",
+    "D2_工程師學長.wav"
+   ],
+   "winner_reason": "音檔 B 兼具低沉溫暖的深夜電台共鳴感與極致放鬆的朋友閒聊感，技術英文唸法流暢地道，最後自嘲『是一張帳單啦』的無奈笑意恰到好處，最契合深夜科技 podcast 的設定。",
+   "per_clip": {
+    "S1_Algieba.wav": {
+     "taiwan_accent": "語調非常道地自然，帶有台灣日常聊天的親切韻律感。",
+     "magnetic_low": "音調偏中高且明亮，缺乏深夜時段該有的低沉包覆感。",
+     "weakness": "整體聲線過於清亮活躍，缺少深夜電台放鬆沉穩的磁性氛圍。"
+    },
+    "S2_Charon.wav": {
+     "taiwan_accent": "台味咬字拿捏極佳，語助詞與收尾節奏鬆弛又生活化。",
+     "magnetic_low": "聲線低緩溫暖且具共鳴感，近麥克風感極強，完美符合深夜調性。",
+     "weakness": "收尾自嘲笑聲略微收斂，若再多一點無奈感會更生動。"
+    },
+    "S4_Umbriel.wav": {
+     "taiwan_accent": "台灣國語語調自然，但在某些斷句上略顯刻意拉長。",
+     "magnetic_low": "低音厚實有磁性，廣播感強烈。",
+     "weakness": "咬字與節奏稍微有播音腔與表演感，朋友間慵懶碎念的隨性度稍打折扣。"
+    },
+    "D1_磁性深夜.wav": {
+     "taiwan_accent": "口音自然，語氣帶有淡淡的台式疲憊幽默感。",
+     "magnetic_low": "音色極低且氣音重，具備極強的私密耳語感。",
+     "weakness": "過於氣音與慵懶導致英文專有名詞（如 prompt）咬字含糊不清。"
+    },
+    "S3_Enceladus.wav": {
+     "taiwan_accent": "語氣極具台灣在地工程師私下吐槽的真實感。",
+     "magnetic_low": "嗓音帶有低沉的顆粒感與喉音，沉穩有力。",
+     "weakness": "開頭氣息處理稍顯粗糙，偶有輕微喉音毛邊。"
+    },
+    "D2_工程師學長.wav": {
+     "taiwan_accent": "口音標準自然，聽起來像普通年輕工程師聊天。",
+     "magnetic_low": "音色較平且偏薄，缺乏低頻共鳴與深夜磁性感。",
+     "weakness": "聲音厚度不足，技術名詞（如 Claude、prompt）略顯倉促。"
+    }
+   }
+  },
+  {
+   "ranking": [
+    "S3_Enceladus.wav",
+    "S2_Charon.wav",
+    "D1_磁性深夜.wav",
+    "S4_Umbriel.wav",
+    "S1_Algieba.wav",
+    "D2_工程師學長.wav"
+   ],
+   "winner_reason": "D 在所有音檔中兼具最飽滿低沉的胸腔磁性共鳴與最鬆弛的台灣朋友閒聊感；其自嘲笑意與英文專有名詞的帶過方式渾然天成，完美契合深夜科技廣播微醺、放鬆且懂行的調性。",
+   "per_clip": {
+    "S1_Algieba.wav": {
+     "taiwan_accent": "極度道地自然，語助詞與日常對話節奏抓得非常準。",
+     "magnetic_low": "音調偏中高且明亮，缺乏深夜電台特有的低音共鳴。",
+     "weakness": "語速偏快且精力充沛，風格偏向白天生活或科技快訊，缺少深夜的慵懶沉浸感。"
+    },
+    "S2_Charon.wav": {
+     "taiwan_accent": "口音道地自然，自嘲與吐槽的語氣十分生活化。",
+     "magnetic_low": "音色沉穩放鬆，低音自然不刻意壓喉嚨。",
+     "weakness": "嗓音厚度與磁性共鳴略遜於 D，聽感稍偏平實乾淨。"
+    },
+    "D2_工程師學長.wav": {
+     "taiwan_accent": "台灣腔調自然，但語氣偏向生動活潑的劇場感。",
+     "magnetic_low": "音高偏高且浮動較大，完全不具備深夜低沉磁性。",
+     "weakness": "情緒起伏過大、表演感過強，英文單詞發音稍嫌刻意，最不符合深夜調性。"
+    },
+    "S3_Enceladus.wav": {
+     "taiwan_accent": "非常地道的台灣男生日常閒聊口吻，尾音與笑意極其自然。",
+     "magnetic_low": "胸腔低頻共鳴極佳，自帶深夜廣播的厚實微醺磁性。",
+     "weakness": "部分英文尾音收得較懶散，但完全符合慵懶朋友聊天的情境。"
+    },
+    "S4_Umbriel.wav": {
+     "taiwan_accent": "台灣語氣具備，但咬字稍顯刻意強調，略有做作感。",
+     "magnetic_low": "聲線偏低但帶有明顯氣音，缺乏紮實的磁性厚度。",
+     "weakness": "語速與節奏拉得過開，斷句稍顯刻板，少了一點跟朋友隨性吐槽的流暢感。"
+    },
+    "D1_磁性深夜.wav": {
+     "taiwan_accent": "語氣隨和親切，台灣口語特色鮮明。",
+     "magnetic_low": "音量低緩接近耳邊私語（ASMR 風格），沉靜感十足。",
+     "weakness": "過度偏向氣音與氣音呢喃，缺少聲音的核心共鳴，容易讓聽眾聽得吃力。"
+    }
+   }
+  }
+ ],
+ "borda": {
+  "D1_磁性深夜.wav": 8,
+  "D2_工程師學長.wav": 6,
+  "S1_Algieba.wav": 6,
+  "S2_Charon.wav": 16,
+  "S3_Enceladus.wav": 17,
+  "S4_Umbriel.wav": 10
+ }
+}
