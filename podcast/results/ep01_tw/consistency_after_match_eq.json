@@ -1,0 +1,144 @@
+{
+ "Gemini D1 修正版": {
+  "centroid_range": 375,
+  "neighbor_sim_min": 0.917,
+  "neighbor_sim_mean": 0.961,
+  "pitch_range": 6.2,
+  "spectral_dev_before": 1.11,
+  "spectral_dev_after": 0.57,
+  "per_segment": [
+   {
+    "id": "s00_open",
+    "centroid": 2676,
+    "pitch": 93.0
+   },
+   {
+    "id": "s01_copy",
+    "centroid": 2676,
+    "pitch": 90.9
+   },
+   {
+    "id": "s02_speed",
+    "centroid": 2337,
+    "pitch": 93.8
+   },
+   {
+    "id": "s03_altitude",
+    "centroid": 2710,
+    "pitch": 91.3
+   },
+   {
+    "id": "s04_depth",
+    "centroid": 2581,
+    "pitch": 94.5
+   },
+   {
+    "id": "s05_judge",
+    "centroid": 2336,
+    "pitch": 92.7
+   },
+   {
+    "id": "s06_range",
+    "centroid": 2433,
+    "pitch": 96.4
+   },
+   {
+    "id": "s07_resolution",
+    "centroid": 2499,
+    "pitch": 94.5
+   },
+   {
+    "id": "s08_efficacy",
+    "centroid": 2486,
+    "pitch": 90.2
+   },
+   {
+    "id": "s09_outro",
+    "centroid": 2400,
+    "pitch": 95.6
+   }
+  ],
+  "neighbor_sim": [
+   0.979,
+   0.965,
+   0.975,
+   0.968,
+   0.967,
+   0.965,
+   0.961,
+   0.95,
+   0.917
+  ]
+ },
+ "ElevenLabs Hardy": {
+  "centroid_range": 436,
+  "neighbor_sim_min": 0.967,
+  "neighbor_sim_mean": 0.976,
+  "pitch_range": 17.9,
+  "spectral_dev_before": 1.04,
+  "spectral_dev_after": 0.55,
+  "per_segment": [
+   {
+    "id": "s00_open",
+    "centroid": 2790,
+    "pitch": 125.0
+   },
+   {
+    "id": "s01_copy",
+    "centroid": 2449,
+    "pitch": 129.7
+   },
+   {
+    "id": "s02_speed",
+    "centroid": 2477,
+    "pitch": 125.0
+   },
+   {
+    "id": "s03_altitude",
+    "centroid": 2589,
+    "pitch": 120.6
+   },
+   {
+    "id": "s04_depth",
+    "centroid": 2401,
+    "pitch": 135.6
+   },
+   {
+    "id": "s05_judge",
+    "centroid": 2373,
+    "pitch": 120.0
+   },
+   {
+    "id": "s06_range",
+    "centroid": 2390,
+    "pitch": 122.1
+   },
+   {
+    "id": "s07_resolution",
+    "centroid": 2411,
+    "pitch": 123.1
+   },
+   {
+    "id": "s08_efficacy",
+    "centroid": 2569,
+    "pitch": 117.6
+   },
+   {
+    "id": "s09_outro",
+    "centroid": 2354,
+    "pitch": 127.3
+   }
+  ],
+  "neighbor_sim": [
+   0.982,
+   0.972,
+   0.985,
+   0.983,
+   0.968,
+   0.979,
+   0.977,
+   0.973,
+   0.967
+  ]
+ }
+}

@@ -226,6 +226,33 @@ def silence(path, seconds):
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(b"\x00\x00" * int(SR * seconds))
 
 
+BANDS = [100 * 2 ** (k / 3) for k in range(0, 21)]   # 1/3-octave band edges, 100 Hz to ~10 kHz
+
+
+def band_spectrum(path):
+    """Long-term average spectrum in 1/3-octave bands (dB, mean-removed), voiced/active frames only."""
+    import numpy as np
+    with wave.open(str(path)) as w:
+        sr = w.getframerate(); x = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
+    n = 4096; win = np.hanning(n); acc = np.zeros(n // 2 + 1); k = 0
+    for i in range(0, len(x) - n, n // 2):
+        fr = x[i:i + n]
+        if np.sqrt(np.mean(fr ** 2)) < 0.01:
+            continue
+        acc += np.abs(np.fft.rfft(fr * win)) ** 2; k += 1
+    f = np.fft.rfftfreq(n, 1 / sr)
+    db = np.array([10 * np.log10(acc[(f >= lo) & (f < hi)].mean() / max(k, 1) + 1e-12) for lo, hi in zip(BANDS[:-1], BANDS[1:])])
+    return db - db.mean()
+
+
+def apply_band_eq(src, dst, gains_db):
+    """Linear-phase EQ through the 1/3-octave band centres (ffmpeg firequalizer)."""
+    centres = [(lo * hi) ** 0.5 for lo, hi in zip(BANDS[:-1], BANDS[1:])]
+    entries = ";".join(f"entry({c:.0f},{g:.2f})" for c, g in zip(centres, gains_db))
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-af", f"firequalizer=gain_entry='{entries}':zero_phase=on",
+                    "-ar", str(SR), "-ac", "1", "-c:a", "pcm_s16le", str(dst)], check=True)
+
+
 def measure_lufs(path):
     r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
     return float(re.findall(r"I:\s+(-?[0-9.]+) LUFS", r)[-1])
@@ -249,6 +276,24 @@ def cmd_master(a):
             levels.append({"id": s["id"], "lufs_before": round(before, 1), "gain_db": round(a.seg_lufs - before, 1), "lufs_after": round(measure_lufs(out), 1)})
             src = out
         seq.append(src)
+    if a.match_eq and a.seg_lufs == a.seg_lufs:
+        # Tonal matching: pull every segment's long-term spectrum toward the episode median, then re-level.
+        import numpy as np
+        seg_files = [x for x in seq if x.parent == norm_dir]
+        specs = np.array([band_spectrum(x) for x in seg_files]); target = np.median(specs, axis=0); eq_log = []
+        for x, sp in zip(seg_files, specs):
+            g = np.clip((target - sp) * a.match_strength, -a.match_max_db, a.match_max_db)
+            g = np.convolve(np.pad(g, 1, mode="edge"), [0.25, 0.5, 0.25], mode="valid")     # smooth across neighbouring bands
+            tmp = x.with_suffix(".eq.wav"); apply_band_eq(x, tmp, g)
+            lv = measure_lufs(tmp)
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(tmp), "-af", f"volume={a.seg_lufs - lv:.2f}dB",
+                            "-ar", str(SR), "-ac", "1", "-c:a", "pcm_s16le", str(x)], check=True)
+            tmp.unlink()
+            eq_log.append({"id": x.stem, "gains_db": [round(float(v), 2) for v in g],
+                           "deviation_before_db": round(float(np.sqrt(np.mean((sp - target) ** 2))), 2),
+                           "deviation_after_db": round(float(np.sqrt(np.mean((band_spectrum(x) - target) ** 2))), 2)})
+        (norm_dir / "match_eq.json").write_text(json.dumps(eq_log, ensure_ascii=False, indent=1))
+        print("tonal match, spectral deviation dB:", " ".join(f"{e['deviation_before_db']}->{e['deviation_after_db']}" for e in eq_log))
         if i < len(sc["segments"]) - 1:
             seq.append(m / "gap.wav")
     seq += [m / "lead.wav", m / "outro.wav"]
@@ -277,5 +322,7 @@ if __name__ == "__main__":
     p = sub.add_parser("episode"); p.add_argument("--voice", required=True); p.add_argument("--retries", type=int, default=2); p.add_argument("--force", action="store_true"); p.add_argument("--only", default="", help="comma-separated segment ids to regenerate"); p.add_argument("--script", default=None, help="script JSON, default podcast/script/ep01.json"); p.add_argument("--tag", default="", help="suffix for the segments folder and output, e.g. tw"); p.add_argument("--takes", type=int, default=1, help="takes per segment; keeps the one with fewest long pauses"); p.add_argument("--style", choices=["v1", "v2", "v3", "v4", "v5"], default="v1", help="v2 = confident and rhythmic but drifts toward a broadcast accent; v3 = rhythmic and Taiwanese-leaning; v4 = v3 plus explicit Taiwan Mandarin phonetic traits and an amateur feel; v5 = v4 plus clear tones (in ep01_tw.json)")
     p = sub.add_parser("master"); p.add_argument("--voice", required=True); p.add_argument("--script", default=None); p.add_argument("--tag", default="")
     p.add_argument("--seg-lufs", type=float, default=-20.0, help="bring every segment to this loudness before joining; pass nan to skip")
+    p.add_argument("--match-eq", action="store_true", help="tonal matching: EQ each segment toward the episode's median spectrum")
+    p.add_argument("--match-strength", type=float, default=0.8); p.add_argument("--match-max-db", type=float, default=6.0)
     a = ap.parse_args()
     {"design": cmd_design, "audition": cmd_audition, "judge": cmd_judge, "episode": cmd_episode, "master": cmd_master}[a.cmd](a)
