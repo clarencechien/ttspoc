@@ -1,0 +1,62 @@
+[
+ {
+  "id": "s00_open",
+  "lufs_before": -30.5,
+  "gain_db": 10.5,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s01_copy",
+  "lufs_before": -31.5,
+  "gain_db": 11.5,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s02_speed",
+  "lufs_before": -37.0,
+  "gain_db": 17.0,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s03_altitude",
+  "lufs_before": -35.6,
+  "gain_db": 15.6,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s04_depth",
+  "lufs_before": -31.4,
+  "gain_db": 11.4,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s05_judge",
+  "lufs_before": -36.4,
+  "gain_db": 16.4,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s06_range",
+  "lufs_before": -32.9,
+  "gain_db": 12.9,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s07_resolution",
+  "lufs_before": -34.5,
+  "gain_db": 14.5,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s08_efficacy",
+  "lufs_before": -36.2,
+  "gain_db": 16.2,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s09_outro",
+  "lufs_before": -31.5,
+  "gain_db": 11.5,
+  "lufs_after": -20.0
+ }
+]
