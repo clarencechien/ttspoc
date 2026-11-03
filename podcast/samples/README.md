@@ -107,6 +107,7 @@
 | `s05_v4_new-script_new-style_d1_warm-eq.mp3` | 同 v3 | v2 | D1 加溫和等化 eqA，較厚較暖 |
 | `s05_v5_new-script_new-style_d1-remix-raspy.mp3` | 同 v3 | v2 | D1 remix「沙啞電台」D1M2 |
 | `s05_v6_new-script_new-style_d1-remix-confident.mp3` | 同 v3 | v2 | D1 remix「磁性自信」D1M1 |
+| `s05_v7_new-script_tw-style_d1_take1.mp3` 到 `take3` | 改寫稿，段落排版 | v3 台灣口音優先、有節奏 | D1，念三次；第 1 次停頓最少 |
 
 真人試聽：v2 最台灣，v3、v4 偏大陸腔；Gemini 評審的口音排名正好相反，口音以真人判斷為準。
 數據與結論在 `podcast/RESULTS.md` 的「稿子口語化與 D1 語氣調整」。

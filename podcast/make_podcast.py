@@ -153,7 +153,7 @@ def cmd_episode(a):
         if only: a.force = True
         p = d / f"{s['id']}.wav"
         expected = spoken_chars(s["text"]) / CHARS_PER_SEC
-        base = sc["base_style_v2"] if a.style == "v2" else sc["base_style"]
+        base = sc.get(f"base_style_{a.style}", sc["base_style"]) if a.style != "v1" else sc["base_style"]
         style = f"{base}。這一段：{s['mood']}"
         for attempt in range(1, a.retries + 2):
             if p.exists() and not a.force and attempt == 1:
@@ -228,7 +228,7 @@ if __name__ == "__main__":
     sub.add_parser("design")
     p = sub.add_parser("audition"); p.add_argument("--voices", default="")
     p = sub.add_parser("judge"); p.add_argument("files", nargs="+"); p.add_argument("--text"); p.add_argument("--out")
-    p = sub.add_parser("episode"); p.add_argument("--voice", required=True); p.add_argument("--retries", type=int, default=2); p.add_argument("--force", action="store_true"); p.add_argument("--only", default="", help="comma-separated segment ids to regenerate"); p.add_argument("--style", choices=["v1", "v2"], default="v1", help="v2 = confident, rhythmic delivery (base_style_v2)")
+    p = sub.add_parser("episode"); p.add_argument("--voice", required=True); p.add_argument("--retries", type=int, default=2); p.add_argument("--force", action="store_true"); p.add_argument("--only", default="", help="comma-separated segment ids to regenerate"); p.add_argument("--style", choices=["v1", "v2", "v3"], default="v1", help="v2 = confident and rhythmic but drifts toward a broadcast accent; v3 = rhythmic and Taiwanese-leaning")
     p = sub.add_parser("master"); p.add_argument("--voice", required=True)
     a = ap.parse_args()
     {"design": cmd_design, "audition": cmd_audition, "judge": cmd_judge, "episode": cmd_episode, "master": cmd_master}[a.cmd](a)
