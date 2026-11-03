@@ -79,5 +79,29 @@
    }
   }
  ],
- "chosen": 0
+ "chosen": 0,
+ "manual_edits": [
+  {
+   "from": "速度其實是——我是說，它根本是地基。",
+   "to": "速度其實是地基。",
+   "reason": "改口太頻繁，九段裡只留四處"
+  }
+ ],
+ "final": {
+  "text": "好，那我們先把正本的骨架抓出來。作者把野心拆成四個面向。就是速度、高度、深度，還有廣度。欸你猜他先跳過哪一個？他直接跳過速度耶。理由是這個大家都會嘛，不需要什麼創意。但我看到這邊，覺得還是得幫他補一下。速度其實是地基。你要反覆重現 bug，成本夠低迴圈才轉得動。<short pause> 可是速度同時也是天花板喔。做得越快產出就越多，對吧？重點是，每一份產出最後都要有人看啊。<sigh> 這個我們等一下再回來講。",
+  "lint": {
+   "chars": 186,
+   "precise_numbers": [],
+   "enumerations": [],
+   "sentences": 13,
+   "avg_sentence_len": 13.3,
+   "max_sentence_len": 20,
+   "sentences_over_20": 0,
+   "particles_per_100": 2.7,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 2,
+   "tags": 2
+  }
+ }
 }

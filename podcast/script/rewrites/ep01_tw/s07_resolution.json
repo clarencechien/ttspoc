@@ -1,0 +1,130 @@
+{
+ "segment": "s07_resolution",
+ "position": "第 8 段，共 10 段",
+ "avoid": [
+  "你猜",
+  "重點來了",
+  "應該說",
+  "有感",
+  "我看到這",
+  "真的假的"
+ ],
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "ef6dddb05b1bbc9cf8062b4d388d929d543355d3d1472f635c01933841a3d6d0",
+ "previous_context": "這句我真的超想抄下來。記住，角色後面一定要接動作。",
+ "original": {
+  "text": "好，接下來講原文沒說、但我覺得一定要補的東西。什麼叫好的裁判？我自己用三題 Three.js 跑過一輪，有三個心得。第一個是解析度。在 Claude Code 裡面，每一輪都是零 console error，很漂亮。<short pause> 可是零錯誤只代表程式沒炸，不代表飛機長得像飛機。同一題換到另一個 app 跑，程式能跑，畫面卻一直閃，要我把症狀貼回去，它才知道機翼尖端在閃。<sigh> 裁判看得到什麼，野心就只能到哪裡。第二個是獨立性：裁判不能是當事人，也不能先偷看過當事人的筆記。第三個是成本：每一輪驗證要多久，決定你能跑幾輪；能跑幾輪，決定你能推多深。",
+  "lint": {
+   "chars": 255,
+   "precise_numbers": [],
+   "enumerations": [
+    "第一",
+    "第二",
+    "第三"
+   ],
+   "sentences": 10,
+   "avg_sentence_len": 24.5,
+   "max_sentence_len": 44,
+   "sentences_over_20": 7,
+   "particles_per_100": 0.0,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 1,
+   "tags": 2
+  }
+ },
+ "candidates": [
+  {
+   "text": "好，那順著這個回到第五招。\n原作者只講了一句要自己跑、給即時回饋。\n但到底什麼才叫好的裁判啊？\n他完全沒展開講。\n我自己拿 Three.js 下去跑。\n發現有三個坑一定要注意。\n第一個是解析度。\n在 Claude Code 裡面跑。\n每一輪都是零 console error。\n程式完全沒炸喔。\n可是沒炸就代表飛機長得像飛機嗎？\n根本不是醬。<laugh>\n換到別的平台，機翼尖端明明一直在閃。\n裁判看得到什麼，野心就只能到哪裡。\n然後就是獨立性。\n裁判不能是當事人。\n呃我是說，它連對方的筆記都不能偷看。\n對話紀錄被污染，結果就不乾淨了。\n最後還有驗證成本。<short pause>\n每輪要驗多久，決定你能跑幾輪。\n跑越慢，你就越推不深。\n對，裁判不只要有，你還得付得起才行啦。",
+   "lint": {
+    "chars": 293,
+    "precise_numbers": [],
+    "enumerations": [
+     "第五",
+     "第一"
+    ],
+    "sentences": 22,
+    "avg_sentence_len": 12.3,
+    "max_sentence_len": 18,
+    "sentences_over_20": 0,
+    "particles_per_100": 0.7,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "角色接動作之後，<short pause> 那要怎麼知道它做對了？\n原文其實沒細講什麼算好裁判。\n我自己跑了三題 Three.js 之後，\n發現有三件事超重要。\n第一個就是解析度。\n在 Claude Code 裡跑，每輪都零錯誤。\n但程式沒炸，飛機就長得像飛機嗎？\n根本不是醬。\n換到另一個 app 跑，畫面一直閃。\n也就是，它自己根本看不出問題，\n還要我肉眼抓蟲貼回去。<sigh>\n裁判看得到什麼，野心就只能到哪裡啦。\n然後就是獨立性，\n裁判絕對不能偷看當事人的筆記。\n最後那個驗證成本也很要命。\n每輪要測多久，決定你能跑幾輪。\n裁判不只要有，我們還要付得起啊。",
+   "lint": {
+    "chars": 240,
+    "precise_numbers": [],
+    "enumerations": [
+     "第一"
+    ],
+    "sentences": 14,
+    "avg_sentence_len": 16.1,
+    "max_sentence_len": 27,
+    "sentences_over_20": 3,
+    "particles_per_100": 0.4,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "好，那接下來聊聊原文沒講清楚的裁判。\n\n我拿 Three.js 實測，\n就是……啊不對，我是跑了三題。\n發現挑裁判有幾件事超重要。\n\n第一件事是解析度。\n在 Claude Code 跑，每一輪都零錯誤。\n聽起來很神對不對？\n其實這只代表程式沒炸掉啦。<short pause>\n完全不代表飛機長得像飛機啊。\n換到別的 app，畫面居然一直閃。\n它自己不知道，還要我貼症狀回去。<sigh>\n裁判看得到什麼，野心就只能到哪裡。\n\n然後是獨立性。\n裁判不能是當事人，\n也不能先偷看當事人的筆記。\n\n最後就是驗證的成本。\n驗一輪要多久，決定你能跑幾輪。\n跑不夠多輪，野心就會變成災難。\n裁判不只要公正，你還要付得起嘛。",
+   "lint": {
+    "chars": 259,
+    "precise_numbers": [],
+    "enumerations": [
+     "第一"
+    ],
+    "sentences": 17,
+    "avg_sentence_len": 14.2,
+    "max_sentence_len": 27,
+    "sentences_over_20": 2,
+    "particles_per_100": 0.8,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  }
+ ],
+ "chosen": 0,
+ "manual_edits": [
+  {
+   "from": "發現有三個坑一定要注意。",
+   "to": "發現有三件事一定要注意。",
+   "reason": "「坑」偏大陸網路用語"
+  },
+  {
+   "from": "呃我是說，它連對方的筆記都不能偷看。",
+   "to": "而且它連當事人的筆記都不能偷看。",
+   "reason": "改口太頻繁；「對方」指涉不清"
+  }
+ ],
+ "final": {
+  "text": "好，那順著這個回到第五招。原作者只講了一句要自己跑、給即時回饋。但到底什麼才叫好的裁判啊？他完全沒展開講。我自己拿 Three.js 下去跑。發現有三件事一定要注意。第一個是解析度。在 Claude Code 裡面跑。每一輪都是零 console error。程式完全沒炸喔。可是沒炸就代表飛機長得像飛機嗎？根本不是醬。<laugh>換到別的平台，機翼尖端明明一直在閃。裁判看得到什麼，野心就只能到哪裡。然後就是獨立性。裁判不能是當事人。而且它連當事人的筆記都不能偷看。對話紀錄被污染，結果就不乾淨了。最後還有驗證成本。<short pause>每輪要驗多久，決定你能跑幾輪。跑越慢，你就越推不深。對，裁判不只要有，你還得付得起才行啦。",
+  "lint": {
+   "chars": 291,
+   "precise_numbers": [],
+   "enumerations": [
+    "第五",
+    "第一"
+   ],
+   "sentences": 22,
+   "avg_sentence_len": 12.2,
+   "max_sentence_len": 18,
+   "sentences_over_20": 0,
+   "particles_per_100": 0.7,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 2,
+   "tags": 2
+  }
+ }
+}

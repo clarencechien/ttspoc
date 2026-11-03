@@ -102,5 +102,33 @@
    }
   }
  ],
- "chosen": 0
+ "chosen": 0,
+ "manual_edits": [
+  {
+   "from": "這不是說角色 prompt 沒用啦。我是說——原文不是要你拿掉角色。而是要你塞工具給它。",
+   "to": "這不是說角色 prompt 沒用啦。原文不是要你拿掉角色，而是要你塞工具給它。",
+   "reason": "改口太頻繁"
+  }
+ ],
+ "final": {
+  "text": "講到深度，作者列了幾招。第一招就是核心。叫模型扮演專家，它往往只換用詞。根本沒換方法嘛。這不是說角色 prompt 沒用啦。原文不是要你拿掉角色，而是要你塞工具給它。模型想丟 markdown 表格打發你？不行，逼它開資料庫、跑統計模型。這跟你 prompt 有沒有寫「資深」，根本沒差。我看到這段真的很有感。<laugh>後面幾招也超有意思。目標直接開到最極限。網站載入直接叫它壓到兩百毫秒。<short pause>你問模型會不會抗議？會啊，但你就跟它說這完全可以解。然後逼它挑戰你以為的常識。最後讓它從資料裡挖出新知識。",
+  "lint": {
+   "chars": 237,
+   "precise_numbers": [
+    "兩百"
+   ],
+   "enumerations": [
+    "第一"
+   ],
+   "sentences": 17,
+   "avg_sentence_len": 12.9,
+   "max_sentence_len": 22,
+   "sentences_over_20": 1,
+   "particles_per_100": 0.8,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 2,
+   "tags": 2
+  }
+ }
 }

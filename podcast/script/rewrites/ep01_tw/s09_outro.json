@@ -1,0 +1,101 @@
+{
+ "segment": "s09_outro",
+ "position": "第 10 段，共 10 段（最後一段）",
+ "avoid": [
+  "你猜",
+  "重點來了",
+  "醬",
+  "應該說",
+  "有感",
+  "我看到這",
+  "真的假的"
+ ],
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "0d1e411106eb541615b44a02f02f70e7b5a62a1cbdd29f9264225dd35ee5eed1",
+ "previous_context": "從開題一路跑到裁判，然後親手付一次帳單。看別人的經驗可以被量產，親身經驗不行啦。",
+ "original": {
+  "text": "好，今天帶走三件事。第一，讓模型有一台電腦跟資料，這是前提，不是選項。第二，每一個往深處推的要求，都要配一個模型以外的裁判。第三，野心的帳單先付，問法最後才問。<short pause> 喔對，最後提醒一下時間戳：Felix 自己有寫，「不要讓模型評自己」是二零二六年十月的判斷，他預期模型變強之後會改。所以你如果是很久以後才聽到這集，<laugh> 記得先看一下日期。好，今天的深夜 Debug 就到這邊，我們下次見，掰掰。",
+  "lint": {
+   "chars": 188,
+   "precise_numbers": [],
+   "enumerations": [
+    "第一",
+    "第二",
+    "第三"
+   ],
+   "sentences": 7,
+   "avg_sentence_len": 25.9,
+   "max_sentence_len": 56,
+   "sentences_over_20": 5,
+   "particles_per_100": 0.5,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 2
+  }
+ },
+ "candidates": [
+  {
+   "text": "好啦，最後幫大家收個尾。\n看二手的轉貼，不如直接翻原文。\n為什麼？\n因為原文讀完不到十分鐘，\n漏掉的那幾行，偏偏是最貴的。\n第一個，讓模型有電腦跟資料，\n這是前提，不是選配喔。\n第二個，想往深處推，\n裁判絕對不能是模型自己。\n然後那個野心的帳單先付，\n提示詞怎麼問，最後再煩惱。\n<short pause>\n喔對，那個作者——我是說 Felix，\n他自己有標一個時間戳記。\n「不要讓模型評自己」，\n是二零二六年十月的判斷。\n之後模型變強會改嗎？\n他預期是會啦。\n所以如果你很久以後才聽到這集，\n記得先看一下日期。<laugh>\n今天的深夜 Debug 就到這邊，\n我們下次見，掰掰！",
+   "lint": {
+    "chars": 247,
+    "precise_numbers": [],
+    "enumerations": [
+     "第一",
+     "第二"
+    ],
+    "sentences": 13,
+    "avg_sentence_len": 18.0,
+    "max_sentence_len": 29,
+    "sentences_over_20": 8,
+    "particles_per_100": 1.6,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "所以回去看正本真的很重要啦。<short pause>\n轉傳的版本，常常漏掉最貴的那幾行。\n第一，給模型電腦跟資料，這是前提喔。\n然後每個深入的要求，都要配外部裁判。\n最後就是，那個……也不是問法不重要，\n而是野心的帳單要先付，問法放最後。\n欸那這個做法能撐多久？\n作者自己寫得很清楚，\n「不讓模型評自己」，\n只是二零二六年十月的判斷。\n以後模型變強，他預期這點會改變啦。\n如果你是很久以後才聽到這集，\n<laugh> 記得先對一下日期喔。\n好啦，今天的深夜 Debug 就到這邊。\n我們下次見，掰掰！",
+   "lint": {
+    "chars": 214,
+    "precise_numbers": [],
+    "enumerations": [
+     "第一"
+    ],
+    "sentences": 11,
+    "avg_sentence_len": 18.5,
+    "max_sentence_len": 34,
+    "sentences_over_20": 3,
+    "particles_per_100": 2.8,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  },
+  {
+   "text": "好啦，聊到最後，有幾件事一定要帶走。\n第一，給模型電腦跟資料。\n這是前提，不是選項喔。\n第二，往深處推，要配模型以外的裁判。\n第三，野心的帳單先付，問法最後再煩惱。\n那個，原文其實幾分鐘就看完了。\n轉傳來轉傳去，漏掉的剛好最貴。<short pause>\n對了，作者自己有留時間戳啦。\n他說不要讓模型評自己，\n但那只是二零二六年十月的判斷。\n之後模型變強會改嗎？\n他覺得會喔。\n所以大家讀這篇，我是說聽這集的時候，\n記得先看一下日期啦。<laugh>\n今天的深夜 Debug 就到這邊。\n我們下次見，掰掰！",
+   "lint": {
+    "chars": 216,
+    "precise_numbers": [],
+    "enumerations": [
+     "第一",
+     "第二",
+     "第三"
+    ],
+    "sentences": 14,
+    "avg_sentence_len": 14.4,
+    "max_sentence_len": 27,
+    "sentences_over_20": 2,
+    "particles_per_100": 2.3,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  }
+ ],
+ "chosen": 2
+}

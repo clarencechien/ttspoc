@@ -32,7 +32,9 @@ MOODS = {
 # Signature phrases and how many times the whole episode may use each.
 # Once a phrase reaches its cap, later segments are told not to use it, and candidates that do are ranked lower.
 PHRASE_CAPS = {"你猜": 3, "重點來了": 2, "醬": 2, "應該說": 1, "有感": 2, "更扯的是": 1, "我看到這": 2, "超扯": 1, "很扯": 1,
-               "真的假的": 1, "欸你知道嗎": 1}
+               "真的假的": 1, "欸你知道嗎": 1,
+               # self-corrections: rule 12 allows one per segment, which made nine of ten segments self-correct
+               "我是說": 2, "我的意思是": 1, "呃不對": 1, "傻眼": 1}
 
 def phrase_counts(text):
     return {k: text.count(k) for k in PHRASE_CAPS}

@@ -1,0 +1,146 @@
+{
+ "segment": "s05_judge",
+ "position": "第 6 段，共 10 段",
+ "avoid": [
+  "你猜",
+  "應該說",
+  "我看到這",
+  "真的假的"
+ ],
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "3c1d88b4e23f25472d6cf612ce899e7d2b826bdc5ae6a2d4fc7337e12e8e11f3",
+ "previous_context": "然後逼它挑戰你以為的常識。最後讓它從資料裡挖出新知識。",
+ "original": {
+  "text": "但第五招，才是我覺得整篇的保險絲。Felix 這邊只寫了一句，而且語氣是用拜託的：Do not ask the model to judge itself. 不要讓模型評它自己。<short pause> 前面四招都在把模型往深處推，推得越深，你越看不到它在幹嘛。第五招，是唯一一招往回拉的。<short pause> 原文開頭有提到一個超讚的例子：一位業餘天文愛好者，用 Claude Code 分析 NASA 的 TESS 光變資料，發現一顆恆星每三點一八天會變暗百分之零點零五，推估是一點四倍地球大小的行星候選。他兩個禮拜跑了七十四次分析、上千個 script。<short pause> 但重點不是他問模型「這是不是行星」，而是一直叫模型想辦法證明它不是。他還把一部分資料遮起來，叫模型預測遮住的那幾段什麼時候會變暗，猜對了才算數。這個，就是外部裁判。",
+  "lint": {
+   "chars": 321,
+   "precise_numbers": [
+    "三點一八",
+    "百分之零點零五",
+    "一點四",
+    "七十四",
+    "千"
+   ],
+   "enumerations": [
+    "第五",
+    "第五"
+   ],
+   "sentences": 9,
+   "avg_sentence_len": 34.7,
+   "max_sentence_len": 91,
+   "sentences_over_20": 6,
+   "particles_per_100": 0.3,
+   "written_words": [
+    "推估"
+   ],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 3
+  }
+ },
+ "candidates": [
+  {
+   "text": "但挖出來之後呢？這就要講第五招了。\n第五招是我覺得整篇最關鍵的保險絲。<short pause>\n原文作者甚至是用懇求的語氣寫喔。\n他說千萬不要讓模型自己評自己。\n前面幾招都在把模型往深處推。\n推得越深，人越看不清楚它在做什麼。\n第五招是唯一往回拉的煞車。\n沒有它，模型就只是變得更敢講而已。\n原文開頭就有一個很厲害的素人例子。\n有位愛好者用 Claude Code 分析 NASA 資料。\n他花了兩週、跑了上千個 script，\n抓到一顆每三點一八天微幅變暗的訊號。\n大小推算出來大概比地球大一點。\n欸，那他是怎麼驗證的？\n他可不是跑去問模型這是不是行星。\n就是，呃不對，他是叫模型去證明這不是。<short pause>\n他還把一部分資料給遮起來，\n叫模型預測被遮住的地方何時變暗。\n預測對了，推論才算數。\n雖然這顆目前還只是候選、尚未確認啦，\n但這才是真正扎實的外部裁判。",
+   "lint": {
+    "chars": 337,
+    "precise_numbers": [
+     "千",
+     "三點一八"
+    ],
+    "enumerations": [
+     "第五",
+     "第五",
+     "第五"
+    ],
+    "sentences": 19,
+    "avg_sentence_len": 16.7,
+    "max_sentence_len": 35,
+    "sentences_over_20": 4,
+    "particles_per_100": 0.9,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "但挖出來之後呢？這就要講第五招了。\n前面四招一直把模型往深處推。\n推越深，你越看不懂它在幹嘛。\n第五招是唯一把它往回拉的繩子。\n作者在原文甚至是用拜託的語氣欸。<short pause>\n他說，千萬不要叫模型自己打分數。\n一定要用模型以外的工具來驗證。\n這招我讀到的時候很有感觸。\n原文開頭不是有提過一顆候選行星嗎？\n那是個業餘天文迷做的。\n他用 Claude Code 抓 NASA 資料來跑。\n兩週跑了幾十次分析、上千個 script。\n結果真的抓到一個微弱的訊號喔。\n那顆恆星每三點一八天會變暗一點點。\n大小大概比地球大一點。\n不過目前還只是候選天體，還沒確認啦。\n那你知道他是怎麼驗證的嗎？\n他不是去問模型這是不是行星。\n我的意思是，他反而叫模型證明它不是。\n然後，他把一部分資料先蓋住。<short pause>\n叫模型預測藏起來的地方何時變暗。\n真的預測對了才算數。\n這就是所謂的外部裁判嘛。",
+   "lint": {
+    "chars": 348,
+    "precise_numbers": [
+     "千",
+     "三點一八"
+    ],
+    "enumerations": [
+     "第五",
+     "第五"
+    ],
+    "sentences": 24,
+    "avg_sentence_len": 13.5,
+    "max_sentence_len": 21,
+    "sentences_over_20": 1,
+    "particles_per_100": 1.4,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 2
+   }
+  },
+  {
+   "text": "講到挖出新知識，就一定要看第五招了。這一招根本是整套做法的保險絲。原作者只寫了一句話。他甚至是用求的耶，叫大家千萬別讓模型幫自己打分數。前面一直把模型往深處推，<short pause> 推越深，你越搞不清楚它在幹嘛。這時候就得靠模型以外的工具來抓漏。\n\n欸那實際上有誰真的醬做？還真的有一位民間神人。就是...不對，是一位業餘天文愛好者啦。他用 Claude Code 分析 NASA 的觀測資料。兩個禮拜跑了上千個 script。抓到一個每三點一八天變暗一次的訊號。推估是比地球大一點的候選天體。\n\n最厲害的是，他怎麼驗證的？他不是問模型「這是不是行星」，而是叫模型想辦法證明它「不是」。然後他把一部分資料遮起來，叫模型猜被遮住的地方何時變暗。<short pause> 測對了才算數。雖然這顆目前只是候選、尚未確認，但後續的觀測提案已經被核准了。這種防呆設計真的讓我超級佩服的耶。",
+   "lint": {
+    "chars": 355,
+    "precise_numbers": [
+     "千",
+     "三點一八"
+    ],
+    "enumerations": [
+     "第五"
+    ],
+    "sentences": 19,
+    "avg_sentence_len": 17.7,
+    "max_sentence_len": 30,
+    "sentences_over_20": 6,
+    "particles_per_100": 1.4,
+    "written_words": [
+     "推估"
+    ],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  }
+ ],
+ "chosen": 1,
+ "manual_edits": [
+  {
+   "from": "我的意思是，他反而叫模型證明它不是。",
+   "to": "他反而叫模型證明它不是。",
+   "reason": "改口太頻繁"
+  }
+ ],
+ "final": {
+  "text": "但挖出來之後呢？這就要講第五招了。前面四招一直把模型往深處推。推越深，你越看不懂它在幹嘛。第五招是唯一把它往回拉的繩子。作者在原文甚至是用拜託的語氣欸。<short pause>他說，千萬不要叫模型自己打分數。一定要用模型以外的工具來驗證。這招我讀到的時候很有感觸。原文開頭不是有提過一顆候選行星嗎？那是個業餘天文迷做的。他用 Claude Code 抓 NASA 資料來跑。兩週跑了幾十次分析、上千個 script。結果真的抓到一個微弱的訊號喔。那顆恆星每三點一八天會變暗一點點。大小大概比地球大一點。不過目前還只是候選天體，還沒確認啦。那你知道他是怎麼驗證的嗎？他不是去問模型這是不是行星。他反而叫模型證明它不是。然後，他把一部分資料先蓋住。<short pause>叫模型預測藏起來的地方何時變暗。真的預測對了才算數。這就是所謂的外部裁判嘛。",
+  "lint": {
+   "chars": 342,
+   "precise_numbers": [
+    "千",
+    "三點一八"
+   ],
+   "enumerations": [
+    "第五",
+    "第五"
+   ],
+   "sentences": 24,
+   "avg_sentence_len": 13.2,
+   "max_sentence_len": 21,
+   "sentences_over_20": 1,
+   "particles_per_100": 1.5,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 3,
+   "tags": 2
+  }
+ }
+}

@@ -87,5 +87,29 @@
    }
   }
  ],
- "chosen": 1
+ "chosen": 1,
+ "manual_edits": [
+  {
+   "from": "<laugh>我看到的時候超傻眼的。就是……換個方式講，",
+   "to": "<laugh>換句話說，",
+   "reason": "「超傻眼」上一段剛用過"
+  }
+ ],
+ "final": {
+  "text": "那篇貼文其實沒有胡說喔。<short pause>但它就像以前那種三聯複寫單。用力壓下去的那一行最清楚，其他字全都淡掉了，你懂我意思嗎？原文裡面明明包山包海，有四種野心、一堆招數，甚至還有警告跟心理學耶。然後轉傳的副本留下了什麼？你猜剩多少？<short pause>大概就剩一招半吧。<laugh>換句話說，它留下了最好記的那招，卻把最重要的一招給丟掉了。這不是貼文作者的錯啦，網路轉傳本來就醬子。但如果你真的打算照著做，對，我們還是得回頭看正本。",
+  "lint": {
+   "chars": 192,
+   "precise_numbers": [],
+   "enumerations": [],
+   "sentences": 10,
+   "avg_sentence_len": 18.2,
+   "max_sentence_len": 33,
+   "sentences_over_20": 4,
+   "particles_per_100": 2.1,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 3,
+   "tags": 3
+  }
+ }
 }
