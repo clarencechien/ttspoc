@@ -14,6 +14,10 @@
 | `ep01_gemini-3.8-flash_enceladus.mp3` | Gemini `gemini-3.8-flash-tts` | 內建 Enceladus | 8:11 | 第 1 |
 | `ep01_gemini-3.8-flash_d1-magnetic-night.mp3` | Gemini `gemini-3.8-flash-tts` | 設計聲線 D1 磁性深夜 | 8:30 | 第 2 |
 | `ep01_elevenlabs-v4_el1.mp3` | ElevenLabs `eleven_v4` | 設計聲線 EL1 | 7:14 | 第 3 |
+| `ep01-tw_gemini-3.8-flash_d1_style-v4.mp3` | Gemini `gemini-3.8-flash-tts` | D1，台灣口語稿 `ep01_tw.json` + v4 語氣 | 8:29 | 尚未排名 |
+| `ep01-tw_elevenlabs-v4_el1_tw-tag.mp3` | ElevenLabs `eleven_v4` | EL1，同一份台灣口語稿，段首加台灣口音標籤 | 7:44 | 尚未排名 |
+| `ep01-tw_gemini-3.8-flash_d1_style-v5_clarity.mp3` | Gemini `gemini-3.8-flash-tts` | D1，改過易混詞的台灣口語稿 + v5 語氣，每段三次依清晰度挑選 | 8:49 | 尚未排名 |
+| `ep01-tw_elevenlabs-v4_hardy.mp3` | ElevenLabs `eleven_v4` | 聲音庫的台灣聲音 Hardy，同一份改過的稿，每段一次 | 8:29 | 尚未排名 |
 
 - 三集都是 128 kbps 單聲道 mp3，響度約 -16.7 LUFS，片頭片尾是程式合成的短音效。
 - 排名、逐段校對與成本在 `podcast/RESULTS.md`。
@@ -95,3 +99,44 @@
 
 - 聲紋模型是 Resemblyzer，用英文訓練，每個模型只測一句、三次，所以只能看趨勢。
 - 2.5 與 3.1 的 TTS 模型最早可能在 2026-11-17 下架；3.8 目前沒有公布下架日期。
+
+## script-rewrite/：稿子口語化與語氣調整
+第五招加行星案例那一段，全部用 D1 系列聲線，響度統一為 -16 LUFS，方便公平比較。
+
+| 檔案 | 稿子 | 語氣 | 聲線與後製 |
+|---|---|---|---|
+| `s05_v1_old-script_old-style_d1.mp3` | 原稿 | v1 慵懶偏慢 | D1 |
+| `s05_v2_new-script_old-style_d1.mp3` | 改寫稿，一句一行 | v1 | D1 |
+| `s05_v3_new-script_new-style_d1.mp3` | 改寫稿，段落排版 | v2 自信有節奏 | D1，自動盲評第一，但真人聽起來偏大陸腔 |
+| `s05_v4_new-script_new-style_d1_warm-eq.mp3` | 同 v3 | v2 | D1 加溫和等化 eqA，較厚較暖 |
+| `s05_v5_new-script_new-style_d1-remix-raspy.mp3` | 同 v3 | v2 | D1 remix「沙啞電台」D1M2 |
+| `s05_v6_new-script_new-style_d1-remix-confident.mp3` | 同 v3 | v2 | D1 remix「磁性自信」D1M1 |
+| `s05_v7_new-script_tw-style_d1_take1.mp3` 到 `take3` | 改寫稿，段落排版 | v3 台灣口音優先、有節奏 | D1，念三次；第 1 次停頓最少 |
+| `s05_v8_old-script_tw-phonetic-style_d1.mp3` | 改寫稿，段落排版 | v4 寫明台灣華語發音特色、素人感 | D1 |
+| `s05_v9_casual-script_tw-phonetic-style_d1_take1.mp3`、`take2` | 素人稿，台灣口語用字 | v4 | D1，念兩次；第 2 次最快、沒有長停頓 |
+
+真人試聽：v2 最台灣，v3、v4 偏大陸腔；Gemini 評審的口音排名正好相反，口音以真人判斷為準。
+數據與結論在 `podcast/RESULTS.md` 的「稿子口語化與 D1 語氣調整」。
+
+## el-tune/：ElevenLabs 調整（第七段）
+同一段台灣口語稿，響度統一為 -16 LUFS。
+
+| 檔案 | 設定 |
+|---|---|
+| `s06_gemini-3.8-flash_d1_style-v4.mp3` | Gemini 對照，取自整集 |
+| `s06_elevenlabs-v4_el1_a-default.mp3` | EL1，穩定度 0.5、風格 0.3 |
+| `s06_elevenlabs-v4_el1_b-expressive.mp3` | EL1，穩定度 0.35、風格 0.5 |
+| `s06_elevenlabs-v4_el1_c-tw-tag.mp3` | EL1，預設設定，段首加 `[Taiwanese accent] [casually]`，整集採用 |
+
+## el-library/：ElevenLabs 聲音庫的台灣男聲
+同一段 74 字，eleven_v4，預設設定；EL1 那段另加台灣口音標籤。響度統一為 -16 LUFS。
+
+| 檔案 | 聲音 | 音高 |
+|---|---|---|
+| `elevenlabs-v4_evan.mp3` | Evan，溫暖、放鬆 | 118 Hz |
+| `elevenlabs-v4_akun.mp3` | Akun，溫暖、有磁性 | 123 Hz |
+| `elevenlabs-v4_neil-chuang.mp3` | Neil Chuang，低沉、可信賴 | 131 Hz |
+| `elevenlabs-v4_jerry-lin.mp3` | Jerry Lin，低沉、沉穩 | 132 Hz |
+| `elevenlabs-v4_hardy.mp3` | Hardy，台灣大叔 | 140 Hz |
+| `elevenlabs-v4_zack.mp3` | Zack，柔和、適合 podcast | 142 Hz |
+| `elevenlabs-v4_el1-tw-tag.mp3` | EL1，自己設計的聲線 | 148 Hz |

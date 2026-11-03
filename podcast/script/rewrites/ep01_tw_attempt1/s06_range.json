@@ -1,0 +1,101 @@
+{
+ "segment": "s06_range",
+ "position": "第 7 段，共 10 段",
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "70a80cf29177d871ca7dac48ace2e33d97d908f550630ebd62fa1f902c35659f",
+ "previous_context": "雖然這顆目前還只是候選、尚未確認。但這個驗證思路真的超強。",
+ "original": {
+  "text": "第四種是廣度。兩招，一個是把名詞換成動詞。季度檢討不是一份簡報，而是在三十分鐘內，讓一群很忙的人相信一個因果故事，然後在不確定之下做決定。你一換成動詞，就會發現好多領域可以幫忙。第二招是組隊，就像搶劫電影前三十分鐘在湊人那樣：分析師、記者、剪接師，再來一個專門唱反調的放空者。<short pause> 但 Felix 在這邊又警告了一次：組隊很容易滑成角色扮演。不要叫模型寫得像放空者，要叫它去做放空者研究一檔股票時會做的事。<laugh> 這句我覺得工程師應該印出來，貼在螢幕旁邊：角色之後，要接動作。",
+  "lint": {
+   "chars": 229,
+   "precise_numbers": [
+    "三十",
+    "三十"
+   ],
+   "enumerations": [
+    "第四",
+    "第二"
+   ],
+   "sentences": 8,
+   "avg_sentence_len": 27.6,
+   "max_sentence_len": 48,
+   "sentences_over_20": 5,
+   "particles_per_100": 0.0,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 2
+  }
+ },
+ "candidates": [
+  {
+   "text": "講完深度，再來聊聊廣度。第一招是把名詞換成動詞。像季度檢討，你覺得就是一份簡報對吧？其實不是醬喔。它是在三十分鐘內，讓一群很忙的人，相信因果故事，然後做決定。換成動詞之後，很多領域就能進來幫忙。然後就是組隊，很像搶劫電影在湊隊友。有分析師、記者，再來個唱反調的放空者。但重點來了，你猜最容易踩什麼雷？就是滑進角色扮演啦。<short pause> 這招，嗯，應該說這個提醒真的超棒。不要叫模型寫得像放空者，要叫它去做放空者研究股票時做的事。<laugh> 角色後面一定要接動作啊。",
+   "lint": {
+    "chars": 218,
+    "precise_numbers": [
+     "三十"
+    ],
+    "enumerations": [
+     "第一"
+    ],
+    "sentences": 13,
+    "avg_sentence_len": 15.8,
+    "max_sentence_len": 29,
+    "sentences_over_20": 2,
+    "particles_per_100": 1.4,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "聊完深度，第四種野心就是廣度。\n作者教了兩招，第一招是把名詞換成動詞。\n比方說季度檢討好了。\n嗯，應該說，它其實不是一份簡報。\n而是在三十分鐘內，讓主管相信你的故事，\n然後在不確定之下做決定。\n你只要醬換成動詞，\n就會發現好多領域能幫忙。\n然後就是第二招，組隊。\n你猜這招像什麼？\n超像搶劫電影在湊隊友啦。<short pause>\n你可以找分析師、記者，還有挑毛病的放空者。\n但重點來了喔，組隊超容易滑成角色扮演。\n不要叫模型寫得像放空者，\n而是叫它去做放空者研究股票時會做的事。\n<laugh> 這句我覺得工程師都要貼在螢幕旁邊：\n角色後面，一定要接動作。",
+   "lint": {
+    "chars": 243,
+    "precise_numbers": [
+     "三十"
+    ],
+    "enumerations": [
+     "第四",
+     "第一",
+     "第二"
+    ],
+    "sentences": 13,
+    "avg_sentence_len": 17.7,
+    "max_sentence_len": 30,
+    "sentences_over_20": 3,
+    "particles_per_100": 0.8,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  },
+  {
+   "text": "講完那個，第四種野心就是廣度。\n作者給了兩招，超有意思。\n第一招，是把名詞換成動詞。\n像季度檢討，它不是一份簡報。\n它是要在三十分鐘內，\n讓一群很忙的人相信你的故事，\n然後在不確定下做決定。\n你一換成動詞，視角整個就開了。\n第二招就是組隊，\n就像搶劫電影前面在湊隊伍醬子。\n找分析師、找記者，\n甚至找一個專門唱反調的放空者。\n欸你猜會怎樣？\n很多人組隊就滑進角色扮演了。\n作者這邊特別警告，\n不要叫模型寫得像放空者，\n你要叫它去做放空者會做的事。\n這招，嗯，應該說是超多人的盲點。<short pause>\n我看到這句真的點頭如搗蒜。\n重點不是給角色，\n而是角色後面，一定要接動作啦。<laugh>",
+   "lint": {
+    "chars": 259,
+    "precise_numbers": [
+     "三十"
+    ],
+    "enumerations": [
+     "第四",
+     "第一",
+     "第二"
+    ],
+    "sentences": 14,
+    "avg_sentence_len": 17.5,
+    "max_sentence_len": 34,
+    "sentences_over_20": 5,
+    "particles_per_100": 0.8,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  }
+ ],
+ "chosen": 0
+}

@@ -1,0 +1,269 @@
+{
+ "objective": [
+  {
+   "file": "s05_rewrite_D1_take0.wav",
+   "duration_s": 62.7,
+   "f0_median_hz": 93.4,
+   "centroid_hz": 2634,
+   "chars_per_sec": 4.16,
+   "pauses": 23,
+   "longest_pause_s": 0.86,
+   "pauses_over_0_8s": 6,
+   "pauses_per_100_chars": 8.8
+  },
+  {
+   "file": "s05_rewrite_D1_take1.wav",
+   "duration_s": 63.9,
+   "f0_median_hz": 89.9,
+   "centroid_hz": 2642,
+   "chars_per_sec": 4.08,
+   "pauses": 21,
+   "longest_pause_s": 0.91,
+   "pauses_over_0_8s": 5,
+   "pauses_per_100_chars": 8.0
+  },
+  {
+   "file": "s05_C1_D1_take0.wav",
+   "duration_s": 56.7,
+   "f0_median_hz": 96.0,
+   "centroid_hz": 2585,
+   "chars_per_sec": 4.6,
+   "pauses": 6,
+   "longest_pause_s": 0.59,
+   "pauses_over_0_8s": 0,
+   "pauses_per_100_chars": 2.3
+  },
+  {
+   "file": "s05_C1_D1_take1.wav",
+   "duration_s": 56.4,
+   "f0_median_hz": 100.4,
+   "centroid_hz": 2967,
+   "chars_per_sec": 4.62,
+   "pauses": 18,
+   "longest_pause_s": 1.1,
+   "pauses_over_0_8s": 3,
+   "pauses_per_100_chars": 6.9
+  },
+  {
+   "file": "s05_C2_D1M1_take0.wav",
+   "duration_s": 56.8,
+   "f0_median_hz": 108.6,
+   "centroid_hz": 2298,
+   "chars_per_sec": 4.59,
+   "pauses": 12,
+   "longest_pause_s": 1.03,
+   "pauses_over_0_8s": 1,
+   "pauses_per_100_chars": 4.6
+  },
+  {
+   "file": "s05_C2_D1M1_take1.wav",
+   "duration_s": 57.6,
+   "f0_median_hz": 97.6,
+   "centroid_hz": 2873,
+   "chars_per_sec": 4.53,
+   "pauses": 15,
+   "longest_pause_s": 0.83,
+   "pauses_over_0_8s": 1,
+   "pauses_per_100_chars": 5.7
+  },
+  {
+   "file": "s05_C3_D1M2_take0.wav",
+   "duration_s": 59.0,
+   "f0_median_hz": 100.4,
+   "centroid_hz": 2356,
+   "chars_per_sec": 4.43,
+   "pauses": 13,
+   "longest_pause_s": 0.86,
+   "pauses_over_0_8s": 1,
+   "pauses_per_100_chars": 5.0
+  },
+  {
+   "file": "s05_C3_D1M2_take1.wav",
+   "duration_s": 60.8,
+   "f0_median_hz": 95.2,
+   "centroid_hz": 2227,
+   "chars_per_sec": 4.3,
+   "pauses": 16,
+   "longest_pause_s": 0.71,
+   "pauses_over_0_8s": 0,
+   "pauses_per_100_chars": 6.1
+  }
+ ],
+ "trials": [
+  {
+   "ranking": [
+    "s05_C1_D1_take0.wav",
+    "s05_C3_D1M2_take1.wav",
+    "s05_rewrite_D1_take0.wav",
+    "s05_C2_D1M1_take1.wav",
+    "s05_C1_D1_take1.wav",
+    "s05_C2_D1M1_take0.wav",
+    "s05_C3_D1M2_take0.wav",
+    "s05_rewrite_D1_take1.wav"
+   ],
+   "winner_reason": "音檔 H 兼具最飽滿醇厚的胸腔共鳴與極佳的深夜氛圍，語氣從容篤定且轉折停頓極富戲劇張力，完全契合深夜科技 podcast 的專業質感。",
+   "per_clip": {
+    "s05_rewrite_D1_take0.wav": {
+     "confidence": "口吻篤定且敘事自然，展現出良好的專業自信。",
+     "rhythm_pauses": "整體節奏流暢，未出現突兀的斷句或拖沓。",
+     "magnetic": "聲音具備不錯的低頻質感，聽感舒適耐聽。"
+    },
+    "s05_C2_D1M1_take0.wav": {
+     "confidence": "語氣略微輕挑浮躁，少了深夜節目該有的沉穩與篤定感。",
+     "rhythm_pauses": "部分句子起伏偏大，在「千萬」前的停頓稍嫌刻意。",
+     "magnetic": "音質偏亮，胸腔共鳴較為薄弱。"
+    },
+    "s05_C3_D1M2_take1.wav": {
+     "confidence": "自信且具說服力，展現出如同深夜好友分享心得的從容。",
+     "rhythm_pauses": "句間停頓與呼吸點拿捏得宜，節奏起伏恰到好處。",
+     "magnetic": "低音厚實有磁性，近講效應與胸腔共鳴非常悅耳。"
+    },
+    "s05_C2_D1M1_take1.wav": {
+     "confidence": "語氣篤定，但稍微有些刻意壓低帶來的緊繃感。",
+     "rhythm_pauses": "在「抓到一個每3.18天」稍顯遲滯，其餘段落順暢。",
+     "magnetic": "聲音低沉厚實，但共鳴略顯閉塞沉重。"
+    },
+    "s05_rewrite_D1_take1.wav": {
+     "confidence": "整體聽感略顯氣餒遲疑，缺乏科技主播的主導氣場。",
+     "rhythm_pauses": "語速偏慢且拖沓，在「所以野心」前拖得過長，打亂了節奏感。",
+     "magnetic": "氣音過多且虛焦，胸腔共鳴缺乏支撐力。"
+    },
+    "s05_C3_D1M2_take0.wav": {
+     "confidence": "語氣中規中矩，缺乏身歷其境的說服力與個人見解的堅定度。",
+     "rhythm_pauses": "停頓位置尚可，但句式之間轉換稍有朗讀感。",
+     "magnetic": "聲線較平，磁性與低頻包覆感稍顯不足。"
+    },
+    "s05_C1_D1_take1.wav": {
+     "confidence": "表現穩定沉著，但語氣起伏較平緩，缺乏激發聽眾好奇心的自信亮點。",
+     "rhythm_pauses": "節奏平穩均勻，未有奇怪中斷，但起伏較為單一。",
+     "magnetic": "共鳴平順但略顯扁平，深夜氛圍感略弱於前段。"
+    },
+    "s05_C1_D1_take0.wav": {
+     "confidence": "態度篤定且極具說服力，將技術細節娓娓道來，充滿掌控力。",
+     "rhythm_pauses": "節奏掌控極佳，懸疑感與轉折點的停頓極為自然精準。",
+     "magnetic": "胸腔共鳴飽滿且低沉富磁性，極具深夜電台的包覆感與吸引力。"
+    }
+   }
+  },
+  {
+   "ranking": [
+    "s05_C1_D1_take1.wav",
+    "s05_C1_D1_take0.wav",
+    "s05_C3_D1M2_take1.wav",
+    "s05_C3_D1M2_take0.wav",
+    "s05_rewrite_D1_take0.wav",
+    "s05_C2_D1M1_take0.wav",
+    "s05_rewrite_D1_take1.wav",
+    "s05_C2_D1M1_take1.wav"
+   ],
+   "winner_reason": "音檔 H 兼具最飽滿深沉的胸腔磁性與高度篤定的敘事節奏，重音與停頓無懈可擊，完美契合深夜科技 Podcast 的質感。",
+   "per_clip": {
+    "s05_rewrite_D1_take1.wav": {
+     "confidence": "語氣略帶刻意的低沉感，篤定度尚可但稍顯拘謹。",
+     "rhythm_pauses": "在「整篇的保險絲」與「你越看不見」等處停頓略顯生硬刻意。",
+     "magnetic": "聲音有壓低，但胸腔共鳴稍嫌扁平，缺少溫潤磁性。"
+    },
+    "s05_C3_D1M2_take0.wav": {
+     "confidence": "態度輕鬆自然且充滿說服力，展現出很棒的臨場自信。",
+     "rhythm_pauses": "整體流暢，僅在「抓到一個」前笑聲後的切換停頓略顯稍長。",
+     "magnetic": "氣息與笑聲融合自然，中低音飽滿且具有深夜陪伴感。"
+    },
+    "s05_C2_D1M1_take1.wav": {
+     "confidence": "語調起伏過大且氣音偏多，顯得底氣稍弱、不夠篤定。",
+     "rhythm_pauses": "在「被遮住的地方」與「何時變暗」之間斷句零碎，節奏不連貫。",
+     "magnetic": "高頻氣聲偏重，缺乏厚實深沉的胸腔共鳴。"
+    },
+    "s05_rewrite_D1_take0.wav": {
+     "confidence": "語氣穩健沉著，但在關鍵觀點的推進上略顯遲疑。",
+     "rhythm_pauses": "在「這是不是行星」與「更狠的是」銜接處節奏稍微拖慢黏滯。",
+     "magnetic": "音色極度低沉渾厚，共鳴充足，但稍微偏悶了一點。"
+    },
+    "s05_C3_D1M2_take1.wav": {
+     "confidence": "語氣非常自信從容，口吻流暢且具備優秀的互動感。",
+     "rhythm_pauses": "節奏輕快自然，無突兀卡頓，僅少數句尾收得略快。",
+     "magnetic": "聲音清亮且帶有磁性，深夜感略少但極具親和力。"
+    },
+    "s05_C1_D1_take0.wav": {
+     "confidence": "口氣極為篤定且富有層次，完美拿捏科技說書人的自信感。",
+     "rhythm_pauses": "段落起伏與停頓恰到好處，呼吸與語意銜接非常自然。",
+     "magnetic": "低音厚實有磁性，近距收音感與胸腔共鳴非常出色。"
+    },
+    "s05_C2_D1M1_take0.wav": {
+     "confidence": "表現偏向慵懶隨意，對核心論點的堅定感稍嫌不足。",
+     "rhythm_pauses": "開頭「第五招啊」略顯拖沓，且在「更敢講」後停頓稍不俐落。",
+     "magnetic": "聲線偏柔和，但低頻下潛不足，磁性與厚度平平。"
+    },
+    "s05_C1_D1_take1.wav": {
+     "confidence": "極度自信篤定，重音下得俐落有力，展現專業且深度的深夜主播風範。",
+     "rhythm_pauses": "節奏掌控極佳，抑揚頓挫完全符合口語邏輯，毫無拖泥帶水。",
+     "magnetic": "胸腔共鳴極為飽滿深沉，磁性溫暖且低音穿透力極佳。"
+    }
+   }
+  },
+  {
+   "ranking": [
+    "s05_C1_D1_take0.wav",
+    "s05_C3_D1M2_take0.wav",
+    "s05_C2_D1M1_take0.wav",
+    "s05_C1_D1_take1.wav",
+    "s05_C2_D1M1_take1.wav",
+    "s05_rewrite_D1_take0.wav",
+    "s05_C3_D1M2_take1.wav",
+    "s05_rewrite_D1_take1.wav"
+   ],
+   "winner_reason": "音檔 H 兼具極具魅力的低沉胸腔共鳴與自然的台灣口音，語速與停頓拿捏得當，既有深夜 podcast 的沉靜氛圍，又具備篤定自信的科技評論說服力。",
+   "per_clip": {
+    "s05_C1_D1_take1.wav": {
+     "confidence": "語調流暢俐落且自信，但聲線偏明亮輕快。",
+     "rhythm_pauses": "停頓點皆合乎文意，無奇怪中斷，但節奏偏快少了深夜沉澱感。",
+     "magnetic": "聲音清澈偏中高頻，缺乏低沉飽滿的胸腔共鳴。"
+    },
+    "s05_rewrite_D1_take0.wav": {
+     "confidence": "語氣略帶刻意的氣音，聽起來不夠篤定扎實。",
+     "rhythm_pauses": "在「所以野心」與「更敢講」之間的語氣拖曳偏慢，節奏微滯。",
+     "magnetic": "氣聲過多导致聲音發虛，低頻共鳴不足。"
+    },
+    "s05_C3_D1M2_take0.wav": {
+     "confidence": "態度篤定堅決，科技評述的權威感與說服力極佳。",
+     "rhythm_pauses": "語句起伏分明，轉折停頓俐落，沒有多餘拖泥帶水。",
+     "magnetic": "胸腔共鳴厚實，低音紮實有顆粒感，兼具磁性與清晰度。"
+    },
+    "s05_rewrite_D1_take1.wav": {
+     "confidence": "聽感微弱遲疑，像在耳語耳背說話，說服力偏弱。",
+     "rhythm_pauses": "多處停頓過長，字句銜接處有拖沓感。",
+     "magnetic": "完全壓低至氣音，失去聲音厚度與胸腔共鳴。"
+    },
+    "s05_C3_D1M2_take1.wav": {
+     "confidence": "語氣稍微平淡隨意，缺少主持人的篤定氣場。",
+     "rhythm_pauses": "在「你看原文提到那個」處微有猶豫拖拍，起伏偏平。",
+     "magnetic": "嗓音質地普通，深夜廣播的磁性包覆感不顯著。"
+    },
+    "s05_C2_D1M1_take0.wav": {
+     "confidence": "情緒飽滿自信，戲劇張力充足。",
+     "rhythm_pauses": "整體節奏不錯，但在「審查他自己」前的停頓稍嫌刻意。",
+     "magnetic": "聲音低沉有共鳴，但偶爾咬字用力略顯做作。"
+    },
+    "s05_C2_D1M1_take1.wav": {
+     "confidence": "語氣沉穩但略顯疲態，自信感中規中矩。",
+     "rhythm_pauses": "換氣呼吸聲偏重，句子前半段拉得偏慢。",
+     "magnetic": "有一定低頻，但因氣流聲干擾使共鳴感不夠純淨。"
+    },
+    "s05_C1_D1_take0.wav": {
+     "confidence": "極為從容、篤定自信，展現科技深夜節目的專注氣場。",
+     "rhythm_pauses": "節奏起伏極具呼吸感與懸疑鋪陳，停頓點完全貼合思考與破題邏輯。",
+     "magnetic": "低音溫潤且胸腔共鳴飽滿，磁性與深夜氛圍完美契合。"
+    }
+   }
+  }
+ ],
+ "borda": {
+  "s05_rewrite_D1_take0.wav": 13,
+  "s05_rewrite_D1_take1.wav": 4,
+  "s05_C1_D1_take0.wav": 23,
+  "s05_C1_D1_take1.wav": 17,
+  "s05_C2_D1M1_take0.wav": 12,
+  "s05_C2_D1M1_take1.wav": 10,
+  "s05_C3_D1M2_take0.wav": 14,
+  "s05_C3_D1M2_take1.wav": 15
+ }
+}

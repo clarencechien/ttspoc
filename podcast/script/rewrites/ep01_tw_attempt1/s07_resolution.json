@@ -1,0 +1,91 @@
+{
+ "segment": "s07_resolution",
+ "position": "第 8 段，共 10 段",
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "a0058a718e426c3265bdd3c1376531490af67484145c71c861818e1e4308142c",
+ "previous_context": "不要叫模型寫得像放空者，要叫它去做放空者研究股票時做的事。 角色後面一定要接動作啊。",
+ "original": {
+  "text": "好，接下來講原文沒說、但我覺得一定要補的東西。什麼叫好的裁判？我自己用三題 Three.js 跑過一輪，有三個心得。第一個是解析度。在 Claude Code 裡面，每一輪都是零 console error，很漂亮。<short pause> 可是零錯誤只代表程式沒炸，不代表飛機長得像飛機。同一題換到另一個 app 跑，程式能跑，畫面卻一直閃，要我把症狀貼回去，它才知道機翼尖端在閃。<sigh> 裁判看得到什麼，野心就只能到哪裡。第二個是獨立性：裁判不能是當事人，也不能先偷看過當事人的筆記。第三個是成本：每一輪驗證要多久，決定你能跑幾輪；能跑幾輪，決定你能推多深。",
+  "lint": {
+   "chars": 255,
+   "precise_numbers": [],
+   "enumerations": [
+    "第一",
+    "第二",
+    "第三"
+   ],
+   "sentences": 10,
+   "avg_sentence_len": 24.5,
+   "max_sentence_len": 44,
+   "sentences_over_20": 7,
+   "particles_per_100": 0.0,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 1,
+   "tags": 2
+  }
+ },
+ "candidates": [
+  {
+   "text": "動作做完呢？\n你要怎麼知道做對了？\n重點就是看裁判嘛。<short pause>\n原文第五招講得很隨便，\n只說要有工具立刻給回饋。\n我用 Three.js 測了三題，真的很有感觸。\n重點來了，第一個是解析度。\n我在 Claude Code 裡面跑，\n每一輪都是零 console error。\n你以為醬就過關了嗎？\n其實沒有。\n零錯誤只代表程式沒當掉，\n不代表飛機真的長得像飛機啊。<sigh>\n換到另一個 app 跑，畫面狂閃，\n它根本不知道，還要我把症狀貼回去。\n裁判看得到什麼，野心就只能到哪裡。\n然後，這招，嗯，第二個重點是獨立性。\n裁判不能自己評自己，\n更不能先偷看對方的筆記。\n最後就是成本啦。\n驗證一次要多久，決定你能跑幾輪；\n能跑幾輪，決定你的東西能推多深。",
+   "lint": {
+    "chars": 288,
+    "precise_numbers": [],
+    "enumerations": [
+     "第五",
+     "第一",
+     "第二"
+    ],
+    "sentences": 16,
+    "avg_sentence_len": 17.0,
+    "max_sentence_len": 34,
+    "sentences_over_20": 7,
+    "particles_per_100": 0.7,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 2
+   }
+  },
+  {
+   "text": "動作做完了，那誰來檢查？\n原文只說要工具立刻回饋，沒講細節。\n我自己拿 Three.js 跑了三題，整理出三點。\n第一個是解析度。\n在 Claude Code 跑，每輪都零 console error。<short pause>\n看起來超爽，但你猜怎麼著？\n程式沒炸，完全不代表飛機長得像飛機。\n換到 Gemini app，畫面一直閃、還會小卡。\n你不貼症狀回去，它哪知道機翼在閃？\n<sigh> 裁判看得到什麼，野心就只能到哪裡。\n然後是獨立性。\n這招就是、嗯，應該說裁判不能球員兼裁判。\n偷看過當事人的筆記，醬結果就不乾淨了嘛。\n最後是成本。\n每一輪要驗多久，決定你能跑幾輪。\n跑不夠多，前面幾招就推不深。\n看不懂、驗不了，野心真的會變災難喔。\n裁判不只要有，重點是要付得起啦。",
+   "lint": {
+    "chars": 295,
+    "precise_numbers": [],
+    "enumerations": [
+     "第一"
+    ],
+    "sentences": 18,
+    "avg_sentence_len": 15.4,
+    "max_sentence_len": 29,
+    "sentences_over_20": 3,
+    "particles_per_100": 1.0,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 2
+   }
+  },
+  {
+   "text": "動作講完了，那要怎麼知道它有沒有做對？\n重點來了，就是裁判嘛。\n原文沒展開這件事。<short pause>\n我自己拿 Three.js 實測，超有感觸。\n第一個是解析度。你猜它跑出來怎樣？\n在 Claude Code 裡每一輪都是零錯誤。\n但我看到很想笑，零錯誤只代表沒當機。\n飛機到底像不像飛機，根本看不出來。\n換到 Gemini app，畫面一直閃、一直卡。\n還要我把症狀貼回去，它才知道機翼有問題。\n裁判看得到什麼，野心就只能到哪裡。\n然後是獨立性，裁判不能是當事人。\n這招，嗯，應該說是利益迴避啦。\n它不能一邊寫又一邊給自己打分數嘛。\n也不能先偷看筆記，醬結果就不乾淨了。\n最後一個就是成本。<short pause>\n每一輪驗證要多久，決定你能跑幾輪。\n能跑幾輪，前四招才能推得多深。",
+   "lint": {
+    "chars": 298,
+    "precise_numbers": [],
+    "enumerations": [
+     "第一"
+    ],
+    "sentences": 19,
+    "avg_sentence_len": 14.7,
+    "max_sentence_len": 21,
+    "sentences_over_20": 1,
+    "particles_per_100": 1.0,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  }
+ ],
+ "chosen": 2
+}

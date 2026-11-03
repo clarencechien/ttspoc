@@ -1,0 +1,94 @@
+{
+ "segment": "s08_efficacy",
+ "position": "第 9 段，共 10 段",
+ "avoid": [
+  "你猜",
+  "重點來了",
+  "醬",
+  "應該說",
+  "有感",
+  "我看到這",
+  "真的假的"
+ ],
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "1105eff3e09e6e90c1b5dee61b371929bc77e1189961878b15078af95a36f831",
+ "previous_context": "跑越慢，你就越推不深。對，裁判不只要有，你還得付得起才行啦。",
+ "original": {
+  "text": "最後一段，Felix 講了一點心理學，叫自我效能，就是你相不相信自己做得到。心理學家 Bandura 說，自我效能有四個來源：親身的成功經驗、看別人做到、別人說服你，還有你當下的身心狀態。原文的例子，Bannister 跑進四分鐘、Dantzig 把未解問題當作業寫掉，大概對應到後面三個。<short pause> 唯獨缺了最強的那一個：親身的成功經驗。用 AI 也一樣，你看一百個別人的 showcase，都比不上自己把一個題目從開題跑到裁判，親手付一次帳單。替代經驗可以工業化，親身經驗不行。",
+  "lint": {
+   "chars": 227,
+   "precise_numbers": [
+    "一百"
+   ],
+   "enumerations": [],
+   "sentences": 6,
+   "avg_sentence_len": 36.8,
+   "max_sentence_len": 53,
+   "sentences_over_20": 4,
+   "particles_per_100": 0.0,
+   "written_words": [
+    "對應"
+   ],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 1
+  }
+ },
+ "candidates": [
+  {
+   "text": "說到帳單，作者最後聊到一個心理學名詞。\n叫做自我效能，就是你信不信自己做得到啦。\n學者說這個東西有四個來源喔。\n看別人做到、別人說你可以，還有放鬆心情。\n原文舉的例子，剛好就是這三個。\n<short pause>\n可是，你有發現缺了什麼嗎？\n缺了最強的那一個，親身成功的經驗。\n用 AI 其實也是這個道理。\n你看再多網路上的 showcase，都不算數。\n不對，不能說完全不算數。<laugh>\n但那真的比不上你自己動手一次。\n從開題一路跑到裁判，然後親手付一次帳單。\n看別人的經驗可以被量產，親身經驗不行啦。",
+   "lint": {
+    "chars": 219,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 13,
+    "avg_sentence_len": 15.8,
+    "max_sentence_len": 21,
+    "sentences_over_20": 1,
+    "particles_per_100": 1.4,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  },
+  {
+   "text": "講到帳單，作者最後聊了一點心理學。\n就是所謂的自我效能。\n那個白話講，就是你相不相信自己做得到。\n欸，那這種信心到底從哪裡來？\n心理學家其實整理過四個來源。\n作者舉了很多人類打破紀錄的例子。\n像有人跑進四分鐘，呃不對，那是別人的紀錄。\n這都算看別人做到，或是被別人說服。<short pause>\n但他唯獨漏掉最強的一個，你自己成功過。\n我覺得這完全打中現在的痛點。\n你看再多網路上的 AI showcase，\n不如自己從開題到當裁判，親手跑過一輪。\n對，甚至自己親自去刷一次卡付錢。<laugh>\n別人的經驗可以大量複製，\n但你自己走過的痛，那可沒辦法偷吃步啦。",
+   "lint": {
+    "chars": 246,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 13,
+    "avg_sentence_len": 17.9,
+    "max_sentence_len": 37,
+    "sentences_over_20": 2,
+    "particles_per_100": 0.8,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  },
+  {
+   "text": "說到付帳單，作者最後聊了一點心理學。\n就是那個自我效能啦。\n簡單講，就是你相不相信自己能搞定。\n心理學家 Bandura 說，這其實有四個來源。\n像是看別人做、聽人鼓勵，還有當下的心情。\n原文舉了一堆很扯的故事，對吧？\n可是，欸你知道缺了什麼嗎？\n偏偏漏掉了最強的那一個。\n就是親身的成功經驗。<short pause>\n我覺得這點超關鍵的。\n玩 AI 不也是這樣？\n看別人發一百個超神 showcase——\n呃也不是，看別人秀再多，終究是別人的。\n比不上你親自從開題一路跑到裁判。\n然後親手刷卡付一次帳單。\n別人的經驗能工業化，親身經歷可不行啦。",
+   "lint": {
+    "chars": 241,
+    "precise_numbers": [
+     "一百"
+    ],
+    "enumerations": [],
+    "sentences": 15,
+    "avg_sentence_len": 15.1,
+    "max_sentence_len": 37,
+    "sentences_over_20": 2,
+    "particles_per_100": 1.7,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 1
+   }
+  }
+ ],
+ "chosen": 0
+}

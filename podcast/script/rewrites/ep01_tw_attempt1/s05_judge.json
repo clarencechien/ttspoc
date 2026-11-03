@@ -1,0 +1,106 @@
+{
+ "segment": "s05_judge",
+ "position": "第 6 段，共 10 段",
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "cc1233b49a0679af2a3e52fd2674192565e824377bf5dbf5ee8ef116911d01c4",
+ "previous_context": "還有叫它挑戰你自以為知道的事。最後，是叫模型去找出全新的知識。",
+ "original": {
+  "text": "但第五招，才是我覺得整篇的保險絲。Felix 這邊只寫了一句，而且語氣是用拜託的：Do not ask the model to judge itself. 不要讓模型評它自己。<short pause> 前面四招都在把模型往深處推，推得越深，你越看不到它在幹嘛。第五招，是唯一一招往回拉的。<short pause> 原文開頭有提到一個超讚的例子：一位業餘天文愛好者，用 Claude Code 分析 NASA 的 TESS 光變資料，發現一顆恆星每三點一八天會變暗百分之零點零五，推估是一點四倍地球大小的行星候選。他兩個禮拜跑了七十四次分析、上千個 script。<short pause> 但重點不是他問模型「這是不是行星」，而是一直叫模型想辦法證明它不是。他還把一部分資料遮起來，叫模型預測遮住的那幾段什麼時候會變暗，猜對了才算數。這個，就是外部裁判。",
+  "lint": {
+   "chars": 321,
+   "precise_numbers": [
+    "三點一八",
+    "百分之零點零五",
+    "一點四",
+    "七十四",
+    "千"
+   ],
+   "enumerations": [
+    "第五",
+    "第五"
+   ],
+   "sentences": 9,
+   "avg_sentence_len": 34.7,
+   "max_sentence_len": 91,
+   "sentences_over_20": 6,
+   "particles_per_100": 0.3,
+   "written_words": [
+    "推估"
+   ],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 3
+  }
+ },
+ "candidates": [
+  {
+   "text": "前面都在把模型往深處推。\n但第五招，嗯，應該說是整篇唯一的保險絲。\n原文作者幾乎是用求的語氣在寫。\n叫大家 Do not ask the model to judge itself。\n千萬不要讓模型給自己打分數。\n因為推得越深，你越看不見它在做什麼。\n少了這招，有野心就只是叫模型更敢講而已啦。\n那，要怎麼做外部裁判？\n原文開頭其實就提了一個民間案例。\n有人用 Claude Code 去分析 NASA 的光變資料。\n兩週跑了幾十次分析、上千個 script。\n找到一顆大約一點四倍地球大的候選天體。\n你猜他怎麼驗證？\n他完全沒問模型「這是不是行星」喔。\n<short pause>\n更扯的是，他是一直叫模型證明它不是。\n他還把一部分資料蓋住。\n叫模型預測蓋住的地方什麼時候會變暗。\n真的預測對了才算數耶。\n你看，醬子做才叫外部裁判嘛。\n雖然目前還只是候選、尚未確認。\n但我看到這段真的起雞皮疙瘩，太厲害了。<short pause>",
+   "lint": {
+    "chars": 356,
+    "precise_numbers": [
+     "千",
+     "一點四"
+    ],
+    "enumerations": [
+     "第五"
+    ],
+    "sentences": 21,
+    "avg_sentence_len": 16.0,
+    "max_sentence_len": 32,
+    "sentences_over_20": 2,
+    "particles_per_100": 1.1,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "找出新知識之後呢？這就要講到第五招了。\n這招，嗯，應該說是整篇的保險絲啦。\n作者原文只寫了一句，而且是用拜託的語氣。\n他說：Do not ask the model to judge itself.\n千萬不要叫模型給自己打分數。<short pause>\n因為前面幾招一直把模型往深處推。\n推得越深，你越看不懂它在幹嘛。\n所以一定要找模型以外的東西來當裁判。\n原文開頭有個例子超酷的。\n有位業餘愛好者用 Claude Code 去挖 NASA 資料。\n他兩週跑了上千個 script，\n找到一個每三點一八天會變暗一次的訊號。\n你猜他怎麼驗證？\n他可不是跑去問模型「這是行星嗎」。<short pause>\n更扯的是，他是一直叫模型想辦法證明它不是。\n然後他還把部分資料遮起來，\n叫模型猜被遮住的地方什麼時候變暗。\n猜中了才算數。\n對，醬才叫真正的外部裁判。\n雖然目前它還只是候選天體、還沒正式確認，\n但我看到這裡真的覺得超佩服的。",
+   "lint": {
+    "chars": 356,
+    "precise_numbers": [
+     "千",
+     "三點一八"
+    ],
+    "enumerations": [
+     "第五"
+    ],
+    "sentences": 18,
+    "avg_sentence_len": 18.8,
+    "max_sentence_len": 46,
+    "sentences_over_20": 5,
+    "particles_per_100": 0.6,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "說到全新知識，這就牽涉到第五招了。\n這招，嗯，應該說是保險絲啦。\n我看到作者甚至用拜託的語氣。\n他寫說千萬別叫模型評估自己。<short pause>\n前面都在把模型往深處推。\n推越深，你越看不到它在幹嘛。\n所以第五招是唯一往回拉的。\n原文有個例子超扯的喔。\n有位愛好者用 Claude Code。\n他跑去分析 NASA 的天文資料。\n找到一顆疑似行星的天體。\n大概每三點一八天會變暗一次。\n他兩個禮拜跑了上千個 script。\n欸，你猜他怎麼做的？\n他不是直接問這是不是行星。\n重點來了，\n他是一直叫模型想辦法證明它不是！\n然後他還把一部分資料遮起來。\n叫模型預測遮住的地方何時變暗。\n猜對了才算數。\n對，醬子做就是最好的外部裁判。<short pause>\n雖然這顆目前還只是候選、尚未確認。\n但這個驗證思路真的超強。",
+   "lint": {
+    "chars": 308,
+    "precise_numbers": [
+     "三點一八",
+     "千"
+    ],
+    "enumerations": [
+     "第五",
+     "第五"
+    ],
+    "sentences": 22,
+    "avg_sentence_len": 13.0,
+    "max_sentence_len": 20,
+    "sentences_over_20": 0,
+    "particles_per_100": 1.3,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  }
+ ],
+ "chosen": 2
+}

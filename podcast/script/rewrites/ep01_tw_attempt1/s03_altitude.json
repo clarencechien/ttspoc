@@ -1,0 +1,91 @@
+{
+ "segment": "s03_altitude",
+ "position": "第 4 段，共 10 段",
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "bcc623b65d7854195cc402b5df2de32d1d7d2c5b7649193cd7ea3469f2fea221",
+ "previous_context": "還不是要人看嘛。對，這個卡點我們後面還會再聊。",
+ "original": {
+  "text": "第二種是高度，就是問自己：這件事做完之後，我真正要的是什麼？目標背後的目標是什麼？Felix 自己的例子很經典。他以前是叫 Claude 一個一個去修 crash，後來改成叫它：讓這個 app 保持零 crash。<short pause> 聽起來很帥對不對？但轉傳的時候，最常被剪掉的就是後面那段。為了讓這句話成立，他得先讓 Claude 能自己抓 crash report，讓它知道哪個版本對應哪個 git commit，還要給它 Windows、macOS、Linux 三台電腦，讓它可以自己重現、自己驗證。<short pause> 所以這不是一句 prompt，這是一張帳單。問法最便宜，讓模型有辦法回答那個問法，才是貴的。",
+  "lint": {
+   "chars": 273,
+   "precise_numbers": [],
+   "enumerations": [
+    "第二"
+   ],
+   "sentences": 9,
+   "avg_sentence_len": 29.3,
+   "max_sentence_len": 98,
+   "sentences_over_20": 4,
+   "particles_per_100": 0.0,
+   "written_words": [
+    "對應"
+   ],
+   "mainland_words": [],
+   "questions": 3,
+   "tags": 2
+  }
+ },
+ "candidates": [
+  {
+   "text": "好，那第二個維度叫做高度。\n就是問自己，這件事做完你真正要什麼？\n也就是目標背後的目標啦。\n作者舉的例子我看到超有感。\n他以前叫 Claude 一個一個修 crash。\n後來改成叫它讓 app 保持零 crash。\n聽起來很帥對不對？\n但你猜要做到醬子，得先付出什麼？\n重點來了。<short pause>\n他要先讓 Claude 自己抓 crash report。\n還要讓它認得哪個版本是哪個 commit。\n更扯的是，還要給它三種作業系統跑測試。\n讓它能自己重現、自己去驗證修法。\n對啊，這哪裡是一句 prompt？\n這招，嗯，根本是一張帳單嘛。<laugh>\n大家常以為拉高維度只是換個問法。\n其實問法最便宜。\n讓模型有辦法回答那個問法，才是貴的。",
+   "lint": {
+    "chars": 278,
+    "precise_numbers": [],
+    "enumerations": [
+     "第二"
+    ],
+    "sentences": 18,
+    "avg_sentence_len": 14.4,
+    "max_sentence_len": 24,
+    "sentences_over_20": 1,
+    "particles_per_100": 0.7,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 4,
+    "tags": 2
+   }
+  },
+  {
+   "text": "好，那接著來看第二個維度，也就是高度。\n就是問自己，目標背後的目標到底是什麼？\n作者舉的例子，我看到整個超有感。\n他以前是叫 Claude 一個一個修 crash。\n後來改叫 Claude，讓 app 保持零 crash。\n聽起來超帥對不對？<short pause>\n但大家轉傳的時候，最常把後面的事剪掉。\n你想醬做齁，得先幫模型把路鋪好。\n要讓它自己去抓 crash report。\n要讓它知道版本對到哪個 git commit。\n還要給它三種不同的作業系統。\n讓它能自己重現問題、自己去驗證。\n這招，嗯，應該說這不是 prompt。\n這根本是一張帳單啊。<laugh>\n你知道嗎？問法其實最便宜了啦。\n讓模型有能力回答那個問法，才是最貴的。",
+   "lint": {
+    "chars": 276,
+    "precise_numbers": [],
+    "enumerations": [
+     "第二"
+    ],
+    "sentences": 17,
+    "avg_sentence_len": 15.2,
+    "max_sentence_len": 23,
+    "sentences_over_20": 2,
+    "particles_per_100": 0.7,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 2
+   }
+  },
+  {
+   "text": "好，那我們接著看第二個維度，叫做高度。\n就是問自己：這件事做完，真正要的是什麼？\n作者以前也是叫 Claude 一個個修 crash。\n後來他改成叫它：讓 app 保持零 crash。<short pause>\n聽起來超神對不對？\n但我跟你說，網路轉傳最常把後面剪掉啦。\n我看到這段超有感，因為背後代價超大。\n他得先讓 Claude 能自己抓 crash report，\n還要知道版本對應到哪個 git commit，\n甚至要準備三種作業系統讓它去驗證。\n這哪是什麼神級 prompt？\n這招，嗯，根本是一張帳單才對嘛。<sigh>\n光是醬子問最便宜了。\n讓模型有辦法回答那個問法，才是貴的。",
+   "lint": {
+    "chars": 251,
+    "precise_numbers": [],
+    "enumerations": [
+     "第二"
+    ],
+    "sentences": 12,
+    "avg_sentence_len": 19.9,
+    "max_sentence_len": 63,
+    "sentences_over_20": 2,
+    "particles_per_100": 0.8,
+    "written_words": [
+     "對應"
+    ],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 2
+   }
+  }
+ ],
+ "chosen": 0
+}

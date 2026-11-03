@@ -1,0 +1,18 @@
+{
+ "Gemini D1 v4": {
+  "speech_s": 498.3,
+  "chars_per_sec": 4.28,
+  "long_pauses": 57,
+  "long_pauses_per_min": 6.9,
+  "f0_median_hz": 95.2,
+  "centroid_hz": 2372
+ },
+ "ElevenLabs EL1 v4": {
+  "speech_s": 451.0,
+  "chars_per_sec": 4.73,
+  "long_pauses": 21,
+  "long_pauses_per_min": 2.8,
+  "f0_median_hz": 149.1,
+  "centroid_hz": 1858
+ }
+}

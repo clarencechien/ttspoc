@@ -1,0 +1,24 @@
+{
+ "Gemini D1 修正版": {
+  "speech_min": 8.6,
+  "chars_per_sec": 4.15,
+  "pauses_per_min": 7.7,
+  "f0_hz": 94,
+  "centroid_hz": 2607,
+  "breeze_cer": 0.03,
+  "gemini_cer": 0.018,
+  "unclear": 26,
+  "both": 1
+ },
+ "ElevenLabs Hardy": {
+  "speech_min": 8.2,
+  "chars_per_sec": 4.35,
+  "pauses_per_min": 16.6,
+  "f0_hz": 141,
+  "centroid_hz": 2399,
+  "breeze_cer": 0.022,
+  "gemini_cer": 0.011,
+  "unclear": 10,
+  "both": 0
+ }
+}

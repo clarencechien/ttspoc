@@ -1,0 +1,84 @@
+{
+ "segment": "s00_open",
+ "position": "第 1 段，共 10 段（第一段）",
+ "avoid": [],
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "8d4c84460dd174b673077b949f9b65d3dfc5e3f7912fde9a358464c88fff3139",
+ "previous_context": "（這是第一段，沒有上一段）",
+ "original": {
+  "text": "欸，<short pause> 大家好，歡迎收聽深夜 Debug，一個在半夜幫你把 bug 跟腦袋一起清一清的節目。<short pause> 我先問一個問題齁。你最近是不是有在社群上滑到一則貼文，大概是這樣講的：別再寫「你是一個資深工程師」這種 prompt 了，角色扮演早就沒用了，要讓 AI 更有野心。<short pause> 然後底下一堆人按讚、轉傳、收藏，收藏完當然就再也沒打開過，<laugh> 這個我們都懂。",
+  "lint": {
+   "chars": 155,
+   "precise_numbers": [],
+   "enumerations": [],
+   "sentences": 4,
+   "avg_sentence_len": 37.8,
+   "max_sentence_len": 68,
+   "sentences_over_20": 3,
+   "particles_per_100": 1.3,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 4
+  }
+ },
+ "candidates": [
+  {
+   "text": "歡迎收聽深夜 Debug。<short pause> 你寫 prompt 還會用角色扮演嗎？就是開頭寫「你是一個資深工程師」醬子。我跟你說，這招早就失效——應該說，至少失效兩年了啦。<laugh> OpenAI 發表 o1 的時候就叫大家別用。Anthropic 的工程經理也說，這只是讓 AI 換個詞，做的事根本沒變。那到底要怎麼做？答案是讓它更有野心，格局放更大，去用專家的工具跟資料格式。我看到這個貼文真的超有感。<short pause>",
+   "lint": {
+    "chars": 179,
+    "precise_numbers": [
+     "1"
+    ],
+    "enumerations": [],
+    "sentences": 9,
+    "avg_sentence_len": 18.9,
+    "max_sentence_len": 34,
+    "sentences_over_20": 3,
+    "particles_per_100": 0.6,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 3
+   }
+  },
+  {
+   "text": "欸大家好，歡迎收聽深夜 Debug。<short pause>\n你最近有沒有在社群滑到一則貼文？\n就是叫大家別再寫「你是一個資深工程師」。\n說這種角色扮演的 prompt，\n其實已經失效至少兩年了。<short pause>\n我看到也是愣了一下。\n那個，應該說很多人第一反應都是「真的假的？」\n對，然後底下還一堆人轉貼收藏。<laugh>\n連 OpenAI 還有 Anthropic 的人都說不要醬寫。\n那到底要怎麼讓 AI 變專業？\n今天這集我們就來聊聊這件事。",
+   "lint": {
+    "chars": 181,
+    "precise_numbers": [],
+    "enumerations": [
+     "第一"
+    ],
+    "sentences": 10,
+    "avg_sentence_len": 17.1,
+    "max_sentence_len": 26,
+    "sentences_over_20": 2,
+    "particles_per_100": 0.6,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 3
+   }
+  },
+  {
+   "text": "欸，歡迎收聽深夜 Debug。<short pause>\n我先問大家一個問題。\n你最近有沒有滑到一則貼文？\n就是叫大家別再寫角色扮演 prompt 了。\n像是「你是一個資深工程師」之類的。\n說這個招數至少失效兩年了。<short pause>\n我看到的時候整個愣住。\n呃不對，應該說是超傻眼。<laugh>\n想說真的假的，那我以前在忙什麼？\n然後貼文底下一堆人轉傳收藏。\n但大家收藏完，真的有搞懂嗎？\n今天我們就來聊聊這件事啦。",
+   "lint": {
+    "chars": 167,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 12,
+    "avg_sentence_len": 12.9,
+    "max_sentence_len": 19,
+    "sentences_over_20": 0,
+    "particles_per_100": 1.2,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 3
+   }
+  }
+ ],
+ "chosen": 2
+}

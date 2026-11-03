@@ -1,0 +1,79 @@
+{
+ "segment": "s02_speed",
+ "position": "第 3 段，共 10 段",
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "d0b1c49cce1223e97e70bf788c4a0318675ec55abc1c0b751c37905204c6d360",
+ "previous_context": "網路轉傳本來就醬嘛。但如果你打算照著做，對，就得回頭看正本。",
+ "original": {
+  "text": "好，我們先把骨架架起來。Felix 把野心拆成四種：速度、高度、深度、廣度。速度就是同一件事做得更快，他直接說這個大家都會，跳過。但我覺得這邊要幫他補一句：速度其實是另外三種的地基。你後面要跑驗證、要一直重試，每一圈都要夠便宜，才轉得起來。<short pause> 可是速度同時也是天花板。你做得越快，產出就越多，而每一份產出，最後都還是要有人看。這個我們等一下會再回來。",
+  "lint": {
+   "chars": 172,
+   "precise_numbers": [],
+   "enumerations": [],
+   "sentences": 8,
+   "avg_sentence_len": 20.5,
+   "max_sentence_len": 28,
+   "sentences_over_20": 5,
+   "particles_per_100": 0.0,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 1
+  }
+ },
+ "candidates": [
+  {
+   "text": "好，那我們先來看正本。作者把野心拆成四種，高度、深度、廣度，還有速度。速度就是花更少時間做完。他直接跳過速度喔，<laugh> 說這個大家都會啦。但，嗯，應該說速度其實是地基。你要反覆重試、跑驗證，成本不夠便宜，根本轉不起來嘛。而且你猜怎麼著？速度同時也是天花板喔。<short pause> 你做得再快、產出再多，最後是不是都要有人看？對啊，那個我們後面再聊。",
+   "lint": {
+    "chars": 159,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 10,
+    "avg_sentence_len": 14.9,
+    "max_sentence_len": 25,
+    "sentences_over_20": 3,
+    "particles_per_100": 2.5,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "好，那我們先來看正本。作者把野心拆成四種，高度、深度、廣度，還有速度。你猜哪一種被他直接跳過？對，就是速度。因為他覺得這大家都會嘛。但我看到這邊，嗯，我覺得速度超關鍵的。它其實是另外三種野心的地基。你後面要一直重試、跑驗證，每一圈都要夠便宜，才轉得動啊。<short pause>然後更扯的是，它同時也是天花板。你做越快，產出就越多。但每一份產出，最後還是要有人看嘛。這個我們後面會再聊到。",
+   "lint": {
+    "chars": 182,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 12,
+    "avg_sentence_len": 14.2,
+    "max_sentence_len": 27,
+    "sentences_over_20": 2,
+    "particles_per_100": 1.1,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 1
+   }
+  },
+  {
+   "text": "正本裡面呢，作者把野心拆成四種。\n就是高度、深度、廣度，還有速度。\n欸，你猜哪一種被他直接跳過？\n答案是速度。\n他覺得速度大家都會嘛，不太需要創意。\n但我看到這邊，超想幫他補回去。\n因為速度其實是其他三種的，嗯，地基。\n重試的成本要夠便宜，迴圈才轉得起來。\n<short pause>\n可是更扯的是，速度同時也是天花板。\n你做得越快、產出越多，最後誰看？\n還不是要人看嘛。\n對，這個卡點我們後面還會再聊。",
+   "lint": {
+    "chars": 177,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 12,
+    "avg_sentence_len": 13.8,
+    "max_sentence_len": 17,
+    "sentences_over_20": 0,
+    "particles_per_100": 1.7,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 1
+   }
+  }
+ ],
+ "chosen": 2
+}

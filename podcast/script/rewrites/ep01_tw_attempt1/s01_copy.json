@@ -1,0 +1,87 @@
+{
+ "segment": "s01_copy",
+ "position": "第 2 段，共 10 段",
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "6256255108ffa06ef15529b031ed7a7d58b9ca2e3ea383ed185d1bf29aa61792",
+ "previous_context": "當然再也沒打開過嘛。醬的毛病我超懂。",
+ "original": {
+  "text": "那我今天要講的是，這則貼文其實只是一張複寫單的第二聯。就是以前那種三聯單啦，你拿原子筆用力寫，第一聯留在作者手上，傳出去的是第二聯，筆壓最重的那一行印得最清楚，其他的都淡掉了。原文是 Anthropic 的 Felix Rieseberg 寫的〈How to be more ambitious〉，大概八分鐘可以讀完。裡面有四種野心、深度的五招、兩次關於角色扮演的警告，還有一張基礎建設的帳單。結果貼文留下來的，大概就一招半。而且很好笑的是，它留下了最好記的那一招，丟掉了最重要的那一招。",
+  "lint": {
+   "chars": 235,
+   "precise_numbers": [],
+   "enumerations": [
+    "第二",
+    "第一",
+    "第二"
+   ],
+   "sentences": 6,
+   "avg_sentence_len": 38.2,
+   "max_sentence_len": 61,
+   "sentences_over_20": 5,
+   "particles_per_100": 0.4,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 0
+  }
+ },
+ "candidates": [
+  {
+   "text": "但我跟你說，那篇網路貼文超像複寫單。\n就是以前那種開收據的紙啦。\n筆壓最重的那一行印得最清楚。\n其他的字全都淡掉了。\n原文明明塞了超多好料，\n像是一堆野心、深度的招式，還有基建清單。\n結果轉傳到最後剩下多少？<short pause>\n你猜猜看。\n居然只剩下一招半！<laugh>\n我看到的時候整個傻眼。\n它，嗯，應該說大家只挑最好記的抄。\n最重要、最關鍵的那招，反而直接被丟掉。\n這其實不能怪轉發的人啦。\n轉傳的過程本來就是醬。\n但如果你真的打算照著做，\n對，我們就得回頭把正本抓出來看。",
+   "lint": {
+    "chars": 210,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 14,
+    "avg_sentence_len": 14.0,
+    "max_sentence_len": 30,
+    "sentences_over_20": 2,
+    "particles_per_100": 1.0,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  },
+  {
+   "text": "說到大家瘋傳的那篇貼文。\n它其實只是三聯複寫單的第二聯啦。\n就是筆壓最重的那行印得出來。\n其他字，基本上全部都淡掉了。\n原文其實內容超級多喔。<short pause>\n裡面有好幾種野心，還有各種招式跟清單。\n結果副本傳到最後，嗯，只剩下一招半。\n欸，你猜它留下了什麼？\n它留下了最好記的那招。\n然後把最重要的那一招直接丟了。<laugh>\n我看到這邊真的覺得超扯。\n這不是貼文作者的錯啦。\n網路轉傳本來就醬嘛。\n但如果你打算照著做，對，就得回頭看正本。",
+   "lint": {
+    "chars": 194,
+    "precise_numbers": [],
+    "enumerations": [
+     "第二"
+    ],
+    "sentences": 14,
+    "avg_sentence_len": 12.9,
+    "max_sentence_len": 19,
+    "sentences_over_20": 0,
+    "particles_per_100": 2.6,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  },
+  {
+   "text": "你看的那篇貼文，其實完全沒造假喔。\n但它就像三聯複寫單的第二聯。\n你用力寫下去，只有壓最重的那行最清楚。\n其他地方，早就都淡掉了。<short pause>\n我看到原文的時候超傻眼，\n裡面明明塞了一大堆東西耶。\n有各種野心、深度廣度的招式，\n還有一張基礎建設清單。\n結果傳到最後，你猜剩下多少？\n<laugh> 居然只剩一招半！\n最扯的是，它留下了最好記的那招。\n那個，應該說，\n最重要的招式反而被丟掉了。\n這其實不是貼文作者的錯啦。\n轉傳本來就是醬運作的嘛。\n但如果你打算照著做，\n就一定要回頭去看正本。",
+   "lint": {
+    "chars": 216,
+    "precise_numbers": [],
+    "enumerations": [
+     "第二"
+    ],
+    "sentences": 13,
+    "avg_sentence_len": 15.6,
+    "max_sentence_len": 24,
+    "sentences_over_20": 2,
+    "particles_per_100": 1.9,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  }
+ ],
+ "chosen": 1
+}

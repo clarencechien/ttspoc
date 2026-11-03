@@ -17,5 +17,14 @@
   "preview_secs": 26.67375,
   "language": "zh"
  },
- "_brief": "A Taiwanese man in his mid-thirties speaking Taiwan Mandarin with a natural Taiwanese accent, no Beijing retroflex or erhua. Low, warm, magnetic voice with a slight rasp and breathiness. Relaxed and laid-back, like a late-night tech podcast host chatting with a friend, occasionally self-deprecating. Mixes English tech terms naturally."
+ "_brief": "A Taiwanese man in his mid-thirties speaking Taiwan Mandarin with a natural Taiwanese accent, no Beijing retroflex or erhua. Low, warm, magnetic voice with a slight rasp and breathiness. Relaxed and laid-back, like a late-night tech podcast host chatting with a friend, occasionally self-deprecating. Mixes English tech terms naturally.",
+ "HARDY": {
+  "voice_id": "FS8UtxyDrvYcNCxVaziq",
+  "source": "ElevenLabs shared voice library",
+  "library_name": "Hardy",
+  "accent": "taiwan mandarin",
+  "locale": "cmn-TW",
+  "library_description": "A friendly and relatable 'Taiwanet Uncle' voice. The tone is warm, natural, ...",
+  "note": "Voice actor's own Taiwanese accent; used as published, no accent tag"
+ }
 }

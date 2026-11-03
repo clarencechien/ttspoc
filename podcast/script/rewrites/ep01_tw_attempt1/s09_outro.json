@@ -1,0 +1,94 @@
+{
+ "segment": "s09_outro",
+ "position": "第 10 段，共 10 段（最後一段）",
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "53cb4757908e700a5f1a4a29221ee564e4020a4b798fe6ddab5c062dfcc38062",
+ "previous_context": "別人的經驗可以工業化。但你自己的親身經驗不行喔。",
+ "original": {
+  "text": "好，今天帶走三件事。第一，讓模型有一台電腦跟資料，這是前提，不是選項。第二，每一個往深處推的要求，都要配一個模型以外的裁判。第三，野心的帳單先付，問法最後才問。<short pause> 喔對，最後提醒一下時間戳：Felix 自己有寫，「不要讓模型評自己」是二零二六年十月的判斷，他預期模型變強之後會改。所以你如果是很久以後才聽到這集，<laugh> 記得先看一下日期。好，今天的深夜 Debug 就到這邊，我們下次見，掰掰。",
+  "lint": {
+   "chars": 188,
+   "precise_numbers": [],
+   "enumerations": [
+    "第一",
+    "第二",
+    "第三"
+   ],
+   "sentences": 7,
+   "avg_sentence_len": 25.9,
+   "max_sentence_len": 56,
+   "sentences_over_20": 5,
+   "particles_per_100": 0.5,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 2
+  }
+ },
+ "candidates": [
+  {
+   "text": "所以講到最後，要帶走什麼？\n就是三件事啦。\n第一，模型要有電腦跟資料。\n這，嗯，應該說是前提，不是選項。\n第二，要求往深處推，就要配模型外的裁判。\n第三，野心的帳單先付，問法最後才問。\n<short pause>\n然後那個，作者有特別留時間戳。\n我看到這句真的超有感。\n你猜為什麼？\n因為模型變強，規則可能就不是醬了。\n他說不要讓模型評自己，\n那只是二零二六年十月的判斷。\n你如果是很久以後才聽到這集，\n<laugh> 記得先看一眼日期喔。\n好啦，今天的深夜 Debug 就到這邊。\n我們下次見，掰掰！",
+   "lint": {
+    "chars": 212,
+    "precise_numbers": [],
+    "enumerations": [
+     "第一",
+     "第二",
+     "第三"
+    ],
+    "sentences": 14,
+    "avg_sentence_len": 14.1,
+    "max_sentence_len": 24,
+    "sentences_over_20": 2,
+    "particles_per_100": 1.4,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "所以回到正本，你該帶走什麼？第一，讓模型有電腦跟資料。這完全是前提，不是選項喔。第二，要求往深處推的時候，一定要配一個模型以外的裁判。然後野心的帳單要先付，prompt，嗯，應該說問法最後才問。<short pause> 原文其實幾分鐘就看完了。但轉傳漏掉的那幾行，剛好最貴。對了，作者有特別標時間戳。說不要讓模型評自己，是二零二六年十月的判斷。以後模型變強，可能就會改了啦。<laugh> 你聽這集的時候，記得看一下日期齁。好，今天的深夜 Debug 就到這裡。我們下次見，掰掰！",
+   "lint": {
+    "chars": 217,
+    "precise_numbers": [],
+    "enumerations": [
+     "第一",
+     "第二"
+    ],
+    "sentences": 13,
+    "avg_sentence_len": 15.7,
+    "max_sentence_len": 29,
+    "sentences_over_20": 3,
+    "particles_per_100": 1.4,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  },
+  {
+   "text": "好啦，總結一下，今天帶走三件事。\n第一，讓模型有一台電腦跟資料。\n這真的是前提，不是選項喔。\n第二，要求往深處推，就要配一個裁判。\n而且必須是模型以外的裁判。\n第三，野心的帳單先付，問法最後才問。\n醬講好了，原文其實幾分鐘就看完了。<short pause>\n但轉傳漏掉的，剛好就是最貴的那幾行。\n欸你猜作者怎麼提醒的？\n他說「不要讓模型評自己」，\n只是二零二六年十月的判斷。\n以後模型變強，嗯，這點可能會改。<laugh>\n所以大家看的時候，記得瞄一下日期啦。\n好，今天的深夜 Debug 就到這邊。\n我們下次見囉，掰掰。",
+   "lint": {
+    "chars": 226,
+    "precise_numbers": [],
+    "enumerations": [
+     "第一",
+     "第二",
+     "第三"
+    ],
+    "sentences": 14,
+    "avg_sentence_len": 15.1,
+    "max_sentence_len": 25,
+    "sentences_over_20": 1,
+    "particles_per_100": 1.8,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 2
+   }
+  }
+ ],
+ "chosen": 2
+}
