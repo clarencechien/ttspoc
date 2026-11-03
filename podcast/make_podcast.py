@@ -226,17 +226,35 @@ def silence(path, seconds):
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(b"\x00\x00" * int(SR * seconds))
 
 
+def measure_lufs(path):
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
+    return float(re.findall(r"I:\s+(-?[0-9.]+) LUFS", r)[-1])
+
+
 def cmd_master(a):
     sc = load_script(a.script); d = seg_dir(a); m = OUT / "master"; m.mkdir(parents=True, exist_ok=True)
     synth_sting(m / "intro.wav", rising=True); synth_sting(m / "outro.wav", rising=False)
     silence(m / "gap.wav", 0.6); silence(m / "lead.wav", 0.4)
     seq = [m / "intro.wav", m / "lead.wav"]
+    name = f"{a.voice}_{a.tag}" if a.tag else a.voice
+    norm_dir = m / f"norm_{name}"; norm_dir.mkdir(exist_ok=True); levels = []
     for i, s in enumerate(sc["segments"]):
-        seq.append(d / f"{s['id']}.wav")
+        src = d / f"{s['id']}.wav"
+        if a.seg_lufs == a.seg_lufs:   # NaN disables per-segment normalization
+            # Per-segment loudness: segments come from separate TTS requests and differ by several dB; the
+            # whole-episode loudnorm below cannot fix that, so bring each one to the same level first.
+            before = measure_lufs(src); out = norm_dir / src.name
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-af", f"volume={a.seg_lufs - before:.2f}dB",
+                            "-ar", str(SR), "-ac", "1", "-c:a", "pcm_s16le", str(out)], check=True)
+            levels.append({"id": s["id"], "lufs_before": round(before, 1), "gain_db": round(a.seg_lufs - before, 1), "lufs_after": round(measure_lufs(out), 1)})
+            src = out
+        seq.append(src)
         if i < len(sc["segments"]) - 1:
             seq.append(m / "gap.wav")
     seq += [m / "lead.wav", m / "outro.wav"]
-    name = f"{a.voice}_{a.tag}" if a.tag else a.voice
+    if levels:
+        (norm_dir / "levels.json").write_text(json.dumps(levels, ensure_ascii=False, indent=1))
+        print("segment loudness before:", " ".join(f"{x['lufs_before']}" for x in levels), f"-> all {a.seg_lufs} LUFS")
     lst = m / f"concat_{name}.txt"
     lst.write_text("".join(f"file '{p.resolve()}'\n" for p in seq))
     raw = m / f"ep01_{name}_raw.wav"
@@ -258,5 +276,6 @@ if __name__ == "__main__":
     p = sub.add_parser("judge"); p.add_argument("files", nargs="+"); p.add_argument("--text"); p.add_argument("--out")
     p = sub.add_parser("episode"); p.add_argument("--voice", required=True); p.add_argument("--retries", type=int, default=2); p.add_argument("--force", action="store_true"); p.add_argument("--only", default="", help="comma-separated segment ids to regenerate"); p.add_argument("--script", default=None, help="script JSON, default podcast/script/ep01.json"); p.add_argument("--tag", default="", help="suffix for the segments folder and output, e.g. tw"); p.add_argument("--takes", type=int, default=1, help="takes per segment; keeps the one with fewest long pauses"); p.add_argument("--style", choices=["v1", "v2", "v3", "v4", "v5"], default="v1", help="v2 = confident and rhythmic but drifts toward a broadcast accent; v3 = rhythmic and Taiwanese-leaning; v4 = v3 plus explicit Taiwan Mandarin phonetic traits and an amateur feel; v5 = v4 plus clear tones (in ep01_tw.json)")
     p = sub.add_parser("master"); p.add_argument("--voice", required=True); p.add_argument("--script", default=None); p.add_argument("--tag", default="")
+    p.add_argument("--seg-lufs", type=float, default=-20.0, help="bring every segment to this loudness before joining; pass nan to skip")
     a = ap.parse_args()
     {"design": cmd_design, "audition": cmd_audition, "judge": cmd_judge, "episode": cmd_episode, "master": cmd_master}[a.cmd](a)

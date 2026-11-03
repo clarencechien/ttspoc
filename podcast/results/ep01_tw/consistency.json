@@ -1,18 +1,34 @@
 {
- "Gemini D1 修正版": {
-  "f0_range": 9.546101243746847,
-  "lufs_range": 4.299999999999997,
-  "cps_range": 0.7748913328860239,
-  "cent_range": 952.1424870228172,
-  "pairwise_sim_mean": 0.9567698836326599,
-  "pairwise_sim_min": 0.9295334815979004
+ "before": {
+  "Gemini D1 修正版": {
+   "f0_range": 9.546101243746847,
+   "lufs_range": 4.299999999999997,
+   "cps_range": 0.7748913328860239,
+   "cent_range": 952.1424870228172,
+   "pairwise_sim_mean": 0.9567698836326599,
+   "pairwise_sim_min": 0.9295334815979004
+  },
+  "ElevenLabs Hardy": {
+   "f0_range": 19.302049094342266,
+   "lufs_range": 6.5,
+   "cps_range": 0.7831060478515446,
+   "cent_range": 776.7296042602688,
+   "pairwise_sim_mean": 0.9751530289649963,
+   "pairwise_sim_min": 0.9599705338478088
+  }
  },
- "ElevenLabs Hardy": {
-  "f0_range": 19.302049094342266,
-  "lufs_range": 6.5,
-  "cps_range": 0.7831060478515446,
-  "cent_range": 776.7296042602688,
-  "pairwise_sim_mean": 0.9751530289649963,
-  "pairwise_sim_min": 0.9599705338478088
+ "after": {
+  "Gemini D1 修正版": {
+   "lufs_range": 0.0,
+   "cent_range": 836.4922598640437,
+   "pairwise_sim_mean": 0.9607230424880981,
+   "pairwise_sim_min": 0.9310398101806641
+  },
+  "ElevenLabs Hardy": {
+   "lufs_range": 0.0,
+   "cent_range": 776.7285273202615,
+   "pairwise_sim_mean": 0.9748995304107666,
+   "pairwise_sim_min": 0.9613946080207825
+  }
  }
 }

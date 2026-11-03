@@ -1,0 +1,62 @@
+[
+ {
+  "id": "s00_open",
+  "lufs_before": -24.4,
+  "gain_db": 4.4,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s01_copy",
+  "lufs_before": -22.2,
+  "gain_db": 2.2,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s02_speed",
+  "lufs_before": -21.1,
+  "gain_db": 1.1,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s03_altitude",
+  "lufs_before": -21.5,
+  "gain_db": 1.5,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s04_depth",
+  "lufs_before": -21.9,
+  "gain_db": 1.9,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s05_judge",
+  "lufs_before": -21.6,
+  "gain_db": 1.6,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s06_range",
+  "lufs_before": -21.5,
+  "gain_db": 1.5,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s07_resolution",
+  "lufs_before": -21.8,
+  "gain_db": 1.8,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s08_efficacy",
+  "lufs_before": -21.9,
+  "gain_db": 1.9,
+  "lufs_after": -20.0
+ },
+ {
+  "id": "s09_outro",
+  "lufs_before": -20.1,
+  "gain_db": 0.1,
+  "lufs_after": -20.0
+ }
+]
