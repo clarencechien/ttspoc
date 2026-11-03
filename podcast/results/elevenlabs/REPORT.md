@@ -1,7 +1,7 @@
 # ElevenLabs 對照組結果（2026-11-03）
 
 ## 結論
-- **ElevenLabs 冠軍：EL1 + `eleven_v4`**（Borda 17），全集已產出：`podcast/samples/elevenlabs/ep01_EL.mp3`（7.2 分鐘）。
+- **ElevenLabs 冠軍：EL1 + `eleven_v4`**（Borda 17），全集已產出：`podcast/samples/episodes/ep01_elevenlabs-v4_el1.mp3`（7.2 分鐘）。
 - 但整體仍輸給 Gemini：S3 Enceladus（24，三次盲評皆第一）> D1 磁性深夜（18）> EL1_v4（17）。
 - 原因：評審一致認為 S3/D1 的胸腔共鳴、慵懶深夜感與自嘲細節較好；EL 的 v4 三個聲音都明顯優於 v3（v3 全部墊底），但 EL 音高偏高（F0 中位數 119–146 Hz，D1 只有 94 Hz），「低沉磁性」這點不如 Gemini。
 - QA：10 段全部 text_match=1.00，**零誤讀**、無標籤被唸出、無大陸腔或英文詞問題，不需重生。
@@ -61,4 +61,4 @@ EL 語速比 Gemini 快約 15%（同一段試聽 17–19 s vs 21 s）。v4 音�
 
 ## 檔案
 - `voice_comparison.json`、`qa_EL.json`、`log.json`、`voices.json`（三個已存 voice_id）
-- 音檔：`podcast/samples/elevenlabs/`（preview_EL0–2、8 個 audition_*.mp3、ep01_EL.mp3）
+- 音檔：已整理到 `podcast/samples/`，整集在 `episodes/`、試聽在 `auditions/`、聲線設計預覽在 `design-previews/`。

@@ -2,7 +2,7 @@
 
 來源文章：〈記住了第一招，漏掉了第五招〉 https://imitator.ai-apps.work/r/fifth-move
 成品：「深夜 Debug」EP01，兩個聲線各一集，約 8 分鐘，Gemini 3.8 Flash TTS 生成。
-音檔在 `out/podcast/`（不進 git），重跑指令見最下方。
+音檔整理在 `podcast/samples/`（索引見該資料夾的 README），重跑指令見最下方；重跑時的中間檔仍輸出到 `out/podcast/`（不進 git）。
 
 ## 結論
 - **整條流程一次跑通**：10 段、每段 166–341 字，兩個聲線共 20 段，第一次生成就全部通過音長檢查，沒有出現 pilot 裡的長文截斷。
@@ -48,21 +48,86 @@
 ## 對「像台灣財經閒聊型 podcast」的定位
 - 聲線用一般特徵描述設計，沒有寫任何真人的名字，也沒有複製或模仿真實主持人的聲音；節目名稱與台詞都是自創。
 - 「像那種節目」的感覺主要來自稿子：單人、口語、自嘲、離題再拉回、語助詞。聲音本身只負責低沉與放鬆。
+- 3.8 TTS 雖然能複製聲音，但必須由本人錄同意句，所以不會、也不能拿來複製真實主持人，細節見「聲音複製」一節。
 
-## ElevenLabs 對照組
-- 腳本 `elevenlabs_tts.py` 已寫好：用相同描述做 Voice Design，再用 `eleven_v3` 生成同一份稿，後製流程共用。
-- **尚未執行**：這個 session 讀不到 `elevenlabs_key`。加到環境設定後，新的 session 才會載入。
+## ElevenLabs 對照組（已執行）
+由新的子 session 執行，因為原本的容器讀不到 `elevenlabs_key`。完整報告在 `results/elevenlabs/REPORT.md`。
+做法：用與 D1 相同的聲線描述做 Voice Design，存下三個候選 EL0 到 EL2，每個用 `eleven_v3` 和 `eleven_v4` 各唸一次試聽稿，
+再跟 Gemini 的 Enceladus、D1 一起做三次洗牌排名。
+
+| 名次 | 聲線 | Borda | 基頻中位數 |
+|---|---|---|---|
+| 1 | Gemini Enceladus | 24（三次都第一） | 114.8 Hz |
+| 2 | Gemini D1 磁性深夜 | 18 | 93.8 Hz |
+| 3 | ElevenLabs EL1 + v4 | 17 | 146.3 Hz |
+| 4 | ElevenLabs EL0 + v4 | 16 | 135.6 Hz |
+| 5 | ElevenLabs EL2 + v4 | 15 | 134.1 Hz |
+| 6–8 | ElevenLabs 三個聲線 + v3 | 4–7 | 119–126 Hz |
+
+- **v4 明顯勝過 v3**：三個聲線換成 v4 都上升了好幾名。
+- **ElevenLabs 輸在「低沉」**：基頻比 Gemini 高 20 到 50 Hz。評審對 EL1 v4 的評語是「音色偏清亮，缺乏深夜廣播的厚實低沉感」。
+- **ElevenLabs 唸得最準**：整集 EL1 v4 共 10 段，逐字稿吻合度全部 1.00，自動校對零錯讀，不需要任何重生成。Gemini 兩集各有一段要重做。
+- **語速快約 15%**：同一份稿 7.2 分鐘，Gemini 是 8.2 到 8.5 分鐘。
+- 響度後製後 -16.7 LUFS，與 Gemini 版一致。
+
+### 三方總表
+| | Gemini Enceladus | Gemini D1 磁性深夜 | ElevenLabs EL1 v4 |
+|---|---|---|---|
+| 比較式排名 | 第 1 | 第 2 | 第 3 |
+| 低沉程度 | 中 | 最低沉 | 最高 |
+| 唸錯需重生成 | 1 段 | 1 段，重試 3 次 | 0 段 |
+| 整集長度 | 8.2 分 | 8.5 分 | 7.2 分 |
+| 每集成本 | 約 US$0.11 | 約 US$0.11 | 約 2,400 字元，依方案計 |
+
+## 聲音複製（voice replication）
+依 2026-11-03 查閱的官方文件整理。這個功能尚未實測，因為需要真人錄音與同一人的同意錄音。
+
+### 怎麼運作
+用一段真人錄音做出那個人的合成聲音。設計目的是複製自己，或已經同意的真人：系統會做說話者比對，確認同意錄音和樣本錄音是同一個人。
+
+| 項目 | 規定 |
+|---|---|
+| 樣本錄音 `source_audio` | 10 到 30 秒、乾淨自然的說話，用希望聲線講的語言錄；要台灣腔就用台灣華語錄 |
+| 同意錄音 `consent_audio` | 同一位成年人照念固定的同意聲明 |
+| 錄音條件 | 兩段用同一支麥克風、同一個空間，安靜、少回音、無音樂或其他人聲；建議 24 kHz 單聲道 16-bit WAV |
+| 同意句語言 | 30 個語言版本；中文只有簡體 zh-CN，沒有台灣版 |
+| 中文同意句 | 「我是此声音的拥有者并授权谷歌使用此声音创建语音合成模型」，台灣人照念即可 |
+| 地區限制 | Google 公告列出伊利諾州、德州、歐洲經濟區、英國、瑞士、印度不開放；台灣不在名單上 |
+| 支援模型 | `gemini-3.8-flash-tts`、`gemini-3.8-flash-lite-tts` |
+| 雙人對話 | 複製的聲音不能放進單次雙人請求，要每人分開合成再剪接 |
+| 浮水印 | 所有輸出都帶 SynthID |
+
+### 保存與效期
+| 方式 | 回傳 | 效期 | 上限 |
+|---|---|---|---|
+| `store=True`（預設） | `voice_…` ID | 閒置一年才自動刪除；拿來合成或當 `base_voice` 會重新計算 | 每個專案 200 個，跟設計聲線共用 |
+| `store=False` | 加密的 `voicekey_…` | 7 天 | 自行保管 |
+
+官方文件寫明「閒置一年」規則，同樣適用於設計聲線 D1、D2。2026-11-03 當天使用後效期沒有立即更新，隔日再確認。
+
+### 跟這個 POC 的關係
+- **台灣口音最道地的做法**：找一位聲音低沉、有磁性的台灣配音員，簽好授權後錄 30 秒樣本加同意句。口音來自真人，不必靠文字描述引導。
+- **最好重現**：自己保有的兩段錄音就是配方。聲線刪除或過期後，用同樣的錄音可以再做一次。重做是否完全相同還沒測過，但不會像設計聲線一樣過期就找不回來。
+- **不能用來備份 D1**：官方要求兩段都是同一位成年人的真人錄音。D1 是合成聲音，用 TTS 生成同意句去通過驗證等於繞過安全檢查，不該這樣做。D1 的備份方法是 `base_voice` remix，見 `samples/README.md` 的重現測試。
+- **不能複製真實主持人**：沒有本人親自錄的同意句就過不了驗證；即使技術上繞得過，未經同意複製真人聲音做節目也不適當。風格參考只停留在節奏與講話方式。
+
+### 參考資料
+- Voice replication，Gemini API：https://ai.google.dev/gemini-api/docs/voice-replication
+- Speech generation，Google AI Studio：https://aistudio.google.com/docs/speech-generation
+- Gemini 3.8 Flash TTS 與 Flash-Lite TTS 公告：https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/
+- Phil Schmid 的實作筆記：https://www.philschmid.de/gemini-3-8-tts
 
 ## 下一步
 1. 人耳挑聲線：聽兩集完整版和六段試聽，決定 Enceladus、D1，或改寫設計描述再生一輪。
-2. 跑 ElevenLabs 對照組，用同一套 `compare_voices.py` 排名與 `qa_episode.py` 校對。
+2. 人耳盲聽三集：自動評審只是粗篩，「磁性」最終要人判斷。
 3. 專有名詞前處理：人名第一次出現時唸全名，之後只唸 Felix；或建立一份讀音對照表，逐段校對時自動比對。
 4. 加背景音樂床與段落轉場音效，再做一次盲聽。
+5. 聲音複製實測：請一位台灣配音員（或自己）依上方條件錄樣本與同意句，跟 Enceladus、D1 做同一套比較式排名與逐段校對。
 
 ## 重跑
 ```bash
 python3 -m pip install -r requirements.txt
-python3 podcast/make_podcast.py design                     # 建立 D1/D2 設計聲線（一年效期）
+python3 podcast/make_podcast.py design                     # 建立 D1/D2 設計聲線（閒置一年後過期）
 python3 podcast/make_podcast.py audition                   # 六個聲線同句試聽
 python3 podcast/compare_voices.py out/podcast/audition/*.wav
 python3 podcast/make_podcast.py episode --voice S3         # 逐段生成 + 音長檢查 + 自動重試
