@@ -1,0 +1,83 @@
+{
+ "segment": "s02_speed",
+ "position": "第 3 段，共 10 段",
+ "avoid": [
+  "應該說",
+  "真的假的"
+ ],
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "e9983f86a64a7ff23d95f402bc6b996d9b39cdbbb8f1bacb635b6bcc495f0a0b",
+ "previous_context": "這不是貼文作者的錯啦，網路轉傳本來就醬子。但如果你真的打算照著做，對，我們還是得回頭看正本。",
+ "original": {
+  "text": "好，我們先把骨架架起來。Felix 把野心拆成四種：速度、高度、深度、廣度。速度就是同一件事做得更快，他直接說這個大家都會，跳過。但我覺得這邊要幫他補一句：速度其實是另外三種的地基。你後面要跑驗證、要一直重試，每一圈都要夠便宜，才轉得起來。<short pause> 可是速度同時也是天花板。你做得越快，產出就越多，而每一份產出，最後都還是要有人看。這個我們等一下會再回來。",
+  "lint": {
+   "chars": 172,
+   "precise_numbers": [],
+   "enumerations": [],
+   "sentences": 8,
+   "avg_sentence_len": 20.5,
+   "max_sentence_len": 28,
+   "sentences_over_20": 5,
+   "particles_per_100": 0.0,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 1
+  }
+ },
+ "candidates": [
+  {
+   "text": "好，那我們先把正本的骨架抓出來。作者把野心拆成四個面向。就是速度、高度、深度，還有廣度。欸你猜他先跳過哪一個？他直接跳過速度耶。理由是這個大家都會嘛，不需要什麼創意。但我看到這邊，覺得還是得幫他補一下。速度其實是——我是說，它根本是地基。你要反覆重現 bug，成本夠低迴圈才轉得動。<short pause> 可是速度同時也是天花板喔。做得越快產出就越多，對吧？重點是，每一份產出最後都要有人看啊。<sigh> 這個我們等一下再回來講。",
+   "lint": {
+    "chars": 196,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 13,
+    "avg_sentence_len": 14.1,
+    "max_sentence_len": 20,
+    "sentences_over_20": 0,
+    "particles_per_100": 2.6,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "那正本裡面到底寫了什麼？作者把野心拆成四種。就是速度、高度、深度，還有廣度。速度就是同一件事花更少時間。作者直接把它跳過喔。他覺得這大家都會嘛，不需要創意。但我看到這邊，其實有點不同想法。<short pause>速度根本是另外三種的地基欸。模型要一直跑驗證、反覆重試，每一圈都要夠便宜，才轉得起來對吧？可是，呃不對，速度同時也是天花板。你做得越快，產出就越多。啊每一份產出，最後都還是要有人看。這個我們後面還會再聊到啦。",
+   "lint": {
+    "chars": 198,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 13,
+    "avg_sentence_len": 14.2,
+    "max_sentence_len": 30,
+    "sentences_over_20": 1,
+    "particles_per_100": 2.5,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 1
+   }
+  },
+  {
+   "text": "來看作者到底怎麼寫。他把野心拆成四種，就是速度、高度、深度還有廣度。速度就是花更少時間做同一件事。作者直接略過，那個，他直接跳過啦，覺得這個大家都會嘛。但速度真的不重要嗎？我覺得它其實是另外三種的地基。你後面要反覆重試、抓 bug，每一圈要夠便宜才轉得起來。<short pause> 重點來了，速度同時也是天花板。產出變超多，最後誰來看？對，還是要人看，這個我們晚點再聊。",
+   "lint": {
+    "chars": 172,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 10,
+    "avg_sentence_len": 16.2,
+    "max_sentence_len": 26,
+    "sentences_over_20": 3,
+    "particles_per_100": 1.2,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 1
+   }
+  }
+ ],
+ "chosen": 0
+}

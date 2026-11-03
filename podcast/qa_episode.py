@@ -14,6 +14,9 @@ from compare_voices import load, f0_track
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "out" / "podcast"
 SCRIPT = json.loads((ROOT / "podcast/script/ep01.json").read_text(encoding="utf-8"))
+_script_arg = next((x.split("=", 1)[1] for x in sys.argv[1:] if x.startswith("--script=")), None)
+if _script_arg:
+    SCRIPT = json.loads(Path(_script_arg).read_text(encoding="utf-8"))
 PROMPT = """你是台灣 podcast 的後製校對。聽這段音檔、對照原稿，只輸出 JSON：
 {"transcript": "你實際聽到的逐字稿（照實寫，含唸錯）",
  "misreadings": [{"word": "原稿詞", "heard": "實際唸法", "severity": "high 或 low"}],
@@ -52,6 +55,6 @@ def main(voices, only=None):
             print(f"{r['id']:16s} F0={r['f0_median']:6.1f} match={r['text_match']:.2f} {mis} {flags}")
 
 if __name__ == "__main__":
-    args = [a for a in sys.argv[1:] if not a.startswith("--only=")]
+    args = [a for a in sys.argv[1:] if not a.startswith(("--only=", "--script="))]
     only = next((a.split("=", 1)[1].split(",") for a in sys.argv[1:] if a.startswith("--only=")), None)
     main(args, only)

@@ -1,0 +1,91 @@
+{
+ "segment": "s01_copy",
+ "position": "第 2 段，共 10 段",
+ "avoid": [
+  "應該說",
+  "真的假的"
+ ],
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "8866f7c0ff794848d51c466946cd0887be498190ced26e53410fe1e8576292ed",
+ "previous_context": "但大家收藏完，真的有搞懂嗎？今天我們就來聊聊這件事啦。",
+ "original": {
+  "text": "那我今天要講的是，這則貼文其實只是一張複寫單的第二聯。就是以前那種三聯單啦，你拿原子筆用力寫，第一聯留在作者手上，傳出去的是第二聯，筆壓最重的那一行印得最清楚，其他的都淡掉了。原文是 Anthropic 的 Felix Rieseberg 寫的〈How to be more ambitious〉，大概八分鐘可以讀完。裡面有四種野心、深度的五招、兩次關於角色扮演的警告，還有一張基礎建設的帳單。結果貼文留下來的，大概就一招半。而且很好笑的是，它留下了最好記的那一招，丟掉了最重要的那一招。",
+  "lint": {
+   "chars": 235,
+   "precise_numbers": [],
+   "enumerations": [
+    "第二",
+    "第一",
+    "第二"
+   ],
+   "sentences": 6,
+   "avg_sentence_len": 38.2,
+   "max_sentence_len": 61,
+   "sentences_over_20": 5,
+   "particles_per_100": 0.4,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 0
+  }
+ },
+ "candidates": [
+  {
+   "text": "說實話，網路上那篇很紅的貼文，就很像三聯複寫單的第二聯。<short pause>那個筆壓最重的一行印得最清楚，其他字全都淡掉了，對吧？原文其實是整套扎實的架構，聊了野心、聊了深度跟廣度，甚至還提醒大家角色扮演有雷。結果傳到大家手上的副本，剩多少？大概就一招半。<laugh>然後最扯的是，它留下了最好記的那招，最關鍵的那招直接被丟掉。呃我是說，精華就這樣不見了。我看到這邊整個超傻眼，就是…最核心的東西怎麼反而沒寫？大家如果真的打算照著做，那就得回頭去翻正本啦。",
+   "lint": {
+    "chars": 212,
+    "precise_numbers": [],
+    "enumerations": [
+     "第二"
+    ],
+    "sentences": 9,
+    "avg_sentence_len": 22.6,
+    "max_sentence_len": 39,
+    "sentences_over_20": 6,
+    "particles_per_100": 0.9,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 2
+   }
+  },
+  {
+   "text": "那篇貼文其實沒有胡說喔。<short pause>\n但它就像以前那種三聯複寫單。\n用力壓下去的那一行最清楚，\n其他字全都淡掉了，你懂我意思嗎？\n原文裡面明明包山包海，\n有四種野心、一堆招數，\n甚至還有警告跟心理學耶。\n然後轉傳的副本留下了什麼？\n你猜剩多少？<short pause>\n大概就剩一招半吧。<laugh>\n我看到的時候超傻眼的。\n就是……換個方式講，\n它留下了最好記的那招，\n卻把最重要的一招給丟掉了。\n這不是貼文作者的錯啦，\n網路轉傳本來就醬子。\n但如果你真的打算照著做，\n對，我們還是得回頭看正本。",
+   "lint": {
+    "chars": 208,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 11,
+    "avg_sentence_len": 17.9,
+    "max_sentence_len": 33,
+    "sentences_over_20": 4,
+    "particles_per_100": 1.9,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 3
+   }
+  },
+  {
+   "text": "老實說，那篇貼文根本就像複寫單的第二聯。\n就是以前那種藍色複寫單啦。\n用力寫下去，只有壓最重的那行最清楚，\n其他的字，全部都淡掉了。\n<short pause>\n我看到原文的時候，整個人超傻眼。\n裡面其實塞了超多料，\n原本寫了一大堆...就是，光是野心就好幾種，\n還有好幾層階梯、好幾招深度技巧，\n甚至連基礎建設清單都有寫。\n那大家轉傳的貼文，最後留下了什麼？\n算一算，大概只剩下一招半吧。<laugh>\n更扯的是，\n它留下了最好記的那一招，\n卻把最重要的那一招給丟了。\n那個，這也不是貼文作者的錯啦，\n轉傳本來就是醬。\n但如果你真的想照著做，\n你猜要怎麼辦？\n當然只能回頭去看正本啊。",
+   "lint": {
+    "chars": 254,
+    "precise_numbers": [],
+    "enumerations": [
+     "第二"
+    ],
+    "sentences": 11,
+    "avg_sentence_len": 22.1,
+    "max_sentence_len": 60,
+    "sentences_over_20": 4,
+    "particles_per_100": 1.2,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  }
+ ],
+ "chosen": 1
+}

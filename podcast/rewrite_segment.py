@@ -24,6 +24,7 @@ def main(a):
     prompt = (prompt_body.replace("{{show}}", sc["show"]).replace("{{audience}}", sc["audience"])
               .replace("{{source}}", (ROOT / f"script/sources/{a.segment}.txt").read_text(encoding="utf-8").strip())
               .replace("{{current}}", seg["text"])
+              .replace("{{position}}", "單獨一段（測試用）").replace("{{previous}}", "（無）").replace("{{avoid}}", "（無）")
               .replace("{{min_chars}}", str(int(n * 0.8))).replace("{{max_chars}}", str(int(n * 1.2))))
     c = genai.Client(api_key=os.environ.get("GEMINI_API_KEY") or os.environ["gemini_key"])
     out = {"segment": a.segment, "model": a.model, "temperature": a.temperature,

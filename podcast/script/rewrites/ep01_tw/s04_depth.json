@@ -1,0 +1,106 @@
+{
+ "segment": "s04_depth",
+ "position": "第 5 段，共 10 段",
+ "avoid": [
+  "你猜",
+  "應該說",
+  "真的假的"
+ ],
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "7424291c7ae803e9f05dcb2dd001a37f8f5a5dfdfc08bc7310165d5e5bc6c9c5",
+ "previous_context": "問法永遠是最便宜的。讓模型有辦法回答那個問法，才是貴的地方。",
+ "original": {
+  "text": "第三種是深度，這邊有五招。第一招就是貼文的主題：叫模型扮演專家的時候，它常常只換詞彙，不換方法。<short pause> 但注意喔，原文沒有說角色 prompt 失效，它的處方也不是把角色拿掉，而是加上工具。模型想要畫一個 markdown 表格給你的時候，你要堅持叫它去開資料庫、跑統計模型。這跟你的 prompt 裡面有沒有寫「資深」兩個字，其實一點關係都沒有。第二到第四招也很好玩：訂一個不合理的目標，網站十秒要壓到五秒？直接要兩百毫秒。挑戰你自以為知道的事。還有，叫模型去產生新的知識。",
+  "lint": {
+   "chars": 228,
+   "precise_numbers": [
+    "兩百"
+   ],
+   "enumerations": [
+    "第三",
+    "第一",
+    "第二",
+    "第四"
+   ],
+   "sentences": 9,
+   "avg_sentence_len": 24.3,
+   "max_sentence_len": 40,
+   "sentences_over_20": 5,
+   "particles_per_100": 0.4,
+   "written_words": [
+    "處方"
+   ],
+   "mainland_words": [],
+   "questions": 1,
+   "tags": 1
+  }
+ },
+ "candidates": [
+  {
+   "text": "講到深度，作者列了幾招。\n第一招就是核心。\n叫模型扮演專家，它往往只換用詞。\n根本沒換方法嘛。\n這不是說角色 prompt 沒用啦。\n我是說——原文不是要你拿掉角色。\n而是要你塞工具給它。\n模型想丟 markdown 表格打發你？\n不行，逼它開資料庫、跑統計模型。\n這跟你 prompt 有沒有寫「資深」，根本沒差。\n我看到這段真的很有感。<laugh>\n後面幾招也超有意思。\n目標直接開到最極限。\n網站載入直接叫它壓到兩百毫秒。<short pause>\n你問模型會不會抗議？\n會啊，但你就跟它說這完全可以解。\n然後逼它挑戰你以為的常識。\n最後讓它從資料裡挖出新知識。",
+   "lint": {
+    "chars": 242,
+    "precise_numbers": [
+     "兩百"
+    ],
+    "enumerations": [
+     "第一"
+    ],
+    "sentences": 18,
+    "avg_sentence_len": 12.4,
+    "max_sentence_len": 22,
+    "sentences_over_20": 1,
+    "particles_per_100": 0.8,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  },
+  {
+   "text": "那要怎麼做？\n接下來要聊的是深度。\n作者整理了五招，第一招就超重要。\n大家很愛在 prompt 叫模型扮演專家。\n但它常常只換詞彙，根本沒換方法。\n這不是說角色 prompt 沒用啦，\n而是你要把工具塞給它。\n我看到這招超有感。\n模型想畫 markdown 表格敷衍？\n不行，叫它直接去開資料庫。\n這跟你有沒有寫資深，\n其實一點關係都沒有。\n然後第二招更扯，要訂不合理的目標。\n載入速度要壓多快？不對，\n我是說直接叫它做到兩百毫秒。<short pause>\n它說辦不到，你就堅持完全可解。\n叫它繼續想辦法。\n接著就是挑戰自以為知道的假設，\n還有逼模型去挖出全新的知識。",
+   "lint": {
+    "chars": 248,
+    "precise_numbers": [
+     "兩百"
+    ],
+    "enumerations": [
+     "第一",
+     "第二"
+    ],
+    "sentences": 16,
+    "avg_sentence_len": 14.5,
+    "max_sentence_len": 28,
+    "sentences_over_20": 2,
+    "particles_per_100": 0.4,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 1
+   }
+  },
+  {
+   "text": "講到這裡，第三種野心就是深度。作者整理了五招。大家很愛叫模型扮演專家對吧？結果超扯，它常常只換說法，不換方法。<short pause> 但作者不是說角色 prompt 沒用啦。我是說，呃，作者的意思是不能停在那裡。重點是加上真正的工具。模型想吐 markdown 表格敷衍你？直接叫它去連資料庫、跑統計模型。prompt 寫不寫資深，根本沒差。然後接下來幾招也超狂。像是故意訂出不合理的目標。載入時間要縮短？直接要求兩百毫秒。還有挑戰你自以為知道的事，甚至叫它去找出新知識。",
+   "lint": {
+    "chars": 219,
+    "precise_numbers": [
+     "兩百"
+    ],
+    "enumerations": [
+     "第三"
+    ],
+    "sentences": 15,
+    "avg_sentence_len": 13.6,
+    "max_sentence_len": 23,
+    "sentences_over_20": 1,
+    "particles_per_100": 0.9,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 3,
+    "tags": 1
+   }
+  }
+ ],
+ "chosen": 0
+}

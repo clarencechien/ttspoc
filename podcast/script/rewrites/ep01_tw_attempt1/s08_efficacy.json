@@ -1,0 +1,89 @@
+{
+ "segment": "s08_efficacy",
+ "position": "第 9 段，共 10 段",
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "b078e68d3008e68b2f2b0a7c9fe2bc424038166ee2e42f79cafb57677baedd45",
+ "previous_context": "每一輪驗證要多久，決定你能跑幾輪。能跑幾輪，前四招才能推得多深。",
+ "original": {
+  "text": "最後一段，Felix 講了一點心理學，叫自我效能，就是你相不相信自己做得到。心理學家 Bandura 說，自我效能有四個來源：親身的成功經驗、看別人做到、別人說服你，還有你當下的身心狀態。原文的例子，Bannister 跑進四分鐘、Dantzig 把未解問題當作業寫掉，大概對應到後面三個。<short pause> 唯獨缺了最強的那一個：親身的成功經驗。用 AI 也一樣，你看一百個別人的 showcase，都比不上自己把一個題目從開題跑到裁判，親手付一次帳單。替代經驗可以工業化，親身經驗不行。",
+  "lint": {
+   "chars": 227,
+   "precise_numbers": [
+    "一百"
+   ],
+   "enumerations": [],
+   "sentences": 6,
+   "avg_sentence_len": 36.8,
+   "max_sentence_len": 53,
+   "sentences_over_20": 4,
+   "particles_per_100": 0.0,
+   "written_words": [
+    "對應"
+   ],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 1
+  }
+ },
+ "candidates": [
+  {
+   "text": "聊完這些招式，作者最後聊到心理學。\n就是所謂的自我效能啦。\n講白一點，你到底相不相信自己做得到？\n欸你知道嗎？心理學家說信心有四個來源喔。\n像是看別人跑進四分鐘，或是有人跟你說這完全可解。\n原文舉了超多例子。\n那個，嗯，應該說他只講了後面三個。\n可是重點來了，最強的那個跑去哪了？\n就是親身的成功經驗嘛。<short pause>\n我看到這段真的超有感。\n大家都在看別人的 showcase，很厲害對不對？\n但你看了一百個，終究都是別人的。\n你自己有沒有從開題一路跑到裁判？\n有沒有醬親手付過一次帳單？\n替代經驗可以工業化，但親身經驗不行啊。",
+   "lint": {
+    "chars": 243,
+    "precise_numbers": [
+     "一百"
+    ],
+    "enumerations": [],
+    "sentences": 16,
+    "avg_sentence_len": 14.2,
+    "max_sentence_len": 23,
+    "sentences_over_20": 2,
+    "particles_per_100": 1.6,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 6,
+    "tags": 1
+   }
+  },
+  {
+   "text": "聊完前面那些，作者最後講了一點心理學。那個詞叫「自我效能」。白話講，就是你到底相不相信自己做得到。心理學家 Bandura 說，這有四個來源。看別人做、被說服，還有你當下的身心狀態。原文舉了一堆很神的例子。像有人跑進四分鐘，有人把難題當作業寫。但你有沒有發現哪裡怪怪的？對，重點來了。它偏偏漏掉了最強的那一個。<short pause>就是「親身的成功經驗」啦。我看到這裡真的超有感。這招，嗯，應該說用 AI 也是醬。你看了一百個別人的 showcase，有用嗎？完全比不上你自己跑一次完整迴圈。從自己開題、當裁判，到親手付一次帳單。別人的經驗可以工業化。但你自己的親身經驗不行喔。",
+   "lint": {
+    "chars": 273,
+    "precise_numbers": [
+     "一百"
+    ],
+    "enumerations": [],
+    "sentences": 18,
+    "avg_sentence_len": 14.2,
+    "max_sentence_len": 21,
+    "sentences_over_20": 1,
+    "particles_per_100": 0.7,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 1
+   }
+  },
+  {
+   "text": "聊完流程，Felix 聊到一個心理學概念喔。叫做自我效能，就是你相不相信自己做得到。心理學家 Bandura 說，這有好幾個來源。像是看別人做到，或是有人一直鼓勵你。原文舉了超扯的例子，把未解難題當作業寫。但我看到這裡，真的覺得哪裡怪怪的。你猜他漏了什麼？他偏偏漏掉最強的一個。<short pause>就是親身的成功經驗。這點，嗯，應該說是心態問題。放在用 AI 上面超明顯。你看了一百個酷炫的 showcase，又怎樣嘛？完全比不上你親手從開題跑到裁判。然後自己掏錢付一次帳單啦。看別人的經驗可以工業化。但親身經驗可不能醬混過去。",
+   "lint": {
+    "chars": 248,
+    "precise_numbers": [
+     "一百"
+    ],
+    "enumerations": [],
+    "sentences": 16,
+    "avg_sentence_len": 14.5,
+    "max_sentence_len": 22,
+    "sentences_over_20": 1,
+    "particles_per_100": 1.2,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 1
+   }
+  }
+ ],
+ "chosen": 1
+}

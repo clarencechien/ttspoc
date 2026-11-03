@@ -10,7 +10,7 @@ Text is spoken verbatim by 3.8 TTS; delivery goes in speech_metadata.style.
 Every segment is checked against the duration the text implies, because 3.8 TTS can
 stop early without returning an error (see experiments/pilot/latency_pilot.jsonl).
 """
-import argparse, base64, json, math, os, re, struct, subprocess, sys, time, wave
+import argparse, base64, json, math, os, re, shutil, struct, subprocess, sys, time, wave
 from pathlib import Path
 
 from google import genai
@@ -42,8 +42,22 @@ def client():
     return genai.Client(api_key=os.environ.get("GEMINI_API_KEY") or os.environ["gemini_key"])
 
 
-def load_script():
-    return json.loads(SCRIPT.read_text(encoding="utf-8"))
+def load_script(path=None):
+    return json.loads(Path(path or SCRIPT).read_text(encoding="utf-8"))
+
+
+def seg_dir(a):
+    """Output folder for one voice + script version, e.g. segments/D1 or segments/D1_tw."""
+    return OUT / "segments" / (f"{a.voice}_{a.tag}" if getattr(a, "tag", "") else a.voice)
+
+
+def long_pauses(path, min_len=0.6):
+    """Count pauses of at least min_len seconds (ignoring leading and trailing silence)."""
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-af", f"silencedetect=noise=-35dB:d={min_len}", "-f", "null", "-"],
+                       capture_output=True, text=True).stderr
+    starts = [float(x) for x in re.findall(r"silence_start: ([0-9.]+)", r)]
+    dur = wav_duration(path)
+    return sum(1 for t in starts if 0.2 < t < dur - 0.8)
 
 
 def spoken_chars(text):
@@ -141,7 +155,7 @@ def cmd_judge(a):
 
 
 def cmd_episode(a):
-    c = client(); sc = load_script(); d = OUT / "segments" / a.voice; d.mkdir(parents=True, exist_ok=True)
+    c = client(); sc = load_script(a.script); d = seg_dir(a); d.mkdir(parents=True, exist_ok=True)
     vid = voice_id(a.voice); log = []
     log_path = d / "log.json"
     old = {r["id"]: r for r in json.loads(log_path.read_text())} if log_path.exists() else {}
@@ -155,19 +169,32 @@ def cmd_episode(a):
         expected = spoken_chars(s["text"]) / CHARS_PER_SEC
         base = sc.get(f"base_style_{a.style}", sc["base_style"]) if a.style != "v1" else sc["base_style"]
         style = f"{base}。這一段：{s['mood']}"
-        for attempt in range(1, a.retries + 2):
-            if p.exists() and not a.force and attempt == 1:
-                wall, tok = 0.0, None
-            else:
-                wall, tok = tts(c, s["text"], style, vid, p)
-            dur = wav_duration(p); ratio = dur / expected
-            ok = OK_RATIO[0] <= ratio <= OK_RATIO[1]
-            print(f"{s['id']:16s} try{attempt} wall={wall:5.1f}s audio={dur:5.1f}s expected~{expected:5.1f}s ratio={ratio:4.2f} {'OK' if ok else 'RETRY'}")
-            if ok:
-                break
-            a.force = True  # cached file failed the check; regenerate
+        takes = []
+        for k in range(a.takes):
+            tp = p if a.takes == 1 else d / f"{s['id']}.take{k}.wav"
+            for attempt in range(1, a.retries + 2):
+                if tp.exists() and not a.force and attempt == 1:
+                    wall, tok = 0.0, None
+                else:
+                    wall, tok = tts(c, s["text"], style, vid, tp)
+                dur = wav_duration(tp); ratio = dur / expected
+                ok = OK_RATIO[0] <= ratio <= OK_RATIO[1]
+                lp = long_pauses(tp)
+                print(f"{s['id']:16s} take{k} try{attempt} wall={wall:5.1f}s audio={dur:5.1f}s expected~{expected:5.1f}s ratio={ratio:4.2f} pauses>=0.6s={lp} {'OK' if ok else 'RETRY'}")
+                if ok:
+                    break
+                a.force = True  # cached file failed the check; regenerate
+            a.force = a.force and bool(only)
+            takes.append({"path": tp, "ok": ok, "dur": dur, "ratio": ratio, "pauses": lp, "wall": wall, "tok": tok, "attempt": attempt})
+        # pick: passes the duration check, then fewest long pauses per minute, then shorter
+        best = min(takes, key=lambda t: (not t["ok"], t["pauses"] / max(t["dur"], 1) * 60, t["dur"]))
+        if best["path"] != p:
+            shutil.copyfile(best["path"], p)
+        dur, ratio, ok, wall, tok, attempt = best["dur"], best["ratio"], best["ok"], best["wall"], best["tok"], best["attempt"]
         log.append({"id": s["id"], "attempts": attempt, "audio_s": round(dur, 2), "expected_s": round(expected, 1),
-                    "ratio": round(ratio, 2), "ok": ok, "wall_s": round(wall, 1), "tokens": tok})
+                    "ratio": round(ratio, 2), "ok": ok, "wall_s": round(wall, 1), "tokens": tok,
+                    "takes": [{"file": t["path"].name, "audio_s": round(t["dur"], 1), "pauses_ge_0_6s": t["pauses"], "ok": t["ok"]} for t in takes],
+                    "chosen": best["path"].name})
         a.force = False
     (d / "log.json").write_text(json.dumps(log, ensure_ascii=False, indent=1))
     bad = [r["id"] for r in log if not r["ok"]]
@@ -200,7 +227,7 @@ def silence(path, seconds):
 
 
 def cmd_master(a):
-    sc = load_script(); d = OUT / "segments" / a.voice; m = OUT / "master"; m.mkdir(parents=True, exist_ok=True)
+    sc = load_script(a.script); d = seg_dir(a); m = OUT / "master"; m.mkdir(parents=True, exist_ok=True)
     synth_sting(m / "intro.wav", rising=True); synth_sting(m / "outro.wav", rising=False)
     silence(m / "gap.wav", 0.6); silence(m / "lead.wav", 0.4)
     seq = [m / "intro.wav", m / "lead.wav"]
@@ -209,11 +236,12 @@ def cmd_master(a):
         if i < len(sc["segments"]) - 1:
             seq.append(m / "gap.wav")
     seq += [m / "lead.wav", m / "outro.wav"]
-    lst = m / f"concat_{a.voice}.txt"
+    name = f"{a.voice}_{a.tag}" if a.tag else a.voice
+    lst = m / f"concat_{name}.txt"
     lst.write_text("".join(f"file '{p.resolve()}'\n" for p in seq))
-    raw = m / f"ep01_{a.voice}_raw.wav"
+    raw = m / f"ep01_{name}_raw.wav"
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(raw)], check=True)
-    mp3 = OUT / f"ep01_{a.voice}.mp3"
+    mp3 = OUT / f"ep01_{name}.mp3"
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(raw),
                     "-af", "highpass=f=70,acompressor=threshold=-20dB:ratio=2.5:attack=10:release=200,loudnorm=I=-16:TP=-1.5:LRA=11",
                     "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "128k",
@@ -228,7 +256,7 @@ if __name__ == "__main__":
     sub.add_parser("design")
     p = sub.add_parser("audition"); p.add_argument("--voices", default="")
     p = sub.add_parser("judge"); p.add_argument("files", nargs="+"); p.add_argument("--text"); p.add_argument("--out")
-    p = sub.add_parser("episode"); p.add_argument("--voice", required=True); p.add_argument("--retries", type=int, default=2); p.add_argument("--force", action="store_true"); p.add_argument("--only", default="", help="comma-separated segment ids to regenerate"); p.add_argument("--style", choices=["v1", "v2", "v3", "v4"], default="v1", help="v2 = confident and rhythmic but drifts toward a broadcast accent; v3 = rhythmic and Taiwanese-leaning; v4 = v3 plus explicit Taiwan Mandarin phonetic traits and an amateur feel")
-    p = sub.add_parser("master"); p.add_argument("--voice", required=True)
+    p = sub.add_parser("episode"); p.add_argument("--voice", required=True); p.add_argument("--retries", type=int, default=2); p.add_argument("--force", action="store_true"); p.add_argument("--only", default="", help="comma-separated segment ids to regenerate"); p.add_argument("--script", default=None, help="script JSON, default podcast/script/ep01.json"); p.add_argument("--tag", default="", help="suffix for the segments folder and output, e.g. tw"); p.add_argument("--takes", type=int, default=1, help="takes per segment; keeps the one with fewest long pauses"); p.add_argument("--style", choices=["v1", "v2", "v3", "v4"], default="v1", help="v2 = confident and rhythmic but drifts toward a broadcast accent; v3 = rhythmic and Taiwanese-leaning; v4 = v3 plus explicit Taiwan Mandarin phonetic traits and an amateur feel")
+    p = sub.add_parser("master"); p.add_argument("--voice", required=True); p.add_argument("--script", default=None); p.add_argument("--tag", default="")
     a = ap.parse_args()
     {"design": cmd_design, "audition": cmd_audition, "judge": cmd_judge, "episode": cmd_episode, "master": cmd_master}[a.cmd](a)
