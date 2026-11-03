@@ -95,3 +95,17 @@
 
 - 聲紋模型是 Resemblyzer，用英文訓練，每個模型只測一句、三次，所以只能看趨勢。
 - 2.5 與 3.1 的 TTS 模型最早可能在 2026-11-17 下架；3.8 目前沒有公布下架日期。
+
+## script-rewrite/：稿子口語化與語氣調整
+第五招加行星案例那一段，全部用 D1 系列聲線，響度統一為 -16 LUFS，方便公平比較。
+
+| 檔案 | 稿子 | 語氣 | 聲線與後製 |
+|---|---|---|---|
+| `s05_v1_old-script_old-style_d1.mp3` | 原稿 | v1 慵懶偏慢 | D1 |
+| `s05_v2_new-script_old-style_d1.mp3` | 改寫稿，一句一行 | v1 | D1 |
+| `s05_v3_new-script_new-style_d1.mp3` | 改寫稿，段落排版 | v2 自信有節奏 | D1，盲評第一 |
+| `s05_v4_new-script_new-style_d1_warm-eq.mp3` | 同 v3 | v2 | D1 加溫和等化 eqA，較厚較暖 |
+| `s05_v5_new-script_new-style_d1-remix-raspy.mp3` | 同 v3 | v2 | D1 remix「沙啞電台」D1M2 |
+| `s05_v6_new-script_new-style_d1-remix-confident.mp3` | 同 v3 | v2 | D1 remix「磁性自信」D1M1 |
+
+數據與結論在 `podcast/RESULTS.md` 的「稿子口語化與 D1 語氣調整」。

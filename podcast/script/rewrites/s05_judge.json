@@ -1,0 +1,58 @@
+{
+ "segment": "s05_judge",
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_file": "podcast/prompts/spoken_script_zh-TW.md",
+ "prompt_sha256": "abc4ea59bc61c831e4f251dfbf00528f7e46ed586034f9523841db182ffc0f70",
+ "original": {
+  "text": "但第五招，才是我覺得整篇的保險絲。Felix 這邊只寫了一句，而且語氣是用拜託的：Do not ask the model to judge itself. 不要讓模型評它自己。<short pause> 前面四招都在把模型往深處推，推得越深，你越看不到它在幹嘛。第五招，是唯一一招往回拉的。<short pause> 原文開頭有提到一個超讚的例子：一位業餘天文愛好者，用 Claude Code 分析 NASA 的 TESS 光變資料，發現一顆恆星每三點一八天會變暗百分之零點零五，推估是一點四倍地球大小的行星候選。他兩個禮拜跑了七十四次分析、上千個 script。<short pause> 但重點不是他問模型「這是不是行星」，而是一直叫模型想辦法證明它不是。他還把一部分資料遮起來，叫模型預測遮住的那幾段什麼時候會變暗，猜對了才算數。這個，就是外部裁判。",
+  "lint": {
+   "chars": 321,
+   "precise_numbers": [
+    "三點一八",
+    "百分之零點零五",
+    "一點四",
+    "七十四",
+    "千"
+   ],
+   "enumerations": [
+    "第五",
+    "第五"
+   ],
+   "sentences": 9,
+   "avg_sentence_len": 34.7,
+   "max_sentence_len": 91,
+   "sentences_over_20": 6,
+   "particles_per_100": 0.3,
+   "written_words": [
+    "推估"
+   ],
+   "questions": 0,
+   "tags": 3
+  }
+ },
+ "candidates": [
+  {
+   "text": "第五招，才是我覺得整篇的保險絲。\n作者甚至是用懇求的語氣寫的喔。\n他說，千萬不要讓模型審查它自己。\n前面四招都在把模型往深處推。\n推得越深，你越看不見它在幹嘛。<short pause>\n如果沒有第五招拉住，\n所謂野心，就只是叫模型更敢講。\n我看到這邊真的很有共鳴。<laugh>\n你看原文提到那個找行星的例子。\n有人用 Claude Code 分析 NASA 資料，\n抓到一個每三點一八天變暗的訊號。\n這目前還只是候選天體啦。\n他兩週跑了上千個 script。\n但你猜他怎麼驗證的？\n他可不是問模型：這是不是行星？\n更狠的是，\n他逼模型自己想辦法證明它不是！\n他還把一部分資料蓋住，\n叫模型預測被遮住的地方何時變暗。\n猜對了才算數嘛。\n這就是作者最在意的外部裁判。",
+   "lint": {
+    "chars": 287,
+    "precise_numbers": [
+     "三點一八",
+     "千"
+    ],
+    "enumerations": [
+     "第五",
+     "第五"
+    ],
+    "sentences": 17,
+    "avg_sentence_len": 15.9,
+    "max_sentence_len": 37,
+    "sentences_over_20": 3,
+    "particles_per_100": 1.4,
+    "written_words": [],
+    "questions": 2,
+    "tags": 2
+   }
+  }
+ ]
+}

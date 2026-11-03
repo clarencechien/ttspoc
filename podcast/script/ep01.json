@@ -4,6 +4,8 @@
   "source": "https://imitator.ai-apps.work/r/fifth-move",
   "audience": "工程師、想搞懂 AI 的人",
   "base_style": "深夜科技 podcast 的台灣男主持人，台灣國語口音，聲音低沉有磁性、慵懶放鬆，像半夜跟朋友聊天，偶爾自嘲嘴砲，語速中等偏慢，英文技術名詞用台灣工程師平常的自然唸法",
+  "base_style_v2": "台灣男主持人，台灣國語口音，聲音低沉、胸腔共鳴飽滿、有磁性。語氣自信篤定、不遲疑，像資深的深夜科技電台主持人在分享一件讓他很興奮的事。節奏明快有起伏，語速中等，句子一口氣講完，只在重點前短暫停頓，句尾俐落不拖長。英文技術名詞自然帶過。",
+  "base_style_v2_note": "2026-11-03 行星段實驗：v1 的「慵懶、語速偏慢、壓低聲音」造成停頓過多、聽起來畏縮；v2 加上段落排版（不要一句一行）後，長停頓從 5 到 6 次降到 0 到 3 次。見 podcast/RESULTS.md",
   "audition_text": "欸，我跟你講，那個「讓 app 保持零 crash」聽起來很帥齁，但他得先讓 Claude 自己抓 crash report，知道哪個版本對應哪個 git commit，還要給它 Windows、macOS、Linux 三台電腦。<laugh> 所以這不是 prompt，這是一張帳單啦。",
   "segments": [
     {"id": "s00_open", "mood": "開場，慵懶、帶鉤子，像剛坐到麥克風前",

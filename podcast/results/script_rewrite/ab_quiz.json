@@ -1,0 +1,75 @@
+{
+ "ab": [
+  {
+   "more_natural_chat": "rewrite",
+   "easier_to_follow": "rewrite",
+   "better_rhythm": "rewrite",
+   "odd_pauses": {
+    "original": "00:06 英文引用前後停頓略顯生硬、00:36 數據描述處語速拖慢不自然",
+    "rewrite": ""
+   },
+   "reason": "B 版加入自然的語氣詞與互動感，敘事起伏流暢，聽起來像在生動分享而不是照稿宣讀。"
+  },
+  {
+   "more_natural_chat": "rewrite",
+   "easier_to_follow": "rewrite",
+   "better_rhythm": "rewrite",
+   "odd_pauses": {
+    "rewrite": "",
+    "original": "在 00:15、00:25、00:50 等處有較為突兀且刻意的嘆氣停頓"
+   },
+   "reason": "A 語調自然且有互動感，B 夾雜英文朗讀與過多刻意設計的嘆氣，聽起來念稿與表演痕跡較重。"
+  },
+  {
+   "more_natural_chat": "rewrite",
+   "easier_to_follow": "rewrite",
+   "better_rhythm": "rewrite",
+   "odd_pauses": {
+    "original": "00:05 Felix這邊只寫了一句，停頓過於刻板像念稿",
+    "rewrite": ""
+   },
+   "reason": "B 版語氣生動且口語化，互動感與對話感強烈，節奏比 A 版的照稿念讀自然許多。"
+  },
+  {
+   "more_natural_chat": "rewrite",
+   "easier_to_follow": "rewrite",
+   "better_rhythm": "rewrite",
+   "odd_pauses": {
+    "rewrite": "",
+    "original": "0:42-0:46 念數據與百分比時停頓較生硬"
+   },
+   "reason": "A 篇幅適中、口氣非常生活化且消化了艱澀數據，比 B 像在真實對話且資訊更好吸收。"
+  }
+ ],
+ "quiz": {
+  "original": {
+   "verification_method": "不直接問模型這是不是行星，而是一直叫模型想辦法證明它不是；另外把一部分資料遮起來，讓模型預測被遮住的區段何時會變暗，猜對了才算數（外部裁判驗證）。",
+   "signal": "一顆恆星每 3.18 天會變暗 0.05%，推估是一顆約 1.4 倍地球大小的行星候選訊號。",
+   "numbers_remembered": [
+    "第五招：整篇技巧的保險絲，也是唯一往回拉的一招",
+    "前面四招：把模型往深處推的方法",
+    "3.18 天：恆星變暗的週期",
+    "0.05%：恆星變暗的幅度",
+    "1.4 倍：推估行星候選的天體為地球大小的 1.4 倍",
+    "兩個禮拜：進行分析研究的時間長度",
+    "74 次：執行的分析次數",
+    "上千個：跑過的腳本（scripts）數量"
+   ],
+   "main_point": "Do not ask the model to judge itself（不要讓模型評它自己）。",
+   "confidence_1to5": 5
+  },
+  "rewrite": {
+   "verification_method": "不直接問模型這是不是行星，而是逼模型自己想辦法證明它『不是』；同時把一部分資料遮蓋起來，讓模型去預測被遮住的地方何時會變暗，猜對了才算數（外部裁判驗證）。",
+   "signal": "用 Claude 分析 NASA 資料時抓到的一個候選天體訊號，特徵是每 3.18 天會變暗一次。",
+   "numbers_remembered": [
+    "第五招：整篇技巧中最關鍵的保險絲，避免模型自我審查",
+    "前四招：把模型往深處推、容易讓人看不清模型在幹嘛的方法",
+    "3.18天：天體訊號變暗的週期",
+    "兩週：跑資料與分析的時間長度",
+    "上千個：兩週內跑的 script（腳本）數量"
+   ],
+   "main_point": "千萬不要讓模型審查它自己（必須仰賴外部裁判與嚴格的驗證機制）。",
+   "confidence_1to5": 5
+  }
+ }
+}
