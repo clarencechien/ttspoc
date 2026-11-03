@@ -1,0 +1,96 @@
+{
+ "segment": "s00_open",
+ "position": "第 1 段，共 2 段（第一段）",
+ "avoid": [],
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "8d226dd4d7809abb5a617cb47e129dea84df43b00e25893e933c4095103d1e7f",
+ "previous_context": "（這是第一段，沒有上一段）",
+ "original": {
+  "text": "歡迎收聽深夜 Debug。今天很短，只講一件事：那則轉傳貼文有三個地方跟原文對不上。第一，OpenAI 發表 o1 時給的四條建議，沒有一條是叫你別用角色扮演。第二，原文沒說角色 prompt 失效，它說的是角色只換詞彙不換方法，解法是加上工具。",
+  "lint": {
+   "chars": 117,
+   "precise_numbers": [
+    "1"
+   ],
+   "enumerations": [
+    "第一",
+    "第二"
+   ],
+   "sentences": 4,
+   "avg_sentence_len": 28.2,
+   "max_sentence_len": 40,
+   "sentences_over_20": 3,
+   "particles_per_100": 0.0,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 0
+  }
+ },
+ "candidates": [
+  {
+   "text": "歡迎收聽深夜 Debug。\n今天聊聊被狂轉的那篇貼文。\n我看完超傻眼，內容跟原文根本對不上。<short pause>\n有人說 OpenAI 叫大家別用角色扮演，\n欸真的假的？根本沒有。\n官方給的四條建議，完全沒提這件事，\n那是作者自己的推論啦。\n然後說角色 prompt 失效？\n也不是失效，是它只換詞彙沒換方法，\n解法其實是加上工具，而不是拿掉角色。",
+   "lint": {
+    "chars": 150,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 8,
+    "avg_sentence_len": 17.8,
+    "max_sentence_len": 34,
+    "sentences_over_20": 3,
+    "particles_per_100": 1.3,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 1
+   }
+  },
+  {
+   "text": "歡迎收聽深夜 Debug。\n我看到那篇轉傳貼文超傻眼，\n裡面居然有幾點跟原文對不上。\n第一，OpenAI 發表 o1 的四條建議，\n有叫大家別用角色扮演嗎？\n完全沒有喔。<short pause>\n然後那個角色 prompt，\n原文說失效了嗎？\n其實不是啦，\n應該說，它只是換詞彙不換方法，\n解法是叫你加上工具。",
+   "lint": {
+    "chars": 128,
+    "precise_numbers": [
+     "1"
+    ],
+    "enumerations": [
+     "第一"
+    ],
+    "sentences": 6,
+    "avg_sentence_len": 20.3,
+    "max_sentence_len": 30,
+    "sentences_over_20": 3,
+    "particles_per_100": 1.6,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 2,
+    "tags": 1
+   }
+  }
+ ],
+ "chosen": 0,
+ "manual_edits": [
+  {
+   "from": "我看完超傻眼，內容跟原文根本對不上。",
+   "to": "我看完超傻眼，有三個地方跟原文對不上。",
+   "reason": "誇大：原文是三處不符，不是全部對不上"
+  }
+ ],
+ "final": {
+  "text": "歡迎收聽深夜 Debug。今天聊聊被狂轉的那篇貼文。我看完超傻眼，有三個地方跟原文對不上。<short pause>有人說 OpenAI 叫大家別用角色扮演，欸真的假的？根本沒有。官方給的四條建議，完全沒提這件事，那是作者自己的推論啦。然後說角色 prompt 失效？也不是失效，是它只換詞彙沒換方法，解法其實是加上工具，而不是拿掉角色。",
+  "lint": {
+   "chars": 151,
+   "precise_numbers": [],
+   "enumerations": [],
+   "sentences": 8,
+   "avg_sentence_len": 17.9,
+   "max_sentence_len": 34,
+   "sentences_over_20": 3,
+   "particles_per_100": 1.3,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 2,
+   "tags": 1
+  }
+ }
+}

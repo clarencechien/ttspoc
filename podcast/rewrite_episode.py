@@ -1,11 +1,14 @@
-"""Rewrite every segment of ep01 into Taiwanese spoken style and assemble podcast/script/ep01_tw.json.
+"""Rewrite every segment of a draft script into Taiwanese spoken style.
 
-  python podcast/rewrite_episode.py [--n 3] [--model gemini-3.8-flash]
+  python podcast/rewrite_episode.py --draft podcast/script/<ep>.json [--out podcast/script/<ep>_tw.json] [--n 3] [--resume]
+
+Source excerpts are read from podcast/script/sources/<ep>/<segment_id>.txt (ep01 used podcast/script/sources/ directly).
+Moods come from each draft segment's "mood" (ep01's original moods are overridden by LEGACY_EP01_MOODS).
 
 Segments are rewritten in order; each prompt gets the previous segment's last two sentences so the
 episode flows, and its position so only the first segment opens the show and only the last one closes it.
 Per-segment candidates, lint results and the chosen index go to podcast/script/rewrites/ep01_tw/<id>.json.
-Moods are rewritten here to match base_style_v4 (no "lazy", "low voice" or broadcaster cues).
+Per-segment candidates, lint results and the chosen index go to podcast/script/rewrites/<out stem>/<id>.json.
 """
 import argparse, hashlib, json, os, re, sys
 from pathlib import Path
@@ -16,7 +19,8 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 from script_lint import lint
 
-MOODS = {
+LEGACY_EP01_MOODS = {   # ep01's draft moods said 慵懶/壓低聲音, which made delivery timid; these replace them
+   
     "s00_open": "開場，輕鬆，像剛按下錄音鍵跟朋友打招呼",
     "s01_copy": "講故事，帶點吐槽",
     "s02_speed": "輕鬆解說，條理清楚",
@@ -44,10 +48,15 @@ def last_sentences(text, k=2):
     return "".join(parts[-k:])
 
 def main(a):
-    sc = json.loads((ROOT / "script/ep01.json").read_text(encoding="utf-8"))
+    draft = Path(a.draft); sc = json.loads(draft.read_text(encoding="utf-8"))
+    out_path = Path(a.out) if a.out else draft.with_name(draft.stem + "_tw.json")
+    src_dir = ROOT / "script/sources" / draft.stem
+    if not src_dir.is_dir():
+        src_dir = ROOT / "script/sources"          # ep01 layout
+    mood_of = lambda seg: (LEGACY_EP01_MOODS.get(seg["id"]) if draft.stem == "ep01" else None) or seg["mood"]
     body = (ROOT / "prompts/spoken_script_zh-TW.md").read_text(encoding="utf-8").split("\n---\n", 1)[1]
     c = genai.Client(api_key=os.environ.get("GEMINI_API_KEY") or os.environ["gemini_key"])
-    outdir = ROOT / "script/rewrites/ep01_tw"; outdir.mkdir(parents=True, exist_ok=True)
+    outdir = ROOT / "script/rewrites" / out_path.stem; outdir.mkdir(parents=True, exist_ok=True)
     segs = sc["segments"]; new_segments = []; previous = "（這是第一段，沒有上一段）"
     used = {k: 0 for k in PHRASE_CAPS}
     for i, seg in enumerate(segs):
@@ -58,14 +67,14 @@ def main(a):
             text = rec["candidates"][rec["chosen"]]["text"].replace("\n", "")
             for k, v in phrase_counts(text).items():
                 used[k] += v
-            new_segments.append({"id": seg["id"], "mood": MOODS[seg["id"]], "text": text})
+            new_segments.append({"id": seg["id"], "mood": mood_of(seg), "text": text})
             previous = last_sentences(text)
             print(f"{seg['id']:16s} resumed (chose {rec['chosen']})")
             continue
         n = lint(seg["text"])["chars"]
         pos = f"第 {i + 1} 段，共 {len(segs)} 段" + ("（第一段）" if i == 0 else "（最後一段）" if i == len(segs) - 1 else "")
         prompt = (body.replace("{{show}}", sc["show"]).replace("{{audience}}", sc["audience"])
-                  .replace("{{source}}", (ROOT / f"script/sources/{seg['id']}.txt").read_text(encoding="utf-8").strip())
+                  .replace("{{source}}", (src_dir / f"{seg['id']}.txt").read_text(encoding="utf-8").strip())
                   .replace("{{current}}", seg["text"]).replace("{{position}}", pos).replace("{{previous}}", previous)
                   .replace("{{min_chars}}", str(int(n * 0.8))).replace("{{max_chars}}", str(int(n * 1.2))))
         avoid = [k for k, cap in PHRASE_CAPS.items() if used[k] >= cap]
@@ -89,20 +98,22 @@ def main(a):
                "original": {"text": seg["text"], "lint": lint(seg["text"])}, "candidates": cands, "chosen": best}
         (outdir / f"{seg['id']}.json").write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
         text = cands[best]["text"].replace("\n", "")
-        new_segments.append({"id": seg["id"], "mood": MOODS[seg["id"]], "text": text})
+        new_segments.append({"id": seg["id"], "mood": mood_of(seg), "text": text})
         previous = last_sentences(text)
         L = cands[best]["lint"]
         print(f"{seg['id']:16s} chose {best}  chars {n}->{L['chars']}  avg_sent {L['avg_sentence_len']}  nums {L['precise_numbers']}  mainland {L['mainland_words']}  avoid {avoid}")
     out = {k: v for k, v in sc.items() if k != "segments"}
     out["episode"] = sc["episode"] + "（台灣口語版）"
-    out["note"] = "由 rewrite_episode.py 依 prompts/spoken_script_zh-TW.md 改寫；人工修正記在 script/rewrites/ep01_tw/<id>.json 的 manual_edits"
+    out["note"] = f"由 rewrite_episode.py 依 prompts/spoken_script_zh-TW.md 改寫；人工修正記在 script/rewrites/{out_path.stem}/<id>.json 的 manual_edits"
     out["segments"] = new_segments
     out["phrase_usage"] = used
-    (ROOT / "script/ep01_tw.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    out_path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    print("wrote", out_path)
     print("phrase usage:", {k: v for k, v in used.items() if v})
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--n", type=int, default=3)
+    ap.add_argument("--draft", default=str(ROOT / "script/ep01.json")); ap.add_argument("--out")
     ap.add_argument("--model", default="gemini-3.8-flash"); ap.add_argument("--temperature", type=float, default=0.8)
     ap.add_argument("--resume", action="store_true", help="reuse segments already written to script/rewrites/ep01_tw/")
     main(ap.parse_args())

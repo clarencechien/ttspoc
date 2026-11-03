@@ -1,0 +1,10 @@
+# Extra packages for the podcast QA steps (blind STT, consistency checks). Install with `python3 -m pip install -r requirements-qa.txt`.
+# torch (CPU) must come first, from the PyTorch index:
+#   python3 -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+faster-whisper>=1.2
+opencc-python-reimplemented
+pypinyin
+resemblyzer
+# only needed once, to convert Breeze-ASR-25 to CTranslate2 (see podcast/PIPELINE.md, step 0)
+transformers<5
+pillow

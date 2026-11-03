@@ -65,8 +65,18 @@ def spoken_chars(text):
 
 
 def registry():
-    p = OUT / "voices.json"
-    return json.loads(p.read_text()) if p.exists() else {}
+    """Designed-voice IDs. out/ is not in git, so fall back to the committed copy in podcast/results/."""
+    for p in (OUT / "voices.json", ROOT / "podcast" / "results" / "voices.json"):
+        if p.exists():
+            return json.loads(p.read_text())
+    return {}
+
+
+def style_text(sc, version):
+    """Base delivery style: the script's own base_style_<v> if present, else podcast/styles.json."""
+    if version == "v1":
+        return sc.get("base_style") or json.loads((ROOT / "podcast" / "styles.json").read_text(encoding="utf-8"))["v1"]
+    return sc.get(f"base_style_{version}") or json.loads((ROOT / "podcast" / "styles.json").read_text(encoding="utf-8"))[version]
 
 
 def voice_id(key):
@@ -164,14 +174,14 @@ def cmd_episode(a):
         if only and s["id"] not in only:
             if s["id"] in old: log.append(old[s["id"]])
             continue
-        if only: a.force = True
+        if only and not a.add_takes: a.force = True
         p = d / f"{s['id']}.wav"
         expected = spoken_chars(s["text"]) / CHARS_PER_SEC
-        base = sc.get(f"base_style_{a.style}", sc["base_style"]) if a.style != "v1" else sc["base_style"]
-        style = f"{base}。這一段：{s['mood']}"
+        style = f"{style_text(sc, a.style)}。這一段：{s['mood']}"
         takes = []
-        for k in range(a.takes):
-            tp = p if a.takes == 1 else d / f"{s['id']}.take{k}.wav"
+        first = len(list(d.glob(f"{s['id']}.take*.wav"))) if a.add_takes else 0   # keep existing takes, add new ones after them
+        for k in range(first, first + (a.add_takes or a.takes)):
+            tp = p if (a.takes == 1 and not a.add_takes) else d / f"{s['id']}.take{k}.wav"
             for attempt in range(1, a.retries + 2):
                 if tp.exists() and not a.force and attempt == 1:
                     wall, tok = 0.0, None
@@ -302,9 +312,10 @@ def cmd_master(a):
         print("segment loudness before:", " ".join(f"{x['lufs_before']}" for x in levels), f"-> all {a.seg_lufs} LUFS")
     lst = m / f"concat_{name}.txt"
     lst.write_text("".join(f"file '{p.resolve()}'\n" for p in seq))
-    raw = m / f"ep01_{name}_raw.wav"
+    stem = Path(a.script).stem if a.script else "ep01"
+    raw = m / f"{stem}_{name}_raw.wav"
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(raw)], check=True)
-    mp3 = OUT / f"ep01_{name}.mp3"
+    mp3 = OUT / f"{stem}_{name}.mp3"
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(raw),
                     "-af", "highpass=f=70,acompressor=threshold=-20dB:ratio=2.5:attack=10:release=200,loudnorm=I=-16:TP=-1.5:LRA=11",
                     "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "128k",
@@ -319,7 +330,7 @@ if __name__ == "__main__":
     sub.add_parser("design")
     p = sub.add_parser("audition"); p.add_argument("--voices", default="")
     p = sub.add_parser("judge"); p.add_argument("files", nargs="+"); p.add_argument("--text"); p.add_argument("--out")
-    p = sub.add_parser("episode"); p.add_argument("--voice", required=True); p.add_argument("--retries", type=int, default=2); p.add_argument("--force", action="store_true"); p.add_argument("--only", default="", help="comma-separated segment ids to regenerate"); p.add_argument("--script", default=None, help="script JSON, default podcast/script/ep01.json"); p.add_argument("--tag", default="", help="suffix for the segments folder and output, e.g. tw"); p.add_argument("--takes", type=int, default=1, help="takes per segment; keeps the one with fewest long pauses"); p.add_argument("--style", choices=["v1", "v2", "v3", "v4", "v5"], default="v1", help="v2 = confident and rhythmic but drifts toward a broadcast accent; v3 = rhythmic and Taiwanese-leaning; v4 = v3 plus explicit Taiwan Mandarin phonetic traits and an amateur feel; v5 = v4 plus clear tones (in ep01_tw.json)")
+    p = sub.add_parser("episode"); p.add_argument("--voice", required=True); p.add_argument("--retries", type=int, default=2); p.add_argument("--force", action="store_true"); p.add_argument("--only", default="", help="comma-separated segment ids to regenerate"); p.add_argument("--script", default=None, help="script JSON, default podcast/script/ep01.json"); p.add_argument("--tag", default="", help="suffix for the segments folder and output, e.g. tw"); p.add_argument("--takes", type=int, default=1, help="takes per segment; keeps the one with fewest long pauses"); p.add_argument("--add-takes", type=int, default=0, help="with --only: render N more takes after the existing ones, leaving them untouched"); p.add_argument("--style", choices=["v1", "v2", "v3", "v4", "v5"], default="v1", help="v2 = confident and rhythmic but drifts toward a broadcast accent; v3 = rhythmic and Taiwanese-leaning; v4 = v3 plus explicit Taiwan Mandarin phonetic traits and an amateur feel; v5 = v4 plus clear tones (in ep01_tw.json)")
     p = sub.add_parser("master"); p.add_argument("--voice", required=True); p.add_argument("--script", default=None); p.add_argument("--tag", default="")
     p.add_argument("--seg-lufs", type=float, default=-20.0, help="bring every segment to this loudness before joining; pass nan to skip")
     p.add_argument("--match-eq", action="store_true", help="tonal matching: EQ each segment toward the episode's median spectrum")

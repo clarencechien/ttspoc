@@ -1,0 +1,120 @@
+{
+ "limits": {
+  "neighbour_sim": 0.93,
+  "pitch_hz": 6.0,
+  "centroid_hz": 350.0,
+  "lufs_db": 1.0
+ },
+ "segments": [
+  {
+   "id": "s00_open",
+   "start": "0:03",
+   "pitch_hz": 93.0,
+   "centroid_hz": 2671,
+   "lufs": -20.0,
+   "sim_prev": null,
+   "sim_next": 0.98,
+   "sim_episode": 0.99,
+   "issues": []
+  },
+  {
+   "id": "s01_copy",
+   "start": "0:39",
+   "pitch_hz": 90.9,
+   "centroid_hz": 2673,
+   "lufs": -20.0,
+   "sim_prev": 0.98,
+   "sim_next": 0.965,
+   "sim_episode": 0.984,
+   "issues": []
+  },
+  {
+   "id": "s02_speed",
+   "start": "1:23",
+   "pitch_hz": 93.8,
+   "centroid_hz": 2331,
+   "lufs": -20.0,
+   "sim_prev": 0.965,
+   "sim_next": 0.976,
+   "sim_episode": 0.983,
+   "issues": []
+  },
+  {
+   "id": "s03_altitude",
+   "start": "2:00",
+   "pitch_hz": 91.6,
+   "centroid_hz": 2702,
+   "lufs": -20.0,
+   "sim_prev": 0.976,
+   "sim_next": 0.969,
+   "sim_episode": 0.99,
+   "issues": []
+  },
+  {
+   "id": "s04_depth",
+   "start": "3:00",
+   "pitch_hz": 94.5,
+   "centroid_hz": 2573,
+   "lufs": -20.0,
+   "sim_prev": 0.969,
+   "sim_next": 0.968,
+   "sim_episode": 0.981,
+   "issues": []
+  },
+  {
+   "id": "s05_judge",
+   "start": "3:51",
+   "pitch_hz": 92.3,
+   "centroid_hz": 2330,
+   "lufs": -20.0,
+   "sim_prev": 0.968,
+   "sim_next": 0.965,
+   "sim_episode": 0.989,
+   "issues": []
+  },
+  {
+   "id": "s06_range",
+   "start": "4:57",
+   "pitch_hz": 96.2,
+   "centroid_hz": 2427,
+   "lufs": -20.0,
+   "sim_prev": 0.965,
+   "sim_next": 0.961,
+   "sim_episode": 0.983,
+   "issues": []
+  },
+  {
+   "id": "s07_resolution",
+   "start": "5:49",
+   "pitch_hz": 94.5,
+   "centroid_hz": 2493,
+   "lufs": -20.0,
+   "sim_prev": 0.961,
+   "sim_next": 0.952,
+   "sim_episode": 0.98,
+   "issues": []
+  },
+  {
+   "id": "s08_efficacy",
+   "start": "6:50",
+   "pitch_hz": 90.2,
+   "centroid_hz": 2478,
+   "lufs": -20.0,
+   "sim_prev": 0.952,
+   "sim_next": 0.955,
+   "sim_episode": 0.978,
+   "issues": []
+  },
+  {
+   "id": "s09_outro",
+   "start": "7:41",
+   "pitch_hz": 94.5,
+   "centroid_hz": 2451,
+   "lufs": -20.0,
+   "sim_prev": 0.955,
+   "sim_next": null,
+   "sim_episode": 0.984,
+   "issues": []
+  }
+ ]
+}
