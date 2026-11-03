@@ -38,15 +38,29 @@
 |---|---|---|---|
 | Enceladus | `gemini-3.8-flash-tts` | `Enceladus` | 隨模型下架 |
 | Charon、Algieba、Umbriel | `gemini-3.8-flash-tts` | 同名 | 隨模型下架 |
-| D1 磁性深夜 | `gemini-3.8-flash-tts` | `voice_b3c8x0jsntqc` | 2027-11-03 |
-| D2 工程師學長 | `gemini-3.8-flash-tts` | `voice_e51ofjtjia55` | 2027-11-03 |
+| D1 磁性深夜 | `gemini-3.8-flash-tts` | `voice_b3c8x0jsntqc` | 閒置一年後，目前顯示 2027-11-03 |
+| D2 工程師學長 | `gemini-3.8-flash-tts` | `voice_e51ofjtjia55` | 閒置一年後，目前顯示 2027-11-03 |
 | EL0 | `eleven_v4` | `NgphutLJuu0MWBHCgcXK` | 不會自動過期 |
 | EL1 | `eleven_v4` | `75JywuJ8Qm0zEIhLabLL` | 不會自動過期 |
 | EL2 | `eleven_v4` | `VWBBlPIiQsGsFmdcqUAz` | 不會自動過期 |
 
 要重現聲音，必須同時固定聲線和模型：
 - **Gemini 內建聲線**：同一個模型內聲音一致。換模型後名稱還在，但聲音會漂移，見 `model-drift/`。
-- **Gemini 設計聲線**：一年效期，API 沒有延期功能，用同一段描述重新設計會得到不同的聲音。
+- **Gemini 設計聲線**：閒置一年才會過期。SDK 文件寫明拿來合成或當作 `base_voice` 會延長效期，但 2026-11-03 當天實測沒有立即更新，還在確認。沒有種子參數，過期後無法做出一模一樣的聲音，只能用下面的方法做出相近的聲音。
+
+### D1 重現測試（2026-11-03）
+同一句試聽稿，跟 D1 的參考錄音比聲紋相似度：
+
+| 方法 | 相似度 |
+|---|---|
+| 原本的 D1 再念三次 | 0.95 |
+| 以 D1 為 `base_voice` 做 remix，描述寫「完全不要改變」 | 0.93 |
+| 用一模一樣的描述重新設計，兩次 | 0.89–0.91 |
+| 其他聲線（Enceladus、Charon） | 0.74–0.77 |
+
+- remix 最接近，但不是同一個聲音。它要在 D1 還存在時才能做，可以當作備份聲線。
+- 重新設計會落在相近的音域和口音，但每次都不同，要多做幾個再用 `match_voice.py` 挑最接近的。
+- 測試建立的聲線已刪除。
 - **ElevenLabs 設計聲線**：存在帳號裡不會過期。設計時固定了 seed 20261103，同 seed 加同描述可以重新設計出同一個聲音。同一個聲線 ID 換用 v3 或 v4，聲音也會不同。
 
 ## design-previews/：聲線設計預覽

@@ -87,7 +87,7 @@
 ## 重跑
 ```bash
 python3 -m pip install -r requirements.txt
-python3 podcast/make_podcast.py design                     # 建立 D1/D2 設計聲線（一年效期）
+python3 podcast/make_podcast.py design                     # 建立 D1/D2 設計聲線（閒置一年後過期）
 python3 podcast/make_podcast.py audition                   # 六個聲線同句試聽
 python3 podcast/compare_voices.py out/podcast/audition/*.wav
 python3 podcast/make_podcast.py episode --voice S3         # 逐段生成 + 音長檢查 + 自動重試
