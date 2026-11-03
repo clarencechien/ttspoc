@@ -5,6 +5,8 @@ words. Here two independent recognisers transcribe blind:
   whisper  faster-whisper large-v3-turbo on CPU (open model, not Gemini)
   gemini   gemini-3.8-flash asked to transcribe only, marking unclear words
 A script span that BOTH recognisers miss is flagged as likely unintelligible.
+The local recogniser can be Whisper large-v3-turbo or Breeze-ASR-25 (--asr breeze); report keys keep the
+"whisper_" prefix for compatibility, and the report's "asr" field says which one was used.
 
   python podcast/stt_check.py --script podcast/script/ep01_tw.json --segments out/podcast/segments/D1_tw [--out report.json]
 """
@@ -69,22 +71,34 @@ def misses(ref, hyp):
                     "context": ref[max(0, i1 - 6):i1] + "【" + ref[i1:i2] + "】" + ref[i2:i2 + 6], "hyp_pos": j1})
     return out
 
+ASR_MODELS = {
+    # local CTranslate2 int8 conversion of the official MediaTek-Research/Breeze-ASR-25 (Whisper-large-v2 fine-tuned
+    # for Taiwanese Mandarin and Mandarin-English code-switching):
+    #   ct2-transformers-converter --model MediaTek-Research/Breeze-ASR-25 --output_dir <dir> --quantization int8 \
+    #       --copy_files tokenizer.json preprocessor_config.json
+    "breeze": os.environ.get("BREEZE_CT2", "/home/user/models/breeze-asr-25-ct2-int8"),
+    "whisper": "large-v3-turbo",
+}
+ASR = "whisper"
+
 def whisper_transcribe(paths):
     from faster_whisper import WhisperModel
-    m = WhisperModel("large-v3-turbo", device="cpu", compute_type="int8")
+    m = WhisperModel(ASR_MODELS[ASR], device="cpu", compute_type="int8")
     res = {}
     for p in paths:
         import wave
         with wave.open(str(p)) as w:
             dur = w.getnframes() / w.getframerate()
-        kw = dict(language="zh", beam_size=5, vad_filter=True, initial_prompt="以下是台灣華語的科技 podcast，繁體中文。")
+        kw = dict(language="zh", beam_size=5, vad_filter=True)
+        if ASR == "whisper":   # Breeze is used as published, without a prompt
+            kw["initial_prompt"] = "以下是台灣華語的科技 podcast，繁體中文。"
         segs = list(m.transcribe(str(p), **kw)[0])
         if segs and segs[-1].end > dur + 1.0:
             # Whisper hallucinated past the end of the audio and kept feeding on its own text; retry without that context
             print(f"  whisper {p.stem}: timestamps run to {segs[-1].end:.0f}s on {dur:.0f}s of audio, retrying")
             segs = list(m.transcribe(str(p), condition_on_previous_text=False, temperature=0.0, **kw)[0])
         res[p.stem] = {"text": "".join(s.text for s in segs), "segments": [(round(s.start, 2), s.text) for s in segs]}
-        print(f"  whisper {p.stem}: {res[p.stem]['text'][:40]}…")
+        print(f"  {ASR} {p.stem}: {res[p.stem]['text'][:40]}…")
     return res
 
 GEMINI_PROMPT = ("請逐字聽寫這段台灣華語音檔。只輸出你聽到的文字，用繁體中文，數字照念出來的寫成中文。"
@@ -119,7 +133,8 @@ def main(a):
     else:
         print("transcribing with whisper…"); W = whisper_transcribe(paths)
         print("transcribing with gemini…"); G = gemini_transcribe(paths)
-    report = {"script": a.script, "method": "blind STT (Whisper large-v3-turbo + Gemini 3.8 Flash), pinyin filter drops homophones", "segments": []}
+    report = {"script": a.script, "asr": ASR, "asr_model": ASR_MODELS[ASR],
+              "method": f"blind STT ({ASR} + Gemini 3.8 Flash), tone-aware pinyin filter drops exact homophones", "segments": []}
     t = 3.6   # intro sting 3.2 s + lead 0.4 s; 0.6 s gaps between segments (make_podcast.cmd_master)
     for s, p in zip(sc["segments"], paths):
         ref = norm(s["text"], conv); wh, ge = norm(W[p.stem]["text"], conv), norm(G[p.stem]["text"], conv)
@@ -145,15 +160,17 @@ def main(a):
         t += dur + 0.6
     if a.out:
         Path(a.out).write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"\n{'段落':16s} {'Whisper CER':>11s} {'Gemini CER':>10s} {'發音不同':>8s} {'兩邊都錯':>8s}")
+    print(f"\n{'段落':16s} {ASR + ' CER':>11s} {'Gemini CER':>10s} {'發音不同':>8s} {'兩邊都錯':>8s}")
     for r in report["segments"]:
         print(f"{r['id']:16s} {r['cer_whisper']:11.3f} {r['cer_gemini']:10.3f} {len(r['flagged']):8d} {sum(1 for x in r['flagged'] if x['by']=='both'):8d}")
     print("\n聽起來跟稿子不同的地方（同音字已排除；時間是整集裡的位置）：")
     for r in report["segments"]:
         for x in r["flagged"]:
-            print(f"  {x['episode_time']:>5s} {r['id']:15s} [{x['by']:7s}] 稿子「{x['script']}」 Whisper「{x['whisper_heard']}」 Gemini「{x['gemini_heard']}」  …{x['context']}…")
+            print(f"  {x['episode_time']:>5s} {r['id']:15s} [{x['by']:7s}] 稿子「{x['script']}」 {ASR}「{x['whisper_heard']}」 Gemini「{x['gemini_heard']}」  …{x['context']}…")
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--script", required=True); ap.add_argument("--segments", required=True)
     ap.add_argument("--out"); ap.add_argument("--reuse", help="report JSON from an earlier run; skips transcription")
-    main(ap.parse_args())
+    ap.add_argument("--asr", choices=list(ASR_MODELS), default="whisper", help="local recogniser: whisper large-v3-turbo or Breeze-ASR-25")
+    a = ap.parse_args(); ASR = a.asr
+    main(a)

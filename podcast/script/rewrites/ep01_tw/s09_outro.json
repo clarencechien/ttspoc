@@ -97,5 +97,34 @@
    }
   }
  ],
- "chosen": 2
+ "chosen": 2,
+ "manual_edits": [
+  {
+   "from": "作者自己有留時間戳啦",
+   "to": "作者自己有留時間戳記啦",
+   "reason": "「時間戳」被聽成「時間出」；台灣常說「時間戳記」",
+   "round": "clarity"
+  }
+ ],
+ "final": {
+  "text": "好啦，聊到最後，有幾件事一定要帶走。第一，給模型電腦跟資料。這是前提，不是選項喔。第二，往深處推，要配模型以外的裁判。第三，野心的帳單先付，問法最後再煩惱。那個，原文其實幾分鐘就看完了。轉傳來轉傳去，漏掉的剛好最貴。<short pause>對了，作者自己有留時間戳記啦。他說不要讓模型評自己，但那只是二零二六年十月的判斷。之後模型變強會改嗎？他覺得會喔。所以大家讀這篇，我是說聽這集的時候，記得先看一下日期啦。<laugh>今天的深夜 Debug 就到這邊。我們下次見，掰掰！",
+  "lint": {
+   "chars": 217,
+   "precise_numbers": [],
+   "enumerations": [
+    "第一",
+    "第二",
+    "第三"
+   ],
+   "sentences": 14,
+   "avg_sentence_len": 14.5,
+   "max_sentence_len": 27,
+   "sentences_over_20": 2,
+   "particles_per_100": 2.3,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 1,
+   "tags": 2
+  }
+ }
 }
