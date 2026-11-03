@@ -14,6 +14,7 @@
 | `ep01_gemini-3.8-flash_enceladus.mp3` | Gemini `gemini-3.8-flash-tts` | 內建 Enceladus | 8:11 | 第 1 |
 | `ep01_gemini-3.8-flash_d1-magnetic-night.mp3` | Gemini `gemini-3.8-flash-tts` | 設計聲線 D1 磁性深夜 | 8:30 | 第 2 |
 | `ep01_elevenlabs-v4_el1.mp3` | ElevenLabs `eleven_v4` | 設計聲線 EL1 | 7:14 | 第 3 |
+| `ep01-tw_gemini-3.8-flash_d1_style-v4.mp3` | Gemini `gemini-3.8-flash-tts` | D1，台灣口語稿 `ep01_tw.json` + v4 語氣 | 8:29 | 尚未排名 |
 
 - 三集都是 128 kbps 單聲道 mp3，響度約 -16.7 LUFS，片頭片尾是程式合成的短音效。
 - 排名、逐段校對與成本在 `podcast/RESULTS.md`。
