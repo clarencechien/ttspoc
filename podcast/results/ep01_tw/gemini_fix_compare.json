@@ -1,0 +1,18 @@
+{
+ "舊版 v4（修正前）": {
+  "breeze_cer": 0.0358,
+  "gemini_cer": 0.0316,
+  "flagged": 29,
+  "both": 4,
+  "pauses_per_min": 6.9,
+  "speech_min": 8.3
+ },
+ "新版 v5 + 改稿 + 依清晰度挑選": {
+  "breeze_cer": 0.0299,
+  "gemini_cer": 0.0177,
+  "flagged": 26,
+  "both": 1,
+  "pauses_per_min": 7.7,
+  "speech_min": 8.6
+ }
+}
