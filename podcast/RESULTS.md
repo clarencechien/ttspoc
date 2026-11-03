@@ -2,7 +2,7 @@
 
 來源文章：〈記住了第一招，漏掉了第五招〉 https://imitator.ai-apps.work/r/fifth-move
 成品：「深夜 Debug」EP01，兩個聲線各一集，約 8 分鐘，Gemini 3.8 Flash TTS 生成。
-音檔在 `out/podcast/`（不進 git），重跑指令見最下方。
+音檔整理在 `podcast/samples/`（索引見該資料夾的 README），重跑指令見最下方；重跑時的中間檔仍輸出到 `out/podcast/`（不進 git）。
 
 ## 結論
 - **整條流程一次跑通**：10 段、每段 166–341 字，兩個聲線共 20 段，第一次生成就全部通過音長檢查，沒有出現 pilot 裡的長文截斷。
