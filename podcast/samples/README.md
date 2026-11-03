@@ -103,9 +103,10 @@
 |---|---|---|---|
 | `s05_v1_old-script_old-style_d1.mp3` | 原稿 | v1 慵懶偏慢 | D1 |
 | `s05_v2_new-script_old-style_d1.mp3` | 改寫稿，一句一行 | v1 | D1 |
-| `s05_v3_new-script_new-style_d1.mp3` | 改寫稿，段落排版 | v2 自信有節奏 | D1，盲評第一 |
+| `s05_v3_new-script_new-style_d1.mp3` | 改寫稿，段落排版 | v2 自信有節奏 | D1，自動盲評第一，但真人聽起來偏大陸腔 |
 | `s05_v4_new-script_new-style_d1_warm-eq.mp3` | 同 v3 | v2 | D1 加溫和等化 eqA，較厚較暖 |
 | `s05_v5_new-script_new-style_d1-remix-raspy.mp3` | 同 v3 | v2 | D1 remix「沙啞電台」D1M2 |
 | `s05_v6_new-script_new-style_d1-remix-confident.mp3` | 同 v3 | v2 | D1 remix「磁性自信」D1M1 |
 
+真人試聽：v2 最台灣，v3、v4 偏大陸腔；Gemini 評審的口音排名正好相反，口音以真人判斷為準。
 數據與結論在 `podcast/RESULTS.md` 的「稿子口語化與 D1 語氣調整」。

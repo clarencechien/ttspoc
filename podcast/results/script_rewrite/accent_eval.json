@@ -1,0 +1,74 @@
+{
+ "accent_borda": {
+  "s05_v1_old-script_old-style_d1.mp3": 3,
+  "s05_v2_new-script_old-style_d1.mp3": 8,
+  "s05_v3_new-script_new-style_d1.mp3": 16,
+  "s05_v4_new-script_new-style_d1_warm-eq.mp3": 16,
+  "s05_v5_new-script_new-style_d1-remix-raspy.mp3": 11,
+  "s05_v6_new-script_new-style_d1-remix-confident.mp3": 9
+ },
+ "accent_scores": {
+  "s05_v1_old-script_old-style_d1.mp3": [
+   3.0,
+   3,
+   4
+  ],
+  "s05_v2_new-script_old-style_d1.mp3": [
+   4.1,
+   5,
+   5
+  ],
+  "s05_v3_new-script_new-style_d1.mp3": [
+   4.9,
+   5,
+   5
+  ],
+  "s05_v4_new-script_new-style_d1_warm-eq.mp3": [
+   5,
+   5,
+   5
+  ],
+  "s05_v5_new-script_new-style_d1-remix-raspy.mp3": [
+   5,
+   4,
+   5
+  ],
+  "s05_v6_new-script_new-style_d1-remix-confident.mp3": [
+   4.3,
+   4,
+   5
+  ]
+ },
+ "mainland_notes": {
+  "s05_v1_old-script_old-style_d1.mp3": [
+   "「深處」、「審查」等字捲舌音較重，咬字字正腔圓，帶有較明顯的播音員或知識型說書播客腔調。",
+   "無明顯兒化或捲舌，但句尾字音收得較硬（如「評它自己」、「外部裁判」），語調起伏與停頓略顯生硬刻意，較缺乏台灣華語自然的尾音延展",
+   "整體語調稍帶朗讀感，部分字音咬字略顯字正腔圓，但仍屬台灣口音範疇"
+  ],
+  "s05_v2_new-script_old-style_d1.mp3": [
+   "語調偏低沉且句尾字音偶爾收得較實、較硬，帶有微弱的普通話錄音腔調。",
+   "",
+   ""
+  ],
+  "s05_v3_new-script_new-style_d1.mp3": [
+   "",
+   "",
+   ""
+  ],
+  "s05_v4_new-script_new-style_d1_warm-eq.mp3": [
+   "",
+   "",
+   ""
+  ],
+  "s05_v5_new-script_new-style_d1-remix-raspy.mp3": [
+   "",
+   "語速較慢且低沉，部分字詞咬字稍顯刻意與字正腔圓（如「審查」、「深處」捲舌略明顯），但整體仍屬台灣口音",
+   ""
+  ],
+  "s05_v6_new-script_new-style_d1-remix-confident.mp3": [
+   "部分詞彙（如「訊號」、「天體」）咬字稍顯刻意與用力，略帶普通話朗讀感。",
+   "節奏偏快，句尾收束較為俐落乾脆（如「保險絲」、「它自己」），稍微帶有一點點廣播播音腔的緊湊感",
+   ""
+  ]
+ }
+}
