@@ -1,0 +1,261 @@
+{
+ "objective": [
+  {
+   "file": "D1_磁性深夜.wav",
+   "f0_median_hz": 93.8,
+   "f0_p10_p90": [
+    82.5,
+    110.1
+   ],
+   "centroid_hz": 1754,
+   "duration_s": 21.2
+  },
+  {
+   "file": "EL0_eleven_v3.wav",
+   "f0_median_hz": 120.6,
+   "f0_p10_p90": [
+    102.6,
+    146.3
+   ],
+   "centroid_hz": 1325,
+   "duration_s": 17.0
+  },
+  {
+   "file": "EL0_eleven_v4.wav",
+   "f0_median_hz": 135.6,
+   "f0_p10_p90": [
+    107.6,
+    201.7
+   ],
+   "centroid_hz": 1814,
+   "duration_s": 18.4
+  },
+  {
+   "file": "EL1_eleven_v3.wav",
+   "f0_median_hz": 118.8,
+   "f0_p10_p90": [
+    96.4,
+    184.6
+   ],
+   "centroid_hz": 1158,
+   "duration_s": 17.7
+  },
+  {
+   "file": "EL1_eleven_v4.wav",
+   "f0_median_hz": 146.3,
+   "f0_p10_p90": [
+    101.7,
+    218.2
+   ],
+   "centroid_hz": 1623,
+   "duration_s": 17.7
+  },
+  {
+   "file": "EL2_eleven_v3.wav",
+   "f0_median_hz": 125.7,
+   "f0_p10_p90": [
+    91.6,
+    165.5
+   ],
+   "centroid_hz": 1658,
+   "duration_s": 18.6
+  },
+  {
+   "file": "EL2_eleven_v4.wav",
+   "f0_median_hz": 134.1,
+   "f0_p10_p90": [
+    100.4,
+    208.5
+   ],
+   "centroid_hz": 2056,
+   "duration_s": 19.2
+  },
+  {
+   "file": "S3_Enceladus.wav",
+   "f0_median_hz": 114.8,
+   "f0_p10_p90": [
+    92.3,
+    149.1
+   ],
+   "centroid_hz": 2879,
+   "duration_s": 21.1
+  }
+ ],
+ "rankings": [
+  {
+   "ranking": [
+    "S3_Enceladus.wav",
+    "D1_磁性深夜.wav",
+    "EL1_eleven_v4.wav",
+    "EL0_eleven_v4.wav",
+    "EL2_eleven_v4.wav",
+    "EL2_eleven_v3.wav",
+    "EL0_eleven_v3.wav",
+    "EL1_eleven_v3.wav"
+   ],
+   "winner_reason": "音檔 G 完美契合所有設定：具備極具磁性的深沉胸腔共鳴，語氣慵懶自然如深夜微醺與朋友吐苦水；笑聲與嘆氣等自嘲細節極為生動，英文專有名詞的處理也非常放鬆流暢，是深夜科技電台主持人的不二人選。",
+   "per_clip": {
+    "EL1_eleven_v4.wav": {
+     "taiwan_accent": "標準且道地的台灣年輕人口吻，語助詞與尾音極為自然。",
+     "magnetic_low": "音色偏清亮、清脆，缺乏深夜廣播的厚實低沉感。",
+     "weakness": "整體聲線偏高偏薄，較像下午的輕鬆對談而非深夜時段。"
+    },
+    "EL0_eleven_v3.wav": {
+     "taiwan_accent": "台灣腔調自然，但咬字偏含糊鬆散。",
+     "magnetic_low": "音調偏低但欠缺共鳴與磁性，聽感略顯平板。",
+     "weakness": "英文技術詞（如 Claude、commit）發音不夠流暢自然，略顯生硬。"
+    },
+    "EL2_eleven_v3.wav": {
+     "taiwan_accent": "口音道地，具有台灣男生的日常語氣。",
+     "magnetic_low": "音域適中偏平，磁性與顆粒感不強烈。",
+     "weakness": "情緒起伏稍嫌機械化，自嘲的放鬆氛圍略顯刻意。"
+    },
+    "EL0_eleven_v4.wav": {
+     "taiwan_accent": "語調生動自然，台灣口語的節奏感掌握良好。",
+     "magnetic_low": "音色偏明亮清朗，較缺乏沈穩低頻。",
+     "weakness": "聲音活力過於充沛，不符合深夜電台的慵懶放鬆感。"
+    },
+    "D1_磁性深夜.wav": {
+     "taiwan_accent": "語氣極度慵懶，非常像半夜跟好友私下講話。",
+     "magnetic_low": "低頻相當充足且帶有沙啞氣音，很有夜晚氛圍。",
+     "weakness": "咬字過於鬆散無力，氣息稍嫌不足導致部分字句略有濁感。"
+    },
+    "EL1_eleven_v3.wav": {
+     "taiwan_accent": "台灣口語表達流暢。",
+     "magnetic_low": "缺乏低沉磁性，音質偏乾薄。",
+     "weakness": "語速過於急促趕進度，完全喪失深夜科技節目的慵懶自嘲風格。"
+    },
+    "S3_Enceladus.wav": {
+     "taiwan_accent": "道地台灣口音，語尾嘆息與輕笑極具臨場感與生活化自嘲。",
+     "magnetic_low": "標準深夜廣播的胸腔共鳴低音砲，磁性厚實且極具包覆感。",
+     "weakness": "節奏非常緩慢，在短篇幅下需要聽眾沉澱心情聆聽。"
+    },
+    "EL2_eleven_v4.wav": {
+     "taiwan_accent": "口音自然，笑意表達真實。",
+     "magnetic_low": "聲線偏中高音，共鳴感稍弱。",
+     "weakness": "聲音偏乾扁且調性偏亮，深夜陪伴感稍嫌不足。"
+    }
+   }
+  },
+  {
+   "ranking": [
+    "S3_Enceladus.wav",
+    "EL2_eleven_v4.wav",
+    "EL1_eleven_v4.wav",
+    "EL0_eleven_v4.wav",
+    "D1_磁性深夜.wav",
+    "EL1_eleven_v3.wav",
+    "EL2_eleven_v3.wav",
+    "EL0_eleven_v3.wav"
+   ],
+   "winner_reason": "音檔 E 擁有無可比擬的低沉磁性嗓音與胸腔共鳴，完美契合「深夜科技電台」所需要的微醺、慵懶感；其說話節奏慢條斯理、像在身旁跟朋友吐苦水，自嘲與英文專有名詞的過渡渾然天成，是唯一真正具備深夜節目靈魂的主持聲線。",
+   "per_clip": {
+    "EL1_eleven_v3.wav": {
+     "taiwan_accent": "語調非常道地自然，語尾助詞使用生動。",
+     "magnetic_low": "音調偏高偏亮，節奏偏快，缺少深夜電台的沉靜感。",
+     "weakness": "整體風格偏向白天科技 YouTuber 或說書節目，缺少深夜放鬆與磁性魅力。"
+    },
+    "EL2_eleven_v4.wav": {
+     "taiwan_accent": "口音道地自然，笑聲與嘆氣等口語細節極具臨場感。",
+     "magnetic_low": "聲線屬中音域，雖未到極低沉，但語感放鬆親切。",
+     "weakness": "厚重磁性稍弱，低音共鳴不如 E 突出。"
+    },
+    "EL0_eleven_v3.wav": {
+     "taiwan_accent": "有台灣國語特徵，但咬字有明顯含糊與發音瑕疵。",
+     "magnetic_low": "聲音略顯沉悶無力，共鳴不足。",
+     "weakness": "「聽起來」發音失真為「慶起來」，英文名詞處理也較生硬。"
+    },
+    "EL2_eleven_v3.wav": {
+     "taiwan_accent": "語調接近台灣日常口語，但有咬字缺陷。",
+     "magnetic_low": "音質中規中矩，缺乏磁性共鳴與沉浸感。",
+     "weakness": "關鍵字「聽起來」發音嚴重跑偏成「慶起來」，影響聽感。"
+    },
+    "S3_Enceladus.wav": {
+     "taiwan_accent": "道地的台灣男聲，語尾助詞「吼」、「啦」極為自然。",
+     "magnetic_low": "完美的深夜電台低沉菸嗓/微醺共鳴，慵懶且極富磁性。",
+     "weakness": "語速偏慢且音量稍輕，需注意後期增益與背景音樂平衡。"
+    },
+    "D1_磁性深夜.wav": {
+     "taiwan_accent": "台灣腔調自然，語氣隨興。",
+     "magnetic_low": "聲音確實低沉，但過於氣音與低語化，有疲倦氣息。",
+     "weakness": "聽感略帶氣喘或過度疲倦，深夜感過頭而稍嫌無精打采。"
+    },
+    "EL1_eleven_v4.wav": {
+     "taiwan_accent": "口音與聊天感極佳，自嘲笑聲自然。",
+     "magnetic_low": "音色清亮流暢，但缺乏低音頻率的溫暖磁性。",
+     "weakness": "整體氛圍偏日常輕鬆聊天，較少深夜電台主持人的低頻包覆感。"
+    },
+    "EL0_eleven_v4.wav": {
+     "taiwan_accent": "咬字標準且具台灣口語特色，發音比 C、D 正確。",
+     "magnetic_low": "聲線偏中音，放鬆度不錯但磁性共鳴平淡。",
+     "weakness": "自嘲與慵懶情緒稍微平鋪直敘，亮點不夠鮮明。"
+    }
+   }
+  },
+  {
+   "ranking": [
+    "S3_Enceladus.wav",
+    "D1_磁性深夜.wav",
+    "EL0_eleven_v4.wav",
+    "EL1_eleven_v4.wav",
+    "EL2_eleven_v4.wav",
+    "EL1_eleven_v3.wav",
+    "EL2_eleven_v3.wav",
+    "EL0_eleven_v3.wav"
+   ],
+   "winner_reason": "音檔 G 完美兼具深夜電台所需的低沉磁性共鳴與台灣日常聊天的慵懶鬆弛感，自嘲笑意與英文技術詞銜接極為自然，氣氛營造無可挑剔。",
+   "per_clip": {
+    "EL2_eleven_v3.wav": {
+     "taiwan_accent": "口音自然貼近台灣日常，但語調偏平。",
+     "magnetic_low": "音色中等偏亮，缺乏深夜電台的低沉包覆感。",
+     "weakness": "節奏略顯緊湊平鋪直敘，少了慵懶和自嘲的趣味。"
+    },
+    "EL1_eleven_v3.wav": {
+     "taiwan_accent": "口音道地，語助詞使用自然。",
+     "magnetic_low": "聲音較亮且扁，沒有磁性感。",
+     "weakness": "講話語氣偏急促，像一般日常解說而非深夜放鬆聊天。"
+    },
+    "EL1_eleven_v4.wav": {
+     "taiwan_accent": "台灣腔調自然且生活化。",
+     "magnetic_low": "音質清亮，雖有親和力但低音厚度不足。",
+     "weakness": "聲線偏年輕活潑，深夜氛圍較弱。"
+    },
+    "EL0_eleven_v3.wav": {
+     "taiwan_accent": "部分發音略帶刻意感，咬字不夠鬆弛。",
+     "magnetic_low": "聲音偏乾且單薄，缺乏磁性共鳴。",
+     "weakness": "英文名詞念法生硬，整體語感不夠流暢自然。"
+    },
+    "EL0_eleven_v4.wav": {
+     "taiwan_accent": "口音非常道地自然，對話感強烈。",
+     "magnetic_low": "聲線偏中音，放鬆度高但低沉度尚可。",
+     "weakness": "音色偏清爽陽光，深夜電台的厚重磁性略嫌不足。"
+    },
+    "EL2_eleven_v4.wav": {
+     "taiwan_accent": "語調非常自然，有台灣男生聊天的鬆弛感。",
+     "magnetic_low": "音色中音偏亮，磁性表現一般。",
+     "weakness": "笑聲與語氣雖好，但整體聲線不夠低沉。"
+    },
+    "S3_Enceladus.wav": {
+     "taiwan_accent": "台灣口音極其自然，語氣慵懶放鬆且自嘲感十足。",
+     "magnetic_low": "低沉醇厚且自帶胸腔共鳴，完全符合深夜電台氛圍。",
+     "weakness": "語速偏慢且部分字句氣音較多，但剛好切合深夜風格。"
+    },
+    "D1_磁性深夜.wav": {
+     "taiwan_accent": "台灣腔調明顯，語調隨性放鬆。",
+     "magnetic_low": "音色極為低沉且沙啞有磁性，深夜感強烈。",
+     "weakness": "咬字偶爾過度含糊，英文名詞發音流暢度略遜於 G。"
+    }
+   }
+  }
+ ],
+ "borda": {
+  "D1_磁性深夜.wav": 18,
+  "EL0_eleven_v3.wav": 4,
+  "EL0_eleven_v4.wav": 16,
+  "EL1_eleven_v3.wav": 7,
+  "EL1_eleven_v4.wav": 17,
+  "EL2_eleven_v3.wav": 7,
+  "EL2_eleven_v4.wav": 15,
+  "S3_Enceladus.wav": 24
+ }
+}

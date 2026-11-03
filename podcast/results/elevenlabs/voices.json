@@ -1,0 +1,21 @@
+{
+ "EL0": {
+  "voice_id": "NgphutLJuu0MWBHCgcXK",
+  "generated_voice_id": "NgphutLJuu0MWBHCgcXK",
+  "preview_secs": 24.11375,
+  "language": "zh"
+ },
+ "EL1": {
+  "voice_id": "75JywuJ8Qm0zEIhLabLL",
+  "generated_voice_id": "75JywuJ8Qm0zEIhLabLL",
+  "preview_secs": 21.7105,
+  "language": "zh"
+ },
+ "EL2": {
+  "voice_id": "VWBBlPIiQsGsFmdcqUAz",
+  "generated_voice_id": "VWBBlPIiQsGsFmdcqUAz",
+  "preview_secs": 26.67375,
+  "language": "zh"
+ },
+ "_brief": "A Taiwanese man in his mid-thirties speaking Taiwan Mandarin with a natural Taiwanese accent, no Beijing retroflex or erhua. Low, warm, magnetic voice with a slight rasp and breathiness. Relaxed and laid-back, like a late-night tech podcast host chatting with a friend, occasionally self-deprecating. Mixes English tech terms naturally."
+}
