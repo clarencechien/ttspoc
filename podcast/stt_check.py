@@ -159,7 +159,7 @@ def main(a):
                                    "whisper_text": W[p.stem]["text"], "whisper_segments": W[p.stem]["segments"], "gemini_text": G[p.stem]["text"]})
         t += dur + 0.6
     if a.out:
-        Path(a.out).write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+        Path(a.out).parent.mkdir(parents=True, exist_ok=True); Path(a.out).write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n{'段落':16s} {ASR + ' CER':>11s} {'Gemini CER':>10s} {'發音不同':>8s} {'兩邊都錯':>8s}")
     for r in report["segments"]:
         print(f"{r['id']:16s} {r['cer_whisper']:11.3f} {r['cer_gemini']:10.3f} {len(r['flagged']):8d} {sum(1 for x in r['flagged'] if x['by']=='both'):8d}")

@@ -1,0 +1,92 @@
+{
+ "segment": "s01_outro",
+ "position": "第 2 段，共 2 段（最後一段）",
+ "avoid": [
+  "真的假的",
+  "傻眼"
+ ],
+ "model": "gemini-3.8-flash",
+ "temperature": 0.8,
+ "prompt_sha256": "ed4012234670274d7498b86a1ab2325647b8aa312f9881ad923292f02925b2eb",
+ "previous_context": "然後說角色 prompt 失效？也不是失效，是它只換詞彙沒換方法，解法其實是加上工具，而不是拿掉角色。",
+ "original": {
+  "text": "第三，說高抽象會讓審查成本爆炸的，是其他評論者，不是原作者。最後提醒一個時間戳：不要讓模型評自己，是作者二零二六年十月的判斷，他預期之後會改。好，今天的深夜 Debug 就到這邊，下次見。",
+  "lint": {
+   "chars": 92,
+   "precise_numbers": [],
+   "enumerations": [
+    "第三"
+   ],
+   "sentences": 3,
+   "avg_sentence_len": 29.7,
+   "max_sentence_len": 40,
+   "sentences_over_20": 2,
+   "particles_per_100": 0.0,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 0,
+   "tags": 0
+  }
+ },
+ "candidates": [
+  {
+   "text": "然後，有人說高抽象會讓審查成本爆炸。\n這誰講的？\n其實是評論者 Felix 啦。\n中文轉傳混在一起，\n呃我是說，好意見還是要標對人嘛。<short pause>\n最後記得看一下日期喔。\n像不要讓模型評自己，\n只是作者二零二六年十月的判斷，\n他預期之後會改。\n好啦，深夜 Debug 就到這邊，下次見！",
+   "lint": {
+    "chars": 124,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 7,
+    "avg_sentence_len": 16.7,
+    "max_sentence_len": 32,
+    "sentences_over_20": 2,
+    "particles_per_100": 3.2,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 1
+   }
+  },
+  {
+   "text": "然後說審查成本爆炸，\n你猜是誰說的？\n其實是 Felix，不是原作者啦。\n轉傳常混在一起，\n但我自己覺得講得很好。<short pause>\n最後就是時間戳記。\n不要讓模型評自己，\n是他二零二六年十月的判斷，\n隨模型變強就會——對，就會改。\n讀的時候記得看日期喔。\n好，深夜 Debug 就到這，下次見！",
+   "lint": {
+    "chars": 126,
+    "precise_numbers": [],
+    "enumerations": [],
+    "sentences": 7,
+    "avg_sentence_len": 17.0,
+    "max_sentence_len": 36,
+    "sentences_over_20": 1,
+    "particles_per_100": 1.6,
+    "written_words": [],
+    "mainland_words": [],
+    "questions": 1,
+    "tags": 1
+   }
+  }
+ ],
+ "chosen": 1,
+ "manual_edits": [
+  {
+   "from": "其實是 Felix，不是原作者啦。",
+   "to": "其實是其他評論者講的，不是原作者 Felix 啦。",
+   "reason": "事實顛倒：原文說這是其他評論者的意見，不是 Felix"
+  }
+ ],
+ "final": {
+  "text": "然後說審查成本爆炸，你猜是誰說的？其實是其他評論者講的，不是原作者 Felix 啦。轉傳常混在一起，但我自己覺得講得很好。<short pause>最後就是時間戳記。不要讓模型評自己，是他二零二六年十月的判斷，隨模型變強就會——對，就會改。讀的時候記得看日期喔。好，深夜 Debug 就到這，下次見！",
+  "lint": {
+   "chars": 133,
+   "precise_numbers": [],
+   "enumerations": [],
+   "sentences": 7,
+   "avg_sentence_len": 18.0,
+   "max_sentence_len": 36,
+   "sentences_over_20": 2,
+   "particles_per_100": 1.5,
+   "written_words": [],
+   "mainland_words": [],
+   "questions": 1,
+   "tags": 1
+  }
+ }
+}

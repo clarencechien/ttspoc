@@ -3,6 +3,8 @@
 make_podcast.py --takes N keeps the take with the fewest long pauses; that ignores intelligibility.
 This re-ranks the saved takes by Breeze-ASR-25 (or Whisper) character error rate against the script: takes within
 --tolerance of the clearest one count as equally clear, and among those the one with fewest long pauses wins.
+With --neighbour (needs --consistency), a final pass swaps a segment's take for another clear-enough take that is
+more similar to the takes chosen for the adjacent segments (by more than --neighbour-margin).
 With --consistency, two more filters run before the pause rule so segments sound like the same take of the
 same voice: speaker similarity to the episode's average voice (Resemblyzer, all takes of all segments) must be
 within --sim-margin of the best candidate, and spectral centroid must be within --bright-margin Hz of the closest
@@ -30,9 +32,9 @@ def main(a):
     missing = [p for p in allc if p.stem not in T]
     if missing:
         T.update(S.whisper_transcribe(missing))
+    import numpy as np
     feats = {}
     if a.consistency:
-        import numpy as np
         from resemblyzer import VoiceEncoder, preprocess_wav
         from compare_voices import load, centroid
         enc = VoiceEncoder("cpu", verbose=False)
@@ -64,10 +66,24 @@ def main(a):
             closest = min(r["bright_gap"] for r in cand)
             cand = [r for r in cand if r["bright_gap"] <= closest + a.bright_margin]
         best = min(cand, key=lambda r: (r["long_pauses_per_min"], r["cer"]))
-        shutil.copyfile(d / best["file"], d / f"{s['id']}.wav")
-        log.append({"id": s["id"], "chosen": best["file"], "takes": rows})
+        log.append({"id": s["id"], "chosen": best["file"], "takes": rows,
+                    "clear_enough": [r["file"] for r in rows if r["cer"] <= floor + a.tolerance]})
         extra = (lambda r: f" sim {r['sim_to_episode']:.3f} bright {r['centroid']}") if feats else (lambda r: "")
         print(f"{s['id']:16s} " + "  ".join(f"{r['file'].split('.')[1]}: CER {r['cer']:.3f} pauses/min {r['long_pauses_per_min']}{extra(r)}" for r in rows) + f"  -> {best['file'].split('.')[1]}")
+    if a.neighbour and feats:
+        # Neighbour pass: a jump between two adjacent segments is what listeners hear as "a different person".
+        # Among takes that are clear enough, switch to one that matches the chosen neighbours better by > margin.
+        for _ in range(2):
+            for k, seg in enumerate(log):
+                nb = [log[j]["chosen"] for j in (k - 1, k + 1) if 0 <= j < len(log)]
+                score = lambda f: float(np.mean([feats[f]["emb"] @ feats[n]["emb"] for n in nb]))
+                cur = score(seg["chosen"])
+                alt = max(seg["clear_enough"], key=score)
+                if score(alt) > cur + a.neighbour_margin:
+                    print(f"  neighbour pass: {seg['id']} {seg['chosen'].split('.')[1]} -> {alt.split('.')[1]} (neighbour similarity {cur:.3f} -> {score(alt):.3f})")
+                    seg["chosen"] = alt
+    for seg in log:
+        shutil.copyfile(d / seg["chosen"], d / f"{seg['id']}.wav")
     (d / "select_log.json").write_text(json.dumps({"asr": a.asr, "tolerance": a.tolerance, "consistency": a.consistency,
                                                    "sim_margin": a.sim_margin, "bright_margin": a.bright_margin, "segments": log}, ensure_ascii=False, indent=1), encoding="utf-8")
 
@@ -78,4 +94,6 @@ if __name__ == "__main__":
     ap.add_argument("--reuse", action="store_true", help="reuse transcripts from an earlier select_log.json")
     ap.add_argument("--consistency", action="store_true", help="also require similar voice and brightness across segments")
     ap.add_argument("--sim-margin", type=float, default=0.015); ap.add_argument("--bright-margin", type=float, default=300)
+    ap.add_argument("--neighbour", action="store_true", help="with --consistency: also prefer takes that match adjacent segments")
+    ap.add_argument("--neighbour-margin", type=float, default=0.01)
     main(ap.parse_args())
