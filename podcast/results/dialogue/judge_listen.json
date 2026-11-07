@@ -1,0 +1,60 @@
+{
+ "A_gemini-multi_designed_fixed": {
+  "interviewer_authority": 4,
+  "candidate_uncertainty": 5,
+  "taiwan_accent_interviewer": 4,
+  "taiwan_accent_candidate": 5,
+  "mainland_sounding_moments": [
+   "01:46 擱置（音調偏大陸普通話讀法）"
+  ],
+  "backchannel_natural": 5,
+  "interruption_natural": 5,
+  "turn_taking_rhythm": 5,
+  "voice_mixups": [],
+  "sounds_like_real_interview": 5,
+  "biggest_flaw": "部分技術細節與情境問題的設計略帶劇本感，缺少一點現場白板或代碼環境的混亂細節。",
+  "best_moment": "00:24 男生脫口說出「在手機？啊不是不是」並慌忙自我修正的瞬間，緊張感極度逼真。"
+ },
+ "B_gemini-turns_designed": {
+  "interviewer_authority": 5,
+  "candidate_uncertainty": 5,
+  "taiwan_accent_interviewer": 5,
+  "taiwan_accent_candidate": 5,
+  "mainland_sounding_moments": [],
+  "backchannel_natural": 5,
+  "interruption_natural": 5,
+  "turn_taking_rhythm": 5,
+  "voice_mixups": [],
+  "sounds_like_real_interview": 5,
+  "biggest_flaw": "面試官語氣極其平穩冷靜，若能偶爾帶點敲鍵盤或紙筆記錄的停頓會更生活化。",
+  "best_moment": "1分11秒面試官犀利打斷追問，求職者慌忙改口並恍然大悟的反應極其逼真。"
+ },
+ "C_elevenlabs-v3_ling-james": {
+  "interviewer_authority": 5,
+  "candidate_uncertainty": 5,
+  "taiwan_accent_interviewer": 5,
+  "taiwan_accent_candidate": 5,
+  "mainland_sounding_moments": [],
+  "backchannel_natural": 5,
+  "interruption_natural": 5,
+  "turn_taking_rhythm": 5,
+  "voice_mixups": [],
+  "sounds_like_real_interview": 5,
+  "biggest_flaw": "英文指令與參數的發音稍微偏字正腔圓，少了一點資深工程師日常唸英文時的連音隨興感。",
+  "best_moment": "01:02 面試官精準強勢地打斷追問，以及男考生前面 00:20 發現講錯連忙『啊不是不是』的自我修正，臨場反應極度逼真。"
+ },
+ "B_gemini-turns_designed_before_click_fix": {
+  "interviewer_authority": 4,
+  "candidate_uncertainty": 4,
+  "taiwan_accent_interviewer": 4,
+  "taiwan_accent_candidate": 5,
+  "mainland_sounding_moments": [],
+  "backchannel_natural": 4,
+  "interruption_natural": 3,
+  "turn_taking_rhythm": 4,
+  "voice_mixups": [],
+  "sounds_like_real_interview": 4,
+  "biggest_flaw": "對話中幾次打斷處出現突兀刺耳的雜音音效，干擾真實感。",
+  "best_moment": "面試者在 00:22 慌忙改口「在…手機…啊不是不是，還是在我電腦上跑」的語氣極度自然真實。"
+ }
+}

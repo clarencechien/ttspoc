@@ -1,0 +1,102 @@
+{
+ "inputs": [
+  {
+   "text": "[serious] 好，我們直接開始。你履歷上寫，平常會同時開好幾個 Claude Code 的 session。那我問你，本機跑到一半的 session，想拿手機接著用，怎麼做？",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  },
+  {
+   "text": "[nervous] 呃，這個我有用過。就是打 slash RC，然後……手機上就看得到了。",
+   "voice_id": "UwT0JPexcCbH107hq7i5"
+  },
+  {
+   "text": "[serious] 那程式在哪裡跑？",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  },
+  {
+   "text": "[nervous] 在……手機？啊不是，不是。還是在我電腦上跑。手機只是，呃，像一個窗戶。",
+   "voice_id": "UwT0JPexcCbH107hq7i5"
+  },
+  {
+   "text": "[serious] 那你電腦關掉呢？",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  },
+  {
+   "text": "[nervous] 那……手機那邊就會看到它離線。",
+   "voice_id": "UwT0JPexcCbH107hq7i5"
+  },
+  {
+   "text": "[serious] 嗯。反過來，雲端的 session，要拉回本機？",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  },
+  {
+   "text": "[nervous] 用 teleport。呃，不過拉回來的是一份複本，之後兩邊就各走各的。",
+   "voice_id": "UwT0JPexcCbH107hq7i5"
+  },
+  {
+   "text": "[serious] 條件呢？",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  },
+  {
+   "text": "[nervous] 條件喔……工作目錄要乾淨，同一個 repo，然後……分支要先 push 上去。還有，嗯，同一個帳號。",
+   "voice_id": "UwT0JPexcCbH107hq7i5"
+  },
+  {
+   "text": "[serious] 好。那本機推上雲端，從終端機。通，不通？",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  },
+  {
+   "text": "[nervous] 應該……可以吧？就是加 dash dash cloud，然後它就——",
+   "voice_id": "UwT0JPexcCbH107hq7i5"
+  },
+  {
+   "text": "[interrupting] cloud 做的是什麼？",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  },
+  {
+   "text": "[nervous] ……喔。它是另外開一個新的雲端 session，不是把原本那個搬上去。所以終端機，呃，不通。要用桌面版的 Continue in。",
+   "voice_id": "UwT0JPexcCbH107hq7i5"
+  },
+  {
+   "text": "[serious] 下一題。你在本機想丟一句話給雲端那個 session，文件說可以，但你試了沒反應。你會怎麼查？",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  },
+  {
+   "text": "[nervous] 呃……先打 slash list agents，看它有沒有出現。有出現的話……可能是被擱置了？就是兩邊權限模式不一樣，一邊是 bypass，訊息會先卡著，等人核准。",
+   "voice_id": "UwT0JPexcCbH107hq7i5"
+  },
+  {
+   "text": "[serious] 卡多久？",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  },
+  {
+   "text": "[nervous] 五分鐘？沒人按就丟掉了……我記得是這樣。",
+   "voice_id": "UwT0JPexcCbH107hq7i5"
+  },
+  {
+   "text": "[serious] 那如果今天下午一定要送到呢？",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  },
+  {
+   "text": "[nervous] 那我就不靠那條線了。直接 claude dash p 加訊息，再加 cloud 跟 session ID。它是單向的，但至少送不到會直接報錯，不會默默不見。",
+   "voice_id": "UwT0JPexcCbH107hq7i5"
+  },
+  {
+   "text": "[serious] 嗯。最後一件事。紙條可以幫你按「允許」嗎？",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  },
+  {
+   "text": "[nervous] 不行，不行。它只帶一段文字。",
+   "voice_id": "UwT0JPexcCbH107hq7i5"
+  },
+  {
+   "text": "[serious] 好，今天先到這裡。結果我們一週內通知你。",
+   "voice_id": "Z8Aisvg1z70p27kGvkZZ"
+  }
+ ],
+ "model_id": "eleven_v3",
+ "language_code": "zh",
+ "seed": 7,
+ "settings": {
+  "stability": 0.5
+ }
+}

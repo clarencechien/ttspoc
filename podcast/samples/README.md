@@ -23,6 +23,9 @@
 - 三集都是 128 kbps 單聲道 mp3，響度約 -16.7 LUFS，片頭片尾是程式合成的短音效。
 - 排名、逐段校對與成本在 `podcast/RESULTS.md`。
 
+## dialogue/：對談測試（面試場景）
+女面試官、男面試者，2～3 分鐘，三種做法：Gemini 多人一次請求、Gemini 逐輪加剪接、ElevenLabs Text to Dialogue。說明在 `dialogue/README.md`。
+
 ## auditions/：試聽
 每個候選聲線念同一句試聽稿（`ep01.json` 的 `audition_text`），用來選聲。
 

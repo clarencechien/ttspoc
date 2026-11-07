@@ -1,0 +1,58 @@
+{
+ "A_gemini-multi_kore-achird t4": {
+  "voices": [
+   {
+    "gender": "male",
+    "text": "那你電腦關掉呢？"
+   }
+  ]
+ },
+ "A_gemini-multi_kore-achird t12": {
+  "voices": [
+   {
+    "gender": "male",
+    "text": "Claude 的作者是什麼"
+   }
+  ]
+ },
+ "A_gemini-multi_kore-achird t13": {
+  "voices": [
+   {
+    "gender": "male",
+    "text": "喔，哦，它是另外開一個新的雲端 session，不是把原本那個搬上去，所以終端機，呃，不通，要用桌面版的，剛聽"
+   }
+  ]
+ },
+ "A_gemini-multi_kore-achird t16": {
+  "voices": [
+   {
+    "gender": "female",
+    "text": "卡多久"
+   }
+  ]
+ },
+ "A_gemini-multi_kore-achird t17": {
+  "voices": [
+   {
+    "gender": "male",
+    "text": "五分鐘沒人按就丟掉了，我記得是這樣。"
+   }
+  ]
+ },
+ "A_gemini-multi_designed t4": {
+  "voices": [
+   {
+    "gender": "male",
+    "text": "那你電腦關掉了？"
+   }
+  ]
+ },
+ "A_gemini-multi_designed t8": {
+  "voices": [
+   {
+    "gender": "female",
+    "text": "条件来"
+   }
+  ]
+ }
+}
