@@ -41,13 +41,31 @@
 1. 先播 D1 的參考錄音（podcast 時期）。
 2. 接著三組台詞：開場、「推播之後湧進來的那一波」、收尾。每組先播面試版（架構師 persona），再播同一句改用 podcast v5 語氣。
 
-## 聲線
+## 對談節目：1000 萬退休的三種人生（給小資族）
+
+稿子來源：〈1000 萬退休的三種人生：一對台灣夫妻的壓力測試〉 https://imitator.ai-apps.work/r/bysq-report-tw-case
+稿子：`podcast/dialogue/talk_retirement_10m.json`（22 輪、約 700 字）。
+對象是小資族和年輕工程師：財經主持人 A 講報告，D1 當 B，代表聽眾發問、吐槽，最後幫大家翻成年輕人能用的三點。
+
+| 檔案 | 生成方式 | 聲線 | 長度 |
+|---|---|---|---|
+| `talk01_retirement-10m_B_gemini-per-turn_finf-d1v5.mp3` | B 的做法：逐輪生成＋剪接，重生 3 輪 | A：FIN_F（新設計的財經女聲）、B：D1 + `base_style: v5` | 2:57 |
+| `design-preview_FIN_F_finance-host.mp3` | FIN_F 設計時 API 回傳的試聽 | | |
+
+- 附和：
+  - 0:29 是 A 在 B 猜「投資吧」時的「嗯」。
+  - 1:17、2:51 是 B 的「嗯」。
+  - 2:09 是 B 的「對」。
+- 2:10 B 搶話「我覺得我會賣欸」，提早 0.15 秒接上。
+- 內容是報告的模擬與壓力測試結果，節目最後也講明不是投資建議。
+
 
 | 代號 | 服務 | ID | 描述 |
 |---|---|---|---|
 | IV_F | Gemini 設計聲線 | `voice_u3fnij37psh2` | 四十出頭的台灣女性技術主管，中低音，沉穩有威嚴，冷靜克制 |
 | IV_M | Gemini 設計聲線 | `voice_ctrzzph70vfc` | 二十七、八歲的台灣男工程師，中音、乾淨、偏年輕 |
-| D1 | Gemini 設計聲線 | `voice_b3c8x0jsntqc` | podcast 的主持人聲線，第二場拿來當面試官 |
+| D1 | Gemini 設計聲線 | `voice_b3c8x0jsntqc` | podcast 的主持人聲線，第二場拿來當面試官，對談節目的 B |
+| FIN_F | Gemini 設計聲線 | `voice_wbpdo27unfgu` | 三十出頭的台灣女性財經節目主持人，中音、明亮溫暖、咬字清楚，講數字很穩 |
 | Ling | ElevenLabs 聲音庫 | `Z8Aisvg1z70p27kGvkZZ` | cmn-TW，middle_aged，steady / calm / grounded |
 | James | ElevenLabs 聲音庫 | `UwT0JPexcCbH107hq7i5` | cmn-TW，young，friendly |
 
