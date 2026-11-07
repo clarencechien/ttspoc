@@ -22,11 +22,35 @@ ROOT = Path(__file__).resolve().parent.parent
 BC = re.compile(r"\[\[(.+?)\]\]")
 
 
+LISTEN_PROMPT = """你是台灣的廣播劇導演，聽這段對話音檔（{who}）。不要看稿，只憑耳朵。
+1 到 5 分，只輸出 JSON：
+{{"authority_of_{a}": n, "uncertainty_of_{b}": n, "two_voices_easy_to_tell_apart": n,
+ "backchannel_natural": n, "interruption_natural": n, "turn_taking_rhythm": n,
+ "voice_mixups": ["哪裡聽起來像換錯人說話"], "clicks_or_noise": ["時間點"], "unclear_words": ["時間點與聽不清楚的字"],
+ "sounds_like_real_conversation": n, "biggest_flaw": "一句話", "best_moment": "一句話"}}"""
+
+
+def listen(path, sc):
+    """Gemini 3.8 Flash listens without the script. Good at clicks, mix-ups and pacing; NOT a judge of
+    Taiwanese accent (it ranked the version people heard as mainland-sounding as the most Taiwanese)."""
+    from make_podcast import client, JUDGE_MODEL
+    from google.genai import types
+    sp = sc["speakers"]
+    who = "、".join(f"{p['name']}（{'女' if p.get('gender') == 'female' else '男'}）" for p in sp.values())
+    prompt = LISTEN_PROMPT.format(who=who, a=sp["I"]["name"], b=sp["C"]["name"])
+    c = client()     # keep a reference: a temporary Client is closed before the request is sent
+    r = c.models.generate_content(
+        model=JUDGE_MODEL, contents=[types.Part.from_bytes(data=Path(path).read_bytes(), mime_type="audio/wav"), prompt],
+        config=types.GenerateContentConfig(response_mime_type="application/json"))
+    return json.loads(r.text)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("files", nargs="+")
     ap.add_argument("--script", default=str(ROOT / "podcast/dialogue/interview_claude_sessions.json"))
     ap.add_argument("--out", default=str(ROOT / "out/dialogue/qa.json"))
+    ap.add_argument("--listen", action="store_true", help="also ask Gemini 3.8 Flash to listen (about 0.004 USD per file)")
     a = ap.parse_args()
     from opencc import OpenCC
     conv = OpenCC("s2twp")
@@ -92,6 +116,9 @@ def main():
             print("   miss:", m)
         for r in wrong:
             print("   wrong voice:", r, BC.sub("", sc["turns"][r["turn"]]["text"])[:24])
+        if a.listen:
+            report[stem]["listen"] = listen(f, sc)
+            print("   listen:", json.dumps(report[stem]["listen"], ensure_ascii=False))
     Path(a.out).write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
 
 

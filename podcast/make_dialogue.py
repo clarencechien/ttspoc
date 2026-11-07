@@ -8,7 +8,8 @@
                                                               # splice a turn the multi-speaker render gave to the wrong voice
   python podcast/make_dialogue.py master out/dialogue/<name>.wav podcast/samples/dialogue/<name>.mp3
 
-Script format (podcast/dialogue/*.json): turns of {speaker, style, text, gap?, overlap?}.
+Script format (podcast/dialogue/*.json): speakers {I, C: {name, gender, persona, base_style?}},
+turns of {speaker, style, text, gap?, overlap?}. Full walkthrough: podcast/DIALOGUE_PIPELINE.md.
   [[嗯]]   in a turn's text = the *listener* says 嗯 at that point.
            A turns it into Gemini's |嗯| (the model voices the other speaker); B synthesises the
            listener's 嗯 separately and mixes it under the speaker at the nearest pause; C drops it.
@@ -118,7 +119,15 @@ def pauses(x, min_len=0.12, thr_db=-35):
 
 
 def style_for(sc, turn):
+    """persona + this turn's delivery. A speaker's optional base_style (a key of podcast/styles.json such as
+    "v5", or literal text) goes first: the persona alone can act a designed voice into a different-sounding
+    person (D1 as a slow, weighty architect), the base style keeps the delivery the voice is known for."""
     p = sc["speakers"][turn["speaker"]]
+    base = p.get("base_style")
+    if base:
+        styles = json.loads((ROOT / "podcast" / "styles.json").read_text(encoding="utf-8"))
+        base = styles.get(base, base)
+        return f"{base} 這次的角色：{p['persona']} 這一句：{turn['style']}。"
     return f"{p['persona']} 這一句：{turn['style']}。台灣國語口音，自然口語，不要捲舌。"
 
 
