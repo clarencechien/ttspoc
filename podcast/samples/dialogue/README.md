@@ -22,12 +22,26 @@
 - B 的附和在 0:18、0:46、1:39、2:07，是面試官的「嗯」疊在面試者講話的停頓下面。
 - B 的搶話在 1:11 左右：面試官提早 0.35 秒開口，面試者的尾巴同時淡出。
 
+## 第二場：一百萬則通知（D1 當面試官）
+
+稿子來源：〈你連的是什麼線〉 https://imitator.ai-apps.work/r/which-wire
+稿子：`podcast/dialogue/interview_which_wire.json`（23 輪）。
+資深架構師連續追問「Black Friday 午夜送一百萬則通知」，面試者從背標準答案，到被問出漏洞。
+
+| 檔案 | 生成方式 | 聲線 | 長度 |
+|---|---|---|---|
+| `interview2_which-wire_B_gemini-per-turn_d1-interviewer.mp3` | B 的做法：逐輪生成＋剪接；說錯的輪次單獨重生 3 次，挑最清楚的 | 面試官 D1（磁性深夜）、面試者 IV_M（跟第一場同一個人） | 2:40 |
+
+- 附和在 0:27、1:12，是面試官的「嗯」。
+- 搶話在 1:41：面試官接「只會多拿到一堆 429」。
+
 ## 聲線
 
 | 代號 | 服務 | ID | 描述 |
 |---|---|---|---|
 | IV_F | Gemini 設計聲線 | `voice_u3fnij37psh2` | 四十出頭的台灣女性技術主管，中低音，沉穩有威嚴，冷靜克制 |
 | IV_M | Gemini 設計聲線 | `voice_ctrzzph70vfc` | 二十七、八歲的台灣男工程師，中音、乾淨、偏年輕 |
+| D1 | Gemini 設計聲線 | `voice_b3c8x0jsntqc` | podcast 的主持人聲線，第二場拿來當面試官 |
 | Ling | ElevenLabs 聲音庫 | `Z8Aisvg1z70p27kGvkZZ` | cmn-TW，middle_aged，steady / calm / grounded |
 | James | ElevenLabs 聲音庫 | `UwT0JPexcCbH107hq7i5` | cmn-TW，young，friendly |
 
@@ -44,6 +58,12 @@ python podcast/dialogue_qa.py out/dialogue/*.wav           # Breeze 盲測 CER +
 python podcast/make_dialogue.py patch out/dialogue/A_gemini-multi_designed.wav out/dialogue/A_fixed.wav \
     --start 28.85 --end 30.2 --clip out/dialogue/B_gemini-turns_designed/turn_04.wav
 python podcast/make_dialogue.py master out/dialogue/<name>.wav podcast/samples/dialogue/<name>.mp3
+
+# 第二場：D1 當面試官；QA 標出的輪次重生後重新組裝
+python podcast/make_dialogue.py gemini-turns --script podcast/dialogue/interview_which_wire.json --voices I=D1,C=IV_M --name B_which-wire_d1-ivm
+python podcast/dialogue_qa.py out/dialogue/B_which-wire_d1-ivm.wav --script podcast/dialogue/interview_which_wire.json
+python podcast/retake_turns.py --script podcast/dialogue/interview_which_wire.json --voices I=D1,C=IV_M --name B_which-wire_d1-ivm --turns 0,6,8 --takes 3
+python podcast/make_dialogue.py gemini-turns --script podcast/dialogue/interview_which_wire.json --voices I=D1,C=IV_M --name B_which-wire_d1-ivm
 ```
 
 Gemini 沒有種子參數，重跑出來的聲音表現會不一樣，A 換錯人的位置也會不一樣。ElevenLabs 固定 `seed=7`，送出的請求存在 `podcast/results/dialogue/`。

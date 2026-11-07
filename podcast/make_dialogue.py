@@ -29,6 +29,7 @@ OUT = ROOT / "out" / "dialogue"
 REG = ROOT / "podcast" / "results" / "voices.json"
 DEFAULT_SCRIPT = ROOT / "podcast" / "dialogue" / "interview_claude_sessions.json"
 BC = re.compile(r"\[\[(.+?)\]\]")
+CLICK = 0.7      # raw Gemini turns: clean speech peaks at ~0.5 sample-to-sample; the glitches heard were 0.84 and 1.17
 
 DESIGNS = {
     "IV_F": ("面試官", "female",
@@ -173,11 +174,27 @@ def cmd_gemini_turns(a):
     sc = load(a.script); vo = {k: resolve(v) for k, v in parse_voices(a.voices).items()}
     c = client(); d = OUT / a.name; d.mkdir(parents=True, exist_ok=True)
     tokens = 0
+    rej = d / "rejected"
+    # --redo: a turn the QA flagged (misread word, wrong delivery) is moved aside and rendered again;
+    # with one request per turn, a mistake costs one line, not the whole conversation
+    for i in (int(x) for x in a.redo.split(",") if x) if a.redo else []:
+        p = d / f"turn_{i:02d}.wav"
+        if p.exists():
+            rej.mkdir(exist_ok=True); n = len(list(rej.glob(f"turn_{i:02d}_*.wav")))
+            p.rename(rej / f"turn_{i:02d}_redo{n}.wav")
     # 1. every turn, without the backchannel markers
     for i, t in enumerate(sc["turns"]):
         p = d / f"turn_{i:02d}.wav"
-        if not p.exists():
+        for attempt in range(3):
+            if p.exists():
+                break
             tokens += tts_one(c, BC.sub("", t["text"]), style_for(sc, t), vo[t["speaker"]], p)
+            jump = float(np.abs(np.diff(read_wav(p))).max())
+            if jump > CLICK and attempt < 2:   # a one-sample jump this big is a digital glitch, not speech
+                rej.mkdir(exist_ok=True); n = len(list(rej.glob(f"turn_{i:02d}_*.wav")))
+                print(f"turn {i:02d} glitch (sample jump {jump:.2f}), rendering again")
+                p.rename(rej / f"turn_{i:02d}_click{n}.wav")
+                continue
             print(f"turn {i:02d} {t['speaker']} {wav_duration(p):5.1f}s {BC.sub('', t['text'])[:30]}")
     # 2. backchannel clips, one per (listener, word), a few takes to pick the shortest clean one
     bcs = {}
@@ -305,6 +322,7 @@ if __name__ == "__main__":
             p.add_argument("--turn-lufs", type=float, default=-20)
             p.add_argument("--bc-db", type=float, default=-7, help="backchannel level relative to turns")
             p.add_argument("--bc-takes", type=int, default=3)
+            p.add_argument("--redo", help="comma-separated turn numbers to render again (see dialogue_qa.py)")
         if name == "elevenlabs":
             p.add_argument("--model", default="eleven_v3")
             p.add_argument("--seed", type=int, default=7)

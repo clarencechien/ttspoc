@@ -1,0 +1,399 @@
+{
+ "00": {
+  "text": "坐。我們不聊履歷，直接來一題。Black Friday 午夜，行銷要同時推一百萬則通知。你怎麼設計？",
+  "chosen": "turn_00_k1.wav",
+  "takes": [
+   {
+    "take": "turn_00_k0.wav",
+    "misses": [
+     "【坐】我們不聊履歷 → "
+    ],
+    "cer": 0.024,
+    "glitch": false,
+    "heard": "我們不聊履歷直接來一題blackfriday午夜行銷要同時推一百萬則通知你怎麼設計"
+   },
+   {
+    "take": "turn_00_k1.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "坐我們不聊履歷直接來一題blackfriday午夜行銷要同時推一百萬則通知你怎麼設計"
+   },
+   {
+    "take": "turn_00_k2.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "坐我們不聊履歷直接來一題blackfriday午夜行銷要同時推一百萬則通知你怎麼設計"
+   },
+   {
+    "take": "turn_00_k3.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "坐我們不聊履歷直接來一題blackfriday午夜行銷要同時推一百萬則通知你怎麼設計"
+   }
+  ]
+ },
+ "06": {
+  "text": "一樣的話，FCM 有 topic，一個 API call 就送完了。你後面那整排 worker，一個都用不到。",
+  "chosen": "turn_06_k0.wav",
+  "takes": [
+   {
+    "take": "turn_06_k0.wav",
+    "misses": [
+     "一個apic【all】就送完了你後 → ode"
+    ],
+    "cer": 0.068,
+    "glitch": false,
+    "heard": "一樣的話fcm有topic一個apicode就送完了你後面那整排worker一個都用不到"
+   },
+   {
+    "take": "turn_06_k1.wav",
+    "misses": [
+     "一個apic【all】就送完了你後 → ode",
+     "送完了你後面【那】整排work → 的"
+    ],
+    "cer": 0.091,
+    "glitch": false,
+    "heard": "一樣的話fcm有topic一個apicode就送完了你後面的整排worker一個都用不到"
+   },
+   {
+    "take": "turn_06_k2.wav",
+    "misses": [
+     "一個apic【all】就送完了你後 → ode"
+    ],
+    "cer": 0.068,
+    "glitch": false,
+    "heard": "一樣的話fcm有topic一個apicode就送完了你後面那整排worker一個都用不到"
+   },
+   {
+    "take": "turn_06_k3.wav",
+    "misses": [
+     "一個apic【all】就送完了你後 → ode",
+     "送完了你後面【那】整排work → 的",
+     "後面那整排w【or】ker一個都 → al"
+    ],
+    "cer": 0.136,
+    "glitch": false,
+    "heard": "一樣的話fcm有topic一個apicode就送完了你後面的整排walker一個都用不到"
+   }
+  ]
+ },
+ "11": {
+  "text": "回擊……對，deep link 會直接打到 API。",
+  "chosen": "turn_11_k3.wav",
+  "takes": [
+   {
+    "take": "turn_11_k0.wav",
+    "misses": [
+     "回【擊對】deepli → 接"
+    ],
+    "cer": 0.105,
+    "glitch": false,
+    "heard": "回接deeplink會直接打到api"
+   },
+   {
+    "take": "turn_11_k1.wav",
+    "misses": [
+     "【回擊對】deepli → "
+    ],
+    "cer": 0.158,
+    "glitch": false,
+    "heard": "deeplink會直接打到api"
+   },
+   {
+    "take": "turn_11_k2.wav",
+    "misses": [
+     "回【擊對】deepli → 接最"
+    ],
+    "cer": 0.105,
+    "glitch": false,
+    "heard": "回接最deeplink會直接打到api"
+   },
+   {
+    "take": "turn_11_k3.wav",
+    "misses": [
+     "回擊【對】deepli → "
+    ],
+    "cer": 0.053,
+    "glitch": false,
+    "heard": "回擊deeplink會直接打到api"
+   }
+  ]
+ },
+ "12": {
+  "text": "再來。queue 堆深了，你就多開 worker。開到一千個，會怎樣？",
+  "chosen": "turn_12_k1.wav",
+  "takes": [
+   {
+    "take": "turn_12_k0.wav",
+    "misses": [
+     "再來q【ueue】堆深了你就多 → ",
+     "queue堆【深】了你就多開w → 生",
+     "了你就多開w【or】ker開到一 → al",
+     "ker開到一【千】個會怎樣 → 零零零"
+    ],
+    "cer": 0.357,
+    "glitch": false,
+    "heard": "再來q堆生了你就多開walker開到一零零零個會怎樣"
+   },
+   {
+    "take": "turn_12_k1.wav",
+    "misses": [
+     "再來【que】ue堆深了你 → c",
+     "ker開到一【千】個會怎樣 → 零零零"
+    ],
+    "cer": 0.214,
+    "glitch": false,
+    "heard": "再來cue堆深了你就多開worker開到一零零零個會怎樣"
+   },
+   {
+    "take": "turn_12_k2.wav",
+    "misses": [
+     "再來q【ueue】堆深了你就多 → ",
+     "ker開到一【千】個會怎樣 → 零零零"
+    ],
+    "cer": 0.25,
+    "glitch": false,
+    "heard": "再來q堆深了你就多開worker開到一零零零個會怎樣"
+   },
+   {
+    "take": "turn_12_k3.wav",
+    "misses": [
+     "再來【que】ue堆深了你 → c",
+     "ker開到一【千】個會怎樣 → 零零零"
+    ],
+    "cer": 0.214,
+    "glitch": false,
+    "heard": "再來cue堆深了你就多開worker開到一零零零個會怎樣"
+   }
+  ]
+ },
+ "13": {
+  "text": "就……送得比較快？呃，等一下。瓶頸其實在 FCM 的配額，所以開再多 worker——",
+  "chosen": "turn_13_k0.wav",
+  "takes": [
+   {
+    "take": "turn_13_k0.wav",
+    "misses": [],
+    "cer": 0.031,
+    "glitch": false,
+    "heard": "就送得比較快等一下瓶頸其實在fcm的配額所以開再多worker"
+   },
+   {
+    "take": "turn_13_k1.wav",
+    "misses": [],
+    "cer": 0.031,
+    "glitch": false,
+    "heard": "就送得比較快等一下瓶頸其實在fcm的配額所以開再多worker"
+   },
+   {
+    "take": "turn_13_k2.wav",
+    "misses": [
+     "再多work【er】 → 額"
+    ],
+    "cer": 0.094,
+    "glitch": true,
+    "heard": "就送得比較快等一下瓶頸其實在fcm的配額所以開再多work額"
+   },
+   {
+    "take": "turn_13_k3.wav",
+    "misses": [
+     "所以開再多w【or】ker → al"
+    ],
+    "cer": 0.094,
+    "glitch": false,
+    "heard": "就送得比較快等一下瓶頸其實在fcm的配額所以開再多walker"
+   }
+  ]
+ },
+ "15": {
+  "text": "對。應該是用一個全域的 token bucket 控總速率，worker 剛好吃滿配額就好。",
+  "chosen": "turn_15_k1.wav",
+  "takes": [
+   {
+    "take": "turn_15_k0.wav",
+    "misses": [
+     "er剛好吃滿【配額】就好 → pair"
+    ],
+    "cer": 0.103,
+    "glitch": false,
+    "heard": "對應該是用一個全域的tokenbucket控總速率worker剛好吃滿pair就好"
+   },
+   {
+    "take": "turn_15_k1.wav",
+    "misses": [],
+    "cer": 0.026,
+    "glitch": false,
+    "heard": "那對應該是用一個全域的tokenbucket控總速率worker剛好吃滿配額就好"
+   },
+   {
+    "take": "turn_15_k2.wav",
+    "misses": [
+     "cket控總【速】率worke → 數"
+    ],
+    "cer": 0.026,
+    "glitch": false,
+    "heard": "對應該是用一個全域的tokenbucket控總數率worker剛好吃滿配額就好"
+   },
+   {
+    "take": "turn_15_k3.wav",
+    "misses": [
+     "cket控總【速】率worke → 數",
+     "er剛好吃滿【配額】就好 → pair"
+    ],
+    "cer": 0.128,
+    "glitch": true,
+    "heard": "對應該是用一個全域的tokenbucket控總數率worker剛好吃滿pair就好"
+   }
+  ]
+ },
+ "18": {
+  "text": "你把「可能重送」，換成了「可能漏送」。",
+  "chosen": "turn_18_k1.wav",
+  "takes": [
+   {
+    "take": "turn_18_k0.wav",
+    "misses": [
+     "送換成了可能【漏】送 → low"
+    ],
+    "cer": 0.231,
+    "glitch": false,
+    "heard": "你把可能重送換成了可能low送"
+   },
+   {
+    "take": "turn_18_k1.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "你把可能重送換成了可能漏送"
+   },
+   {
+    "take": "turn_18_k2.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "你把可能重送換成了可能漏送"
+   },
+   {
+    "take": "turn_18_k3.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "你把可能重送換成了可能漏送"
+   }
+  ]
+ },
+ "19": {
+  "text": "可是……行銷推播，漏一則好像沒人在意？重複兩則，反而會被客訴。",
+  "chosen": "turn_19_k2.wav",
+  "takes": [
+   {
+    "take": "turn_19_k0.wav",
+    "misses": [
+     "二則反而會被【客訴】 → 剋屬耶"
+    ],
+    "cer": 0.16,
+    "glitch": false,
+    "heard": "可是行銷推播漏一則好像沒人在意吧重複二則反而會被剋屬耶"
+   },
+   {
+    "take": "turn_19_k1.wav",
+    "misses": [
+     "可是行銷推【播】漏一則好像沒 → 波耶"
+    ],
+    "cer": 0.12,
+    "glitch": false,
+    "heard": "可是行銷推波耶漏一則好像沒人在意重複二則反而會被客訴耶"
+   },
+   {
+    "take": "turn_19_k2.wav",
+    "misses": [],
+    "cer": 0.04,
+    "glitch": false,
+    "heard": "可是行銷推播漏一則好像沒人在意重複二則反而會被客訴耶"
+   },
+   {
+    "take": "turn_19_k3.wav",
+    "misses": [
+     "可是行銷推【播】漏一則好像沒 → 博"
+    ],
+    "cer": 0.04,
+    "glitch": false,
+    "heard": "可是行銷推博漏一則好像沒人在意重複二則反而會被客訴"
+   }
+  ]
+ },
+ "08_old_text": {
+  "text": "好，就當它是逐人的。「午夜同時」，是真的要同時嗎？",
+  "chosen": "turn_08_k3.wav",
+  "takes": [
+   {
+    "take": "turn_08_k0.wav",
+    "misses": [
+     "好就當它是【逐】人的午夜同時 → 主",
+     "就當它是逐人【的】午夜同時是真 → 了"
+    ],
+    "cer": 0.263,
+    "glitch": false,
+    "heard": "好就當他是主人了午夜同食是真的要同食嗎"
+   },
+   {
+    "take": "turn_08_k1.wav",
+    "misses": [
+     "好就當它是【逐】人的午夜同時 → 主",
+     "就當它是逐人【的】午夜同時是真 → 了"
+    ],
+    "cer": 0.263,
+    "glitch": false,
+    "heard": "好就當他是主人了午夜同食是真的要同食嗎"
+   },
+   {
+    "take": "turn_08_k2.wav",
+    "misses": [
+     "好就當它是【逐】人的午夜同時 → 主"
+    ],
+    "cer": 0.211,
+    "glitch": true,
+    "heard": "好就當他是主人的午夜同食是真的要同食嗎"
+   },
+   {
+    "take": "turn_08_k3.wav",
+    "misses": [
+     "好就當它是【逐】人的午夜同時 → 主"
+    ],
+    "cer": 0.211,
+    "glitch": false,
+    "heard": "好就當他是主人的午夜同食是真的要同食嗎"
+   }
+  ]
+ },
+ "08": {
+  "text": "好，就當它每個人都不一樣。「午夜同時」，是真的要同時嗎？",
+  "chosen": "turn_08_k0.wav",
+  "takes": [
+   {
+    "take": "turn_08_k0.wav",
+    "misses": [],
+    "cer": 0.091,
+    "glitch": false,
+    "heard": "好就當它每個人都不一樣午夜同食是真的要同食嗎"
+   },
+   {
+    "take": "turn_08_k1.wav",
+    "misses": [],
+    "cer": 0.091,
+    "glitch": false,
+    "heard": "好就當它每個人都不一樣午夜同食是真的要同食嗎"
+   },
+   {
+    "take": "turn_08_k2.wav",
+    "misses": [],
+    "cer": 0.091,
+    "glitch": false,
+    "heard": "好就當它每個人都不一樣午夜同食是真的要同食嗎"
+   }
+  ]
+ }
+}

@@ -75,13 +75,19 @@ def main():
         med = {k: float(np.median([r["f0"] for r in rows if r["speaker"] == k and r["f0"]])) for k in sc["speakers"]}
         cut = (med["I"] + med["C"]) / 2
         hi_spk = max(med, key=med.get)
-        wrong = [r for r in rows if r["f0"] and ((r["f0"] > cut) != (r["speaker"] == hi_spk))]
+        same_gender = len({p.get("gender") for p in sc["speakers"].values()}) == 1
+        # pitch only separates a woman from a man; with two men (or two women) the check means nothing
+        wrong = [] if same_gender else [r for r in rows if r["f0"] and ((r["f0"] > cut) != (r["speaker"] == hi_spk))]
         missing = [i for i in range(len(turns)) if i not in spans]
-        report[stem] = {"cer": round(cer(ref, hyp_full), 4), "real_misses": [m["context"] + " → " + m["heard"] for m in ms],
+        miss_turns = sorted({owner[min(m["ref_start"], len(owner) - 1)] for m in ms})
+        report[stem] = {"cer": round(cer(ref, hyp_full), 4),
+                        "real_misses": [f"t{owner[min(m['ref_start'], len(owner) - 1)]:02d} " + m["context"] + " → " + m["heard"] for m in ms],
+                        "turns_with_misses": miss_turns,
                         "f0_median": {k: round(v, 1) for k, v in med.items()}, "turns": rows,
                         "wrong_voice_turns": wrong, "turns_not_found": missing, "transcript": text}
         print(f"\n{stem}: CER {cer(ref, hyp_full):.1%}  misses {len(ms)}  F0 I={med['I']:.0f} C={med['C']:.0f} Hz  "
               f"wrong-voice turns {len(wrong)}  turns not found {missing}")
+        print("   turns with misses (redo candidates for gemini-turns --redo):", ",".join(map(str, miss_turns)))
         for m in report[stem]["real_misses"]:
             print("   miss:", m)
         for r in wrong:

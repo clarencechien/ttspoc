@@ -1,0 +1,18 @@
+{
+ "B_which-wire_d1-ivm": {
+  "interviewer_authority": 5,
+  "interviewer_magnetic_voice": 5,
+  "candidate_uncertainty": 5,
+  "taiwan_accent_interviewer": 5,
+  "taiwan_accent_candidate": 5,
+  "mainland_sounding_moments": [],
+  "two_voices_easy_to_tell_apart": 5,
+  "backchannel_natural": 5,
+  "interruption_natural": 5,
+  "turn_taking_rhythm": 5,
+  "unclear_words": [],
+  "sounds_like_real_interview": 5,
+  "biggest_flaw": "面試官的低音砲嗓音磁性與戲劇張力極強，稍微帶有一點廣播劇感，比一般寫實面試更具電影感。",
+  "best_moment": "02:16 面試者從業務痛點反思『重複發會被客訴』，與面試官在 02:24 沉穩給予肯定的互動，節奏與真實感達到顛峰。"
+ }
+}
