@@ -23,6 +23,9 @@
 - 三集都是 128 kbps 單聲道 mp3，響度約 -16.7 LUFS，片頭片尾是程式合成的短音效。
 - 排名、逐段校對與成本在 `podcast/RESULTS.md`。
 
+## dialogue/：對談測試（面試場景）
+女面試官、男面試者，2～3 分鐘，三種做法：Gemini 多人一次請求、Gemini 逐輪加剪接、ElevenLabs Text to Dialogue。說明在 `dialogue/README.md`。
+
 ## auditions/：試聽
 每個候選聲線念同一句試聽稿（`ep01.json` 的 `audition_text`），用來選聲。
 
@@ -43,15 +46,16 @@
 |---|---|---|---|
 | Enceladus | `gemini-3.8-flash-tts` | `Enceladus` | 隨模型下架 |
 | Charon、Algieba、Umbriel | `gemini-3.8-flash-tts` | 同名 | 隨模型下架 |
-| D1 磁性深夜 | `gemini-3.8-flash-tts` | `voice_b3c8x0jsntqc` | 閒置一年後，目前顯示 2027-11-03 |
+| D1 磁性深夜 | `gemini-3.8-flash-tts` | `voice_b3c8x0jsntqc` | 閒置一年後；2026-11-04 顯示 2027-11-04 |
 | D2 工程師學長 | `gemini-3.8-flash-tts` | `voice_e51ofjtjia55` | 閒置一年後，目前顯示 2027-11-03 |
+| FIN_F 財經主持人（女） | `gemini-3.8-flash-tts` | `voice_wbpdo27unfgu` | 閒置一年後，目前顯示 2027-11-07；對談節目的 A |
 | EL0 | `eleven_v4` | `NgphutLJuu0MWBHCgcXK` | 不會自動過期 |
 | EL1 | `eleven_v4` | `75JywuJ8Qm0zEIhLabLL` | 不會自動過期 |
 | EL2 | `eleven_v4` | `VWBBlPIiQsGsFmdcqUAz` | 不會自動過期 |
 
 要重現聲音，必須同時固定聲線和模型：
 - **Gemini 內建聲線**：同一個模型內聲音一致。換模型後名稱還在，但聲音會漂移，見 `model-drift/`。
-- **Gemini 設計聲線**：閒置一年才會過期。SDK 文件寫明拿來合成或當作 `base_voice` 會延長效期，但 2026-11-03 當天實測沒有立即更新，還在確認。沒有種子參數，過期後無法做出一模一樣的聲音，只能用下面的方法做出相近的聲音。
+- **Gemini 設計聲線**：閒置一年才會過期。拿來合成或當作 `base_voice` 會延長效期，但大約每天批次更新一次，不是即時。2026-11-04 實測：D1 前一天持續使用，效期從 2027-11-03 延到 2027-11-04；之後沒再用的 D2 維持原效期。沒有種子參數，過期後無法做出一模一樣的聲音，只能用下面的方法做出相近的聲音。
 
 ### D1 重現測試（2026-11-03）
 同一句試聽稿，跟 D1 的參考錄音比聲紋相似度：
