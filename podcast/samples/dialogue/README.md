@@ -31,9 +31,11 @@
 | 檔案 | 生成方式 | 聲線 | 長度 |
 |---|---|---|---|
 | `interview2_which-wire_B_gemini-per-turn_d1-interviewer.mp3` | B 的做法：逐輪生成＋剪接；說錯的輪次單獨重生 3 次，挑最清楚的 | 面試官 D1（磁性深夜）、面試者 IV_M（跟第一場同一個人） | 2:40 |
+| `interview2_which-wire_B_gemini-per-turn_d1-v5-interviewer.mp3` | 同上，面試官加上 `base_style: v5`（podcast 的 D1 語氣），稿子 `interview_which_wire_d1v5.json`；面試者的輪次直接沿用上一版 | D1 + v5、IV_M | 2:37 |
 
-- 附和在 0:27、1:12，是面試官的「嗯」。
-- 搶話在 1:41：面試官接「只會多拿到一堆 429」。
+- 附和在 0:27、1:12（v5 版在 0:26、1:10），是面試官的「嗯」。
+- 搶話在 1:41（v5 版 1:40）：面試官接「只會多拿到一堆 429」。
+- v5 版第 16 輪把「冪等」改成「防重複送」：v5 的懶音把「冪等」念糊了，Breeze 和 Gemini 都聽成 meet / meter。
 
 `d1-compare_reference_interview-style_vs_podcast-v5.mp3`（1:14）：D1 聽起來跟 podcast 不一樣，用這個檔對照。
 1. 先播 D1 的參考錄音（podcast 時期）。

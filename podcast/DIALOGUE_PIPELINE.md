@@ -133,6 +133,16 @@ python3 podcast/script_lint.py $S/s.txt                       # mainland_words �
 
 對照檔：`samples/dialogue/d1-compare_reference_interview-style_vs_podcast-v5.mp3`。
 
+`base_style` 的實測結果（`interview_which_wire_d1v5.json`）：
+- **每一輪 style 的影響比 base_style 大。**
+  - 加上 v5，語速只從每秒 2.7 字變成 3.1 字，podcast 是 4.0 字。
+  - 要保留主持人原本的節奏，面試官的 style 只寫態度（「不置可否」「直接打斷」），不要寫「慢」「一字一字講」。
+- **v5 的懶音會把少見的專有名詞念糊。**
+  - 「冪等」被聽成 meet、meter。
+  - 碰到這種詞，換成口語說法，例如「防重複送」。
+- **只換其中一個人的聲音時，另一個人的輪次可以直接複製過去**，只重生這個人的輪次。
+  - 新的 `<name>` 資料夾先放好那些 `turn_XX.wav`，`gemini-turns` 會跳過已存在的檔案。
+
 ## 4. 逐輪生成與組裝
 
 ```bash

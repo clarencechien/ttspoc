@@ -1,0 +1,227 @@
+{
+ "06": {
+  "text": "一樣的話，FCM 有 topic，一個 API call 就送完了。你後面那整排 worker，一個都用不到。",
+  "chosen": "turn_06_k2.wav",
+  "takes": [
+   {
+    "take": "turn_06_k0.wav",
+    "misses": [
+     "一個apic【all】就送完了你後 → ode",
+     "送完了你後面【那】整排work → 的"
+    ],
+    "cer": 0.091,
+    "glitch": false,
+    "heard": "一樣的話fcm有topic一個apicode就送完了你後面的整排worker一個都用不到"
+   },
+   {
+    "take": "turn_06_k1.wav",
+    "misses": [
+     "一個apic【all】就送完了你後 → ode",
+     "送完了你後面【那】整排work → 的"
+    ],
+    "cer": 0.091,
+    "glitch": false,
+    "heard": "一樣的話fcm有topic一個apicode就送完了你後面的整排worker一個都用不到"
+   },
+   {
+    "take": "turn_06_k2.wav",
+    "misses": [
+     "一個apic【all】就送完了你後 → ode"
+    ],
+    "cer": 0.068,
+    "glitch": false,
+    "heard": "一樣的話fcm有topic一個apicode就送完了你後面那整排worker一個都用不到"
+   },
+   {
+    "take": "turn_06_k3.wav",
+    "misses": [
+     "一個apic【all】就送完了你後 → ode"
+    ],
+    "cer": 0.068,
+    "glitch": false,
+    "heard": "一樣的話fcm有topic一個apicode就送完了你後面那整排worker一個都用不到"
+   }
+  ]
+ },
+ "10": {
+  "text": "不只沒差。一百萬人半夜同時點開，推播之後湧進來的那一波，才會把你打掛。",
+  "chosen": "turn_10_k2.wav",
+  "takes": [
+   {
+    "take": "turn_10_k0.wav",
+    "misses": [
+     "推播之後湧進【來】的那一波才會 → 臺"
+    ],
+    "cer": 0.065,
+    "glitch": false,
+    "heard": "不只沒差一百萬人半夜同時點開推波之後湧進臺的那一波才會把你打掛"
+   },
+   {
+    "take": "turn_10_k1.wav",
+    "misses": [
+     "不【只】沒差一百萬人 → 知"
+    ],
+    "cer": 0.032,
+    "glitch": false,
+    "heard": "不知沒差一百萬人半夜同時點開推播之後湧進來的那一波才會把你打掛"
+   },
+   {
+    "take": "turn_10_k2.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "不只沒差一百萬人半夜同時點開推播之後湧進來的那一波才會把你打掛"
+   },
+   {
+    "take": "turn_10_k3.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "不只沒差一百萬人半夜同時點開推播之後湧進來的那一波才會把你打掛"
+   }
+  ]
+ },
+ "14": {
+  "text": "只會多拿到一堆 429。",
+  "chosen": "turn_14_k0.wav",
+  "takes": [
+   {
+    "take": "turn_14_k0.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "只會多拿到一堆四百二十九"
+   },
+   {
+    "take": "turn_14_k1.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "只會多拿到一堆四百二十九"
+   },
+   {
+    "take": "turn_14_k2.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "只會多拿到一堆四百二十九"
+   },
+   {
+    "take": "turn_14_k3.wav",
+    "misses": [],
+    "cer": 0.0,
+    "glitch": false,
+    "heard": "只會多拿到一堆四百二十九"
+   }
+  ]
+ },
+ "20": {
+  "text": "嗯。這句是你今天講得最好的一句。",
+  "chosen": "turn_20_k1.wav",
+  "takes": [
+   {
+    "take": "turn_20_k0.wav",
+    "misses": [
+     "句是你今天講【得】最好的一句 → 的"
+    ],
+    "cer": 0.143,
+    "glitch": false,
+    "heard": "這句是你今天講的最好的一句"
+   },
+   {
+    "take": "turn_20_k1.wav",
+    "misses": [],
+    "cer": 0.071,
+    "glitch": false,
+    "heard": "嗯這一句是你今天講得最好的一句"
+   },
+   {
+    "take": "turn_20_k2.wav",
+    "misses": [
+     "句是你今天講【得】最好的一句 → 的"
+    ],
+    "cer": 0.143,
+    "glitch": false,
+    "heard": "嗯這一句是你今天講的最好的一句"
+   },
+   {
+    "take": "turn_20_k3.wav",
+    "misses": [
+     "句是你今天講【得】最好的一句 → 的"
+    ],
+    "cer": 0.214,
+    "glitch": false,
+    "heard": "這一句是你今天講的最好的一句"
+   }
+  ]
+ },
+ "16_old_text": {
+  "text": "最後。你說冪等，先 INSERT 一筆紀錄，再送。INSERT 完、送出去之前，機器掛了。重試的時候呢？",
+  "chosen": "turn_16_k0.wav",
+  "takes": [
+   {
+    "take": "turn_16_k0.wav",
+    "misses": [
+     "最後你說【冪】等先inse → meet"
+    ],
+    "cer": 0.122,
+    "glitch": false,
+    "heard": "最後你說meet等先insert一筆記錄再送insert完送出去之前機器掛了重試的時候呢"
+   },
+   {
+    "take": "turn_16_k1.wav",
+    "misses": [
+     "最後你說【冪等】先inser → meet"
+    ],
+    "cer": 0.122,
+    "glitch": false,
+    "heard": "最後你說meet先insert一筆記錄再送insert完送出去之前機器掛了重試的時候呢"
+   },
+   {
+    "take": "turn_16_k2.wav",
+    "misses": [
+     "最後你說【冪等】先inser → meet"
+    ],
+    "cer": 0.122,
+    "glitch": false,
+    "heard": "最後你說meet先insert一筆記錄再送insert完送出去之前機器掛了重試的時候呢"
+   },
+   {
+    "take": "turn_16_k3.wav",
+    "misses": [
+     "最後你說【冪等】先inser → meet"
+    ],
+    "cer": 0.146,
+    "glitch": false,
+    "heard": "最後你說meet先insert的一筆記錄再送insert完送出去之前機器掛了重試的時候呢"
+   }
+  ]
+ },
+ "16": {
+  "text": "最後。你說要防重複送，先 INSERT 一筆紀錄，再送。INSERT 完、送出去之前，機器掛了。重試的時候呢？",
+  "chosen": "turn_16_k0.wav",
+  "takes": [
+   {
+    "take": "turn_16_k0.wav",
+    "misses": [],
+    "cer": 0.023,
+    "glitch": false,
+    "heard": "最後你說要防重複送先insert一筆記錄再送insert完送出去之前機器掛了重試的時候呢"
+   },
+   {
+    "take": "turn_16_k1.wav",
+    "misses": [],
+    "cer": 0.023,
+    "glitch": false,
+    "heard": "最後你說要防重複送先insert一筆記錄再送insert完送出去之前機器掛了重試的時候呢"
+   },
+   {
+    "take": "turn_16_k2.wav",
+    "misses": [],
+    "cer": 0.023,
+    "glitch": false,
+    "heard": "最後你說要防重複送先insert一筆記錄再送insert完送出去之前機器掛了重試的時候呢"
+   }
+  ]
+ }
+}

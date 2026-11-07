@@ -1,0 +1,74 @@
+{
+ "ref D1": {
+  "f0": 96.4,
+  "centroid": 1573,
+  "sim_ref": 1.0,
+  "sim_podcast": 0.932
+ },
+ "podcast D1 v5": {
+  "f0": 93.8,
+  "centroid": 1374,
+  "sim_ref": 0.932,
+  "sim_podcast": 1.0
+ },
+ "interview D1 (architect)": {
+  "f0": 93.0,
+  "centroid": 1328,
+  "sim_ref": 0.948,
+  "sim_podcast": 0.976,
+  "per_turn_sim_ref": [
+   0.9,
+   0.901,
+   0.734,
+   0.938,
+   0.901,
+   0.921,
+   0.894,
+   0.831,
+   0.872,
+   0.829,
+   0.811,
+   0.889
+  ]
+ },
+ "interview D1 (base v5)": {
+  "f0": 94.5,
+  "centroid": 1283,
+  "sim_ref": 0.943,
+  "sim_podcast": 0.98,
+  "per_turn_sim_ref": [
+   0.898,
+   0.865,
+   0.735,
+   0.863,
+   0.895,
+   0.925,
+   0.862,
+   0.824,
+   0.893,
+   0.799,
+   0.825,
+   0.894
+  ]
+ },
+ "prosody": {
+  "podcast D1 v5 (ep01-tw)": {
+   "rate": 3.99,
+   "f0_range_st": 7.0,
+   "pause_frac": 0.39,
+   "n": 10
+  },
+  "interview D1 architect": {
+   "rate": 2.7,
+   "f0_range_st": 6.2,
+   "pause_frac": 0.47,
+   "n": 10
+  },
+  "interview D1 base v5": {
+   "rate": 3.06,
+   "f0_range_st": 6.1,
+   "pause_frac": 0.45,
+   "n": 10
+  }
+ }
+}

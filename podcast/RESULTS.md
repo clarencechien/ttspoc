@@ -518,6 +518,31 @@ ElevenLabs 960 字元。
 - 現在說話者可以加 `"base_style": "v5"`，先帶 podcast 的語氣，再疊上角色。
 - 對照檔：`samples/dialogue/d1-compare_reference_interview-style_vs_podcast-v5.mp3`。
 
+**用 `base_style: v5` 重生 D1 那一場。**
+
+做法：
+- 面試官加上 `base_style: v5`，persona 只寫角色。
+- 面試者的 11 輪直接沿用上一版。
+- 新生成 D1 的 12 輪：重生 5 輪，改稿 1 輪。
+- 約 7,100 個音訊 token，約 0.06 美元。
+
+結果：
+- CER 6.4%，剩下的都是 Breeze 的轉寫問題（queue、一千、call、漏 → low）。
+- 第 16 輪的「冪等」4 次都被 Breeze 聽成 meet，Gemini 盲聽也聽成「meter」，原版則聽得清楚。v5 的懶音會把少見的專有名詞念糊，所以改成「防重複送」。
+
+聲紋與韻律比較（`results/dialogue/which_wire/d1_style_compare.json`）：
+
+| D1 | 跟 podcast D1 的聲紋 | 語速（字/秒） | 音高起伏（半音，P10–P90） | 停頓比例 |
+|---|---|---|---|---|
+| podcast EP01 成品（v5） | — | 3.99 | 7.0 | 0.39 |
+| 面試，架構師 persona | 0.976 | 2.70 | 6.2 | 0.47 |
+| 面試，base_style v5 | 0.980 | 3.06 | 6.1 | 0.45 |
+
+觀察：
+- 聲紋幾乎一樣，聽起來的差別主要在語速和語調。
+- 加上 v5 後語速快了 13%，但還是比 podcast 慢 23%。原因是每一輪的 style 還寫著「慢」「放慢」「一字一字講」，這些演出指示的影響比 base_style 大。
+- 要再接近，就把面試官每一輪 style 裡的「慢」拿掉，只留態度，例如「不置可否」「直接打斷」。
+
 流程整理在 `podcast/DIALOGUE_PIPELINE.md`。
 
 重點：逐輪生成時，錯一句只要重生那一句，花幾分錢；一次生成整段的做法（A、ElevenLabs）錯了就要整段重來。
