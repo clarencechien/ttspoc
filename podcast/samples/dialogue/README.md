@@ -50,6 +50,7 @@
 | 檔案 | 生成方式 | 聲線 | 長度 |
 |---|---|---|---|
 | `talk01_retirement-10m_B_gemini-per-turn_finf-d1v5.mp3` | B 的做法：逐輪生成＋剪接，重生 3 輪 | A：FIN_F（新設計的財經女聲）、B：D1 + `base_style: v5` | 2:57 |
+| `talk01-v2_retirement-10m_B_gemini-per-turn_finf-d1v5.mp3` | 同上，最後 26 秒的三點整理拆成 5 輪，第一、二點後 A 接話補充（`talk_retirement_10m_v2.json`）；沿用 21 輪，只生成新的 5 輪 | 同上 | 3:12 |
 | `design-preview_FIN_F_finance-host.mp3` | FIN_F 設計時 API 回傳的試聽 | | |
 
 - 附和：
@@ -57,6 +58,11 @@
   - 1:17、2:51 是 B 的「嗯」。
   - 2:09 是 B 的「對」。
 - 2:10 B 搶話「我覺得我會賣欸」，提早 0.15 秒接上。
+- v2 的三點整理從 2:20 開始：
+  - 2:32 A 接「風險排序」。
+  - 2:43 A 接「租屋讓破產率壞一級」，2:49 B 附和。
+  - 2:54 B 講第三點。
+- FIN_F 的參考錄音在 `podcast/samples/references/gemini-3.8-flash_fin-f-finance-host.flac`。
 - 內容是報告的模擬與壓力測試結果，節目最後也講明不是投資建議。
 
 

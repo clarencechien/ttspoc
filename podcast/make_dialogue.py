@@ -1,6 +1,7 @@
 """Two-person dialogue (interview) on Gemini 3.8 TTS and ElevenLabs, three ways.
 
-  python podcast/make_dialogue.py design                      # Gemini designed voices IV_F (interviewer) / IV_M (candidate)
+  python podcast/make_dialogue.py design                      # Gemini designed voices in DESIGNS (IV_F, IV_M, FIN_F)
+  python podcast/make_dialogue.py reference FIN_F --file-label fin-f-finance-host --style "..."   # keep a reference recording
   python podcast/make_dialogue.py gemini-multi --voices I=Kore,C=Achird   # A: one request, built-in voices, |嗯| backchannels
   python podcast/make_dialogue.py gemini-turns --voices I=IV_F,C=IV_M     # B: one request per turn, spliced backchannels + overlap
   python podcast/make_dialogue.py elevenlabs --voices I=<id>,C=<id>       # C: ElevenLabs text-to-dialogue (eleven_v3)
@@ -17,7 +18,7 @@ turns of {speaker, style, text, gap?, overlap?}. Full walkthrough: podcast/DIALO
   overlap  seconds the turn starts *before* the previous one ends (an interruption); the previous
            turn is faded out shortly after, as a speaker who is cut off stops talking.
 """
-import argparse, base64, json, re, subprocess, sys, wave
+import argparse, base64, json, re, subprocess, sys, time, wave
 from pathlib import Path
 
 import numpy as np
@@ -150,6 +151,33 @@ def cmd_design(a):
         print("created", key, v["id"])
 
 
+# ---------------------------------------------------------------- reference recording for a designed voice
+def cmd_reference(a):
+    """Record what a designed voice sounds like: the shared audition text (ep01.json audition_text, the same line
+    every reference reads) -> podcast/samples/references/<file>.flac, plus an entry in references.json with the
+    design prompt, expiry, F0, SHA-256 and Resemblyzer embedding, so match_voice.py can find a stand-in later."""
+    import hashlib
+    import match_voice
+    v = all_voices()[a.key]
+    text = json.loads((ROOT / "podcast/script/ep01.json").read_text(encoding="utf-8"))["audition_text"]
+    ref_dir = ROOT / "podcast/samples/references"; flac = ref_dir / f"gemini-3.8-flash_{a.file_label}.flac"
+    wav = OUT / f"ref_{a.key}.wav"; OUT.mkdir(parents=True, exist_ok=True)
+    tts_one(client(), text, a.style, v["id"], wav)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-c:a", "flac", str(flac)], check=True)
+    e, _ = match_voice.embed(flac)
+    meta = json.loads((ref_dir / "references.json").read_text(encoding="utf-8"))
+    meta["references"] = [r for r in meta["references"] if r["file"] != flac.name]
+    meta["references"].append({
+        "file": flac.name, "provider": "gemini", "model": TTS_MODEL, "voice_type": "designed", "voice": v["id"],
+        "voice_label": f"{a.key} {v['name']}", "design_prompt": v["prompt"], "expires": v["expire_time"],
+        "lifetime_note": "閒置一年才過期；合成或當 base_voice 會延長，大約每天批次更新。綁定此模型；沒有種子，過期後只能用 match_voice.py 找相近的聲線",
+        "text": text, "style": a.style, "generated": time.strftime("%Y-%m-%d"), "lossless": True,
+        "sha256": hashlib.sha256(flac.read_bytes()).hexdigest(), "f0_median_hz": match_voice.f0_median(flac),
+        "duration_s": round(wav_duration(wav), 2), "embedding_resemblyzer": [round(float(x), 5) for x in e]})
+    (ref_dir / "references.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(flac, "F0", meta["references"][-1]["f0_median_hz"])
+
+
 # ---------------------------------------------------------------- A: one multi-speaker request
 def cmd_gemini_multi(a):
     sc = load(a.script); vo = parse_voices(a.voices); c = client(); OUT.mkdir(parents=True, exist_ok=True)
@@ -194,6 +222,19 @@ def cmd_gemini_turns(a):
         if p.exists():
             rej.mkdir(exist_ok=True); n = len(list(rej.glob(f"turn_{i:02d}_*.wav")))
             p.rename(rej / f"turn_{i:02d}_redo{n}.wav")
+    # --reuse-from OLD_NAME:OLD_SCRIPT: after an edit that adds, removes or reorders turns, copy every turn whose
+    # (speaker, text, style) is unchanged from the old render (retake choices included), so only new lines are rendered
+    if a.reuse_from:
+        old_name, old_script = a.reuse_from.split(":", 1)
+        old_sc = load(old_script)
+        key = lambda t: (t["speaker"], BC.sub("", t["text"]), t["style"])
+        old_idx = {key(t): j for j, t in enumerate(old_sc["turns"])}
+        same_voices = old_sc["speakers"] == sc["speakers"]
+        for i, t in enumerate(sc["turns"]):
+            p, j = d / f"turn_{i:02d}.wav", old_idx.get(key(t))
+            src = OUT / old_name / f"turn_{j:02d}.wav" if j is not None else None
+            if not p.exists() and src is not None and src.exists() and same_voices:
+                p.write_bytes(src.read_bytes()); print(f"turn {i:02d} reused from {old_name} turn {j:02d}")
     # 1. every turn, without the backchannel markers
     for i, t in enumerate(sc["turns"]):
         p = d / f"turn_{i:02d}.wav"
@@ -321,6 +362,9 @@ def cmd_master(a):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("design")
+    p = sub.add_parser("reference", help="store a reference recording of a designed voice")
+    p.add_argument("key"); p.add_argument("--file-label", required=True, help="e.g. fin-f-finance-host")
+    p.add_argument("--style", required=True, help="neutral delivery for the shared audition text")
     for name in ("gemini-multi", "gemini-turns", "elevenlabs"):
         p = sub.add_parser(name)
         p.add_argument("--script", default=str(DEFAULT_SCRIPT))
@@ -335,6 +379,7 @@ if __name__ == "__main__":
             p.add_argument("--bc-db", type=float, default=-7, help="backchannel level relative to turns")
             p.add_argument("--bc-takes", type=int, default=3)
             p.add_argument("--redo", help="comma-separated turn numbers to render again (see dialogue_qa.py)")
+            p.add_argument("--reuse-from", help="OLD_NAME:OLD_SCRIPT - copy unchanged turns from an earlier render of an edited script")
         if name == "elevenlabs":
             p.add_argument("--model", default="eleven_v3")
             p.add_argument("--seed", type=int, default=7)
@@ -344,5 +389,5 @@ if __name__ == "__main__":
     p.add_argument("--start", type=float, required=True); p.add_argument("--end", type=float, required=True)
     p.add_argument("--clip", required=True); p.add_argument("--gap", type=float, default=0.15)
     a = ap.parse_args()
-    {"design": cmd_design, "gemini-multi": cmd_gemini_multi, "gemini-turns": cmd_gemini_turns,
+    {"design": cmd_design, "reference": cmd_reference, "gemini-multi": cmd_gemini_multi, "gemini-turns": cmd_gemini_turns,
      "elevenlabs": cmd_elevenlabs, "patch": cmd_patch, "master": cmd_master}[a.cmd](a)

@@ -48,6 +48,7 @@
 | Charon、Algieba、Umbriel | `gemini-3.8-flash-tts` | 同名 | 隨模型下架 |
 | D1 磁性深夜 | `gemini-3.8-flash-tts` | `voice_b3c8x0jsntqc` | 閒置一年後；2026-11-04 顯示 2027-11-04 |
 | D2 工程師學長 | `gemini-3.8-flash-tts` | `voice_e51ofjtjia55` | 閒置一年後，目前顯示 2027-11-03 |
+| FIN_F 財經主持人（女） | `gemini-3.8-flash-tts` | `voice_wbpdo27unfgu` | 閒置一年後，目前顯示 2027-11-07；對談節目的 A |
 | EL0 | `eleven_v4` | `NgphutLJuu0MWBHCgcXK` | 不會自動過期 |
 | EL1 | `eleven_v4` | `75JywuJ8Qm0zEIhLabLL` | 不會自動過期 |
 | EL2 | `eleven_v4` | `VWBBlPIiQsGsFmdcqUAz` | 不會自動過期 |
